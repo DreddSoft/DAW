@@ -9,7 +9,7 @@ if (!preg_match("/^[0-9]+$/", $numss)) {
     $numss = "ERROR";
 }
 
-// Operador ternario para el texto que corresponde a la consulta
+// Operador ternario para el texto que corresponde a la consulta 
 $consulta = $_POST['consulta'] == 1 ? "Medicina General" : "Pediatria";
 
 // Guardamos en variables.
