@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            padding: 15px;
+        }
+    </style>
+    <title>Ejercicio 03</title>
+</head>
+
+<body>
+
+    <div class="titulo" style="display: grid;">
+        <h1 style="place-self: center;">Ejercicio 03</h1>
+        <h2 style="place-self: center;">Enunciado: </h2>
+        <br>
+        <div id="statement" style="display: none;">
+            <p>Realiza una aplicación web dónde se solicite por pantalla, mediante
+                una ventana emergente, al usuario su sueldo (sin decimales) y los años de antigüedad.
+                La aplicación mostrará en la parte destinada para tal efecto, el sueldo resultante:
+            </p>
+            <ul>
+                <li>Si el sueldo es inferior a 500 y su antigüedad es igual o superior a 10 años, triplicar el sueldo.
+                </li>
+                <li>Si el sueldo es inferior a 500, pero su antigüedad es menor a 10 años, doblar sueldo.</li>
+                <li>Si el sueldo es mayor o igual a 500, mostrar sin cambios.</li>
+            </ul>
+        </div>
+        <input type="button" value="Ver" style="width: 200px; place-self: center;" id="btn-show"
+            onclick="showStatement();">
+        <input type="button" value="Ocultar" style="width: 200px; place-self: center; display: none;" id="btn-hide"
+            onclick="hideStatement();">
+        <br>
+
+    </div>
+
+    <div class="resultado" style="display: grid; place-content: center;">
+        <table style="width: 500px; display: grid; place-self: center; place-content: center;" id="tabla">
+            <tbody id="bodyTabla">
+                <tr>
+                    <th style="text-align: center;">EMPLEADO</th>
+                    <th style="text-align: center;">SUELDO</th>
+                    <th style="text-align: center;">ANTIG</th>
+                    <th style="text-align: center;">RESULTADO</th>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="button" value="Introducir" style="padding: 10px 15px; width: 200px; place-self: center;"
+            onclick="introEmployee();">
+    </div>
+
+    <script src="./exer03.js"></script>
+
+</body>
+
+</html>

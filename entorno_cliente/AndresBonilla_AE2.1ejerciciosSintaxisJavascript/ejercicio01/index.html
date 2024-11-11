@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            padding: 15px;
+        }
+    </style>
+    <title>Ejercicio 01</title>
+</head>
+
+<body>
+
+    <div class="titulo">
+        <h1>Ejercicio 01</h1>
+        <h2>Enunciado: </h2>
+        <p>Realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario tres
+            números. Si al menos uno de los valores ingresados es mayor a 10, mostrar en la parte destinada para tal
+            efecto de la aplicación web "ALGUNO MAYOR QUE 10". En caso contrario mostrar "NINGUNO MAYOR QUE 10". (La
+            doble comilla ha de aparecer también).</p>
+    </div>
+
+    <div class="resultado" style="display: grid; place-content: center;">
+        <table style="width: 500px; display: grid; place-self: center; place-content: center;">
+            <tr>
+                <th style="text-align: center;">ENTRADA</th>
+                <th style="text-align: center;">SALIDA</th>
+            </tr>
+            <tr>
+                <td id="ent1"></td>
+                <td id="sal1"></td>
+            </tr>
+            <tr>
+                <td id="ent2"></td>
+                <td id="sal2"></td>
+            </tr>
+            <tr>
+                <td id="ent3"></td>
+                <td id="sal3"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="button" value="Introducir" style="padding: 10px 15px; width: 200px; place-self: center;" id="btn-intro">
+    </div>
+
+    <script src="./logica.js"></script>
+
+</body>
+
+</html>

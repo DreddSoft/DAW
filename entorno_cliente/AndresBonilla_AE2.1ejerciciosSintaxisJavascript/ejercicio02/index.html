@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            padding: 15px;
+        }
+    </style>
+    <title>Ejercicio 02</title>
+</head>
+
+<body>
+
+    <div class="titulo" style="display: grid;">
+        <h1>Ejercicio 02</h1>
+        <h2 style="place-self: center;">Enunciado: </h2>
+        <br>
+        <input type="button" value="Ver" style="width: 200px; place-self: center;" id="btn-ver">
+        <input type="button" value="Ocultar" style="width: 200px; place-self: center; display: none;" id="btn-ocultar">
+        <br>
+        <p style="display: none;" id="display-enun"></p>
+    </div>
+
+    <div class="resultado" style="display: grid; place-content: center;">
+        <table style="width: 500px; display: grid; place-self: center; place-content: center;" id="tabla">
+            <tr>
+                <th style="text-align: center;">ENTRADA</th>
+                <th style="text-align: center;">SALIDA</th>
+            </tr>
+        </table>
+        <br>
+        <input type="button" value="Introducir" style="padding: 10px 15px; width: 200px; place-self: center;" id="btn-intro">
+    </div>
+
+    <script src="./logica.js"></script>
+
+</body>
+
+</html>

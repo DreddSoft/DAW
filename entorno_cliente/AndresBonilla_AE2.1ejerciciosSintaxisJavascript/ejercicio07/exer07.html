@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            padding: 15px;
+        }
+    </style>
+    <title>Ejercicio 07</title>
+</head>
+
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="Logo Javascript" style="width: 200px; place-self: center; margin-bottom: 50px;">
+
+    <div class="titulo" style="display: grid;">
+        <h1 style="place-self: center;">Ejercicio 07</h1>
+        <h2 style="place-self: center;">Enunciado: </h2>
+        <br>
+        <div id="statement" style="display: none;">
+            <p>Realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario un número N. La aplicación mostrará en la parte destinada para tal efecto, todos los impares desde N (inclusive) hasta 1, con las siguientes condiciones:</p>
+            <ul>
+                <li>Cada número se mostrará en una línea distinta.</li>
+                <li>Controlar que N siempre será mayor o igual a 1. En caso contrario, mostrar advertencia y volver a solicitar N.</li>
+            </ul>
+        </div>
+        <input type="button" value="Ver" style="width: 200px; place-self: center;" id="btn-show"
+            onclick="showStatement();">
+        <input type="button" value="Ocultar" style="width: 200px; place-self: center; display: none;" id="btn-hide"
+            onclick="hideStatement();">
+        <br>
+
+    </div>
+
+    <div class="resultado" style="display: grid; place-content: center;">
+        <table style="width: 500px; display: grid; place-self: center; place-content: center;" id="tabla">
+            <tbody id="bodyTabla">
+                <tr>
+                    <th style="text-align: center;">ENTRADA</th>
+                    <th style="text-align: center;">SALIDA</th>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="button" value="Introducir" style="padding: 10px 15px; width: 200px; place-self: center;"
+            id="btn-intro">
+    </div>
+
+    <script src="./exer07.js"></script>
+
+</body>
+
+</html>

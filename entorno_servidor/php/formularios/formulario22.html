@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            place-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        .btn-field {
+            margin: 25px;
+        }
+
+        .btn {
+            padding: 10px;
+            max-width: 200px;
+        }
+        .tbn:active {
+            transform: translateY(4px);
+
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+            text-align: center;
+        }
+    </style>
+    <title>Formulario 22</title>
+</head>
+
+<body>
+
+
+
+    <form action="../basicos/ejercicio21.php" method="GET">
+
+        <img src="https://imgs.search.brave.com/n47Kd35ttgRyl7BLjYZ3wgbmDxQS-UIZbetG1tGbeqQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8yLzI3L1BI/UC1sb2dvLnN2Zy82/NDBweC1QSFAtbG9n/by5zdmcucG5n"
+            alt="" style="place-self: center; width: 200px;">
+
+        <h2>Formulario 22</h2>
+
+        <div class="numeros">
+            <label for="">Primer número: </label>
+            <input type="number" name="num1" id="num1">
+        </div>
+        <div class="numeros">
+            <label for="">Segundo número: </label>
+            <input type="number" name="num2" id="num2">
+        </div>
+
+
+
+        <div class="btn-field">
+            <input type="submit" value="Calcular" id="calcular" class="btn">
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            place-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        .btn-field {
+            margin: 25px;
+        }
+
+        .btn {
+            padding: 10px;
+            max-width: 200px;
+        }
+
+        .tbn:active {
+            transform: translateY(4px);
+
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+            text-align: center;
+        }
+
+        .lenguajes {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .noticias-field {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+
+    </style>
+    <title>Formulario 23</title>
+</head>
+
+<body>
+
+    <form action="../basicos/ejercicio23.php" method="POST">
+
+        <img src="https://imgs.search.brave.com/n47Kd35ttgRyl7BLjYZ3wgbmDxQS-UIZbetG1tGbeqQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8yLzI3L1BI/UC1sb2dvLnN2Zy82/NDBweC1QSFAtbG9n/by5zdmcucG5n"
+            alt="" style="place-self: center; width: 200px;">
+
+        <h2>Formulario 23</h2>
+
+        <div class="">
+            <label for="">Nombre: </label>
+            <input type="text" name="nombre" id="nombre" required>
+        </div>
+
+        <div class="">
+            <label for="">Lenguaje de programación: </label>
+            <div class="lenguajes">
+                <div class="option">
+                    <input type="radio" name="lprog" id="rphp" value="php" required>
+                    <label for="rphp">PHP</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="lprog" id="rjavascript" value="javascript" required>
+                    <label for="rjavascript">JavaScript</label>
+
+                </div>
+                <div class="option">
+                    <input type="radio" name="lprog" id="rpython" value="python" required>
+                    <label for="rpython">Python</label>
+                </div>
+
+            </div>
+
+            <div class="" style="margin-top: 1rem;">
+                <select name="nExp" id="nExp">
+                    <option value="0">Principiante</option>
+                    <option value="1">Intermedio</option>
+                    <option value="2">Avanzado</option>
+                </select>
+            </div>
+
+            <div class="noticias-field">
+                <label for="">Suscripción a noticias: </label>
+                <input type="checkbox" name="noticias" id="noticias">
+            </div>
+        </div>
+
+        <div class="btn-field">
+            <input type="submit" value="Calcular" id="calcular" class="btn">
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <title>Practica 01</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <noscript>
+        En caso de no poder ejecutar los scripts, <br>
+        <b>actualice su navegador o active JavaScript</b>
+    </noscript>
+
+    <div class="titulo" style="display: grid; place-content: center;">
+        <h1>Actividad evaluable:</h1>
+    </div>
+
+
+    <div class="enunciado" style="display: grid; place-content: center;">
+        <h3>Si quieres ver el enunciado de la actividad evaluable, pulsa el botón <b><i> "Ver enunciado"</i></b></h3>
+        <p id="espacio-texto"></p>
+        <input type="button" value="Mostrar" onclick="mostrarEnunciado()" id="btn-mostrar-enunciado"
+            style="width: 200px; place-self: center;">
+        <input type="button" value="Ocultar" onclick="ocultarEnunciado()" id="btn-ocultar-enunciado"
+            style="width: 200px; display: none; place-self: center;">
+    </div>
+
+
+
+    <div class="ejercicio" style="display: grid;">
+        <div class="valores" style="display:grid; width: 300px; place-content: center; place-self: center;">
+            <label for="valor1" style="place-self: center;">Primer valor: </label>
+            <input type="number" name="valor1" id="valor1" style="place-self: center;">
+        </div>
+
+        <div class="valores" style="display:grid; width: 300px; place-content: center; place-self: center;">
+            <label for="valor2">Segundo valor: </label>
+            <input type="number" name="valor2" id="valor2">
+        </div>
+
+        <div class="valores" style="display:grid; width: 300px; place-content: center; place-self: center;">
+            <label for="valor3">Tercer valor: </label>
+            <input type="number" name="valor3" id="valor3">
+        </div>
+    </div>
+
+    <div class="resolucion" style="display: grid; place-content: center;">
+            <h3 id="enunciadoAE">Si quieres ver la resolución de la activada evaluable pulsa el botón <b><i> "Ver
+                resolución"</i></b></h3>
+    <input type="button" value="ver resolución" onclick="verResolucion()" id="btn-mostrar-res" style="width: 200px; place-self: center;">
+    <input type="button" value="ocultar resolución" onclick="ocultarResolucion()" id="btn-ocultar-res"
+    style="width: 200px; display: none; place-self: center;">
+    </div>
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

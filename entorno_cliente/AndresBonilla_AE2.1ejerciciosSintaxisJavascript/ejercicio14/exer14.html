@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            padding: 15px;
+        }
+    </style>
+    <title>Ejercicio 14</title>
+</head>
+
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="Logo Javascript" style="width: 200px; place-self: center; margin-bottom: 50px;">
+
+    <div class="titulo" style="display: grid;">
+        <h1 style="place-self: center;">Ejercicio 14</h1>
+    </div>
+
+    <div style="display: grid; place-content: center;">
+        <div id="enunciado" style="display: none;">
+            <p>El cálculo de la letra del Documento Nacional de Identidad (DNI) es un proceso matemático sencillo que se basa en obtener el resto de la división entera del número de DNI y el número 23. A partir del resto de la división, se obtiene la letra seleccionándola dentro de un array de letras. El array de letras es:</p>
+            <p>var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];</p>
+            <p>Por tanto si el resto de la división es 0, la letra del DNI es la T y si el resto es 3 la letra es la A.</p>
+            <p>Con estos datos, realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario un número de DNI y la letra del DNI. La aplicación debe:</p>
+            <ol>
+                <li>Comprobar si el número es menor que 0 o mayor que 99.999.999. Si ese es el caso, se muestra un mensaje al usuario indicando que el número proporcionado no es válido y el programa vuelve a solicitar los datos mencionados</li>
+                <li>Si el número es válido, se calcula la letra que le corresponde según el método explicado anteriormente</li>
+                <li>Una vez calculada la letra, se debe comparar con la letra indicada por el usuario. Si no coinciden, se muestra un mensaje al usuario diciéndole que la letra que ha indicado no es correcta y se le pide de nuevo que introduzca los datos volviendo al punto 1.</li>
+            </ol>
+            <p>La aplicación mostrará en la parte destinada para tal efecto, un mensaje indicando que el número y la letra de DNI son correctos y el DNI introducido.</p>
+
+        </div>
+        <input type="button" value="Ver" onclick="mostrarEnunciado();" id="ver" style="padding: 10px 15px; width: 200px; place-self: center;">
+        <input type="button" value="ocultar" onclick="ocultarEnunciado();" id="ocultar" style="display:  none; padding: 10px 15px; width: 200px; place-self: center;">
+    </div>
+
+    <div class="resultado" style="display: grid; place-content: center;">
+        <table style="width: 500px; display: grid; place-self: center; place-content: center;" id="tabla">
+            <tbody id="bodyTabla">
+                <tr>
+                    <th style="text-align: center;">ENTRADA</th>
+                    <th style="text-align: center;">SALIDA</th>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="button" value="Introducir" style="padding: 10px 15px; width: 200px; place-self: center;"
+            onclick="exercise14();">
+    </div>
+
+    <script src="./exer14.js"></script>
+
+</body>
+
+</html>

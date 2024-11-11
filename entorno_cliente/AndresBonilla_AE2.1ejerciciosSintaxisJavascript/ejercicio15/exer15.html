@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            padding: 15px;
+        }
+    </style>
+    <title>Ejercicio 15</title>
+</head>
+
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="Logo Javascript" style="width: 200px; place-self: center; margin-bottom: 50px;">
+
+    <div class="titulo" style="display: grid;">
+        <h1 style="place-self: center;">Ejercicio 15</h1>
+    </div>
+
+    <div style="display: grid; place-content: center;">
+        <div id="enunciado" style="display: none;">
+            <p>El factorial de un número entero n es una operación matemática que consiste en multiplicar todos los factores así:</p>
+            <p>n x (n-1) x (n-2) x ... x 1</p>
+            <p>Así, el factorial de 5 (escrito como 5!) es igual a: 5! = 5 x 4 x 3 x 2 x 1 = 120.</p>
+            <p>Con estos datos, realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario un número. La aplicación mostrará en la parte destinada para tal efecto, su factorial.</p>
+            <p>Dado que solo se puede calcular el factorial de un número natural, si se introduce un número negativo mostrar un mensaje de error y volver a pedir el número al usuario.</p>
+
+        </div>
+        <input type="button" value="Ver" onclick="mostrarEnunciado();" id="ver" style="padding: 10px 15px; width: 200px; place-self: center;">
+        <input type="button" value="ocultar" onclick="ocultarEnunciado();" id="ocultar" style="display:  none; padding: 10px 15px; width: 200px; place-self: center;">
+    </div>
+
+    <div class="resultado" style="display: grid; place-content: center;">
+        <table style="width: 500px; display: grid; place-self: center; place-content: center;" id="tabla">
+            <tbody id="bodyTabla">
+                <tr>
+                    <th style="text-align: center;">ENTRADA</th>
+                    <th style="text-align: center;">SALIDA</th>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="button" value="Introducir" style="padding: 10px 15px; width: 200px; place-self: center;"
+            onclick="exercise15();">
+    </div>
+
+    <script src="./exer15.js"></script>
+
+</body>
+
+</html>
