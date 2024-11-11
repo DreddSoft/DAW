@@ -20,11 +20,41 @@
         }
         .btn-field {
             margin: 25px;
+            place-content: center;
         }
 
         .btn {
             padding: 10px;
             max-width: 200px;
+            display: grid;
+            place-self: center;
+        }
+
+        img {
+            display: grid;
+            place-self: center;
+            margin-bottom: 2rem;
+        }
+
+        form {
+            border: solid 2px grey;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 2rem;
+            box-shadow: #aca5a57c 8px 8px 8px;
+            background-color: #242424;
+        }
+
+                /* Modo claro */
+                @media (prefers-color-scheme: light) {
+            form {
+            border: solid 2px #535353;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 2rem;
+            box-shadow: grey 8px 8px 8px;
+            background-color: #d1d1d1;
+        }
         }
         
     </style>
@@ -34,7 +64,7 @@
 
 
 
-    <form action="../basicos/ejercicio24.php" method="POST">
+    <form action="/ejercicio24.php" method="POST">
 
         <img src="https://imgs.search.brave.com/n47Kd35ttgRyl7BLjYZ3wgbmDxQS-UIZbetG1tGbeqQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8yLzI3L1BI/UC1sb2dvLnN2Zy82/NDBweC1QSFAtbG9n/by5zdmcucG5n" alt="" style="place-self: center; width: 200px;">
 
@@ -42,18 +72,19 @@
 
         <div class="form-field">
             <label for="nombre">Nombre completo:</label>
-            <input type="text" name="nombre" id="nombre">
+            <input type="text" name="nombre" id="nombre" required>
         </div>
 
         <div class="form-field">
             <label for="numss">Número de seguridad social: </label>
-            <input type="text" name="numss" id="numss" minlength="12" maxlength="12">
+            <input type="text" name="numss" id="numss" minlength="12" maxlength="12" pattern="[0-9]{12}" title="Introduzca 12 dígitos" required>
         </div>
 
         <div class="form-field">
             <label for="consulta">Tipo de consulta: </label>
-            <select name="consulta" id="consulta">
-                <option value="1" selected>Medicina General</option>
+            <select name="consulta" id="consulta" placeholder="Elige una opción">
+                <option hidden></option>
+                <option value="1">Medicina General</option>
                 <option value="2">Pediatría</option>
             </select>
         </div>
