@@ -1,28 +1,34 @@
 <?php
 
+// Guardamos en variables algunos de los parámetos
 $nombre = $_POST['nombre'];
 $numss = $_POST['numss'];
 
+// Comprobamos si el parámetros numss es un dígito
 if (!preg_match("/^[0-9]+$/", $numss)) {
     $numss = "ERROR";
 }
 
+// Operador ternario para el texto que corresponde a la consulta
 $consulta = $_POST['consulta'] == 1 ? "Medicina General" : "Pediatria";
+
+// Guardamos en variables.
 $fecha = $_POST['fecha'];
+
+// Condicional para el turno.
 if ($_POST['turno'] == 0) {
     $turno = "mañana";
 } else if ($_POST['turno'] == 1) {
     $turno = "tarde";
-    
 } else {
     $turno = "noche";
 }
 
+// Construcción del mensaje
 $mensaje = "La cita para $nombre con numero de la seguridad social $numss, para la consulta $consulta el dia $fecha en el turno $turno";
 
 if (strtotime($fecha) < strtotime("-1 day")) {
     $mensaje = "Error, no se ha podido realizar la cita porque la fecha es anterior a la de hoy.";
-
 } else if (strtotime($fecha) > strtotime("+1 month")) {
     $mensaje = "Error, el calendario de citas permite reservar hasta un mes de antelación pero no más.";
 }
