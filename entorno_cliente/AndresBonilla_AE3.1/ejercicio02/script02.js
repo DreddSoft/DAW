@@ -221,7 +221,7 @@ function pedirPassw(primerPassw) {
 
 }
 
-function impresion(email, password, mensaje) {
+function impresion(email, password, mensaje) {ñ
 
     // Capturamos tabla
     let tabla = document.getElementById("bodyTabla");
@@ -229,4 +229,10 @@ function impresion(email, password, mensaje) {
     tabla.innerHTML += `<tr><td>${email}<br>${password}</td><td>${mensaje}</td></tr>`;
 
 }
+
+/**
+ * Author: @Dreddsoft
+ * Date: 12/11/2024 (dd/MM/yyyy)
+ * Version: 1.0
+ * */ 
 

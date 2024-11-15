@@ -18,10 +18,10 @@ firstCond = True if (nom[0] == nom[-1]) else False
 secondCond = True if (len(ape1) == len(ape2)) else False
 
 if firstCond and secondCond:
-    print(nom, ape1, ape2, "es APTO.")
+    print(nom, ape1, ape2, "Persona APTA para participar en el concurso.")
 
 else:
-    print(nom, ape1, ape2, "no es APTO.")
+    print(nom, ape1, ape2, " Persona NO APTA para participar en el concurso.")
 
 
 print("FIN DE PROGRAMA")
