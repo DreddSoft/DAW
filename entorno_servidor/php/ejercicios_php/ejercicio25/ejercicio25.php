@@ -23,6 +23,12 @@ if ($usuario == $usuarioCorrecto && $passw == $passwCorrecta) {
     $acceso = false;
 }
 
+/**
+ * Ejercicio 25: Envío de ficheros desde un formulario
+ * author: @dreddsoft
+ * date: 16/11/2024
+ * version: 1.0
+ */
 
 ?>
 <!DOCTYPE html>

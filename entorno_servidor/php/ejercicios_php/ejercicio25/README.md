@@ -1,7 +1,4 @@
-
-markdown
-Copiar código
-# Ejercicio 25 – Envío de ficheros desde un formulario (15/11/2024)
+# Ejercicio 25 – Envío de ficheros desde un formulario
 
 - Crea un formulario HTML, llamado `formulario25.html` con dos campos: **usuario** y **contraseña**.
 - Crea un archivo PHP, llamado `Ejercicio25.php`, que compruebe los datos introducidos:
