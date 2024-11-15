@@ -11,7 +11,14 @@ $error = false;
 // }
 
 // Operador ternario para el texto que corresponde a la consulta 
-$consulta = $_POST['consulta'] == 2 ? "Pediatría" : "Medicina General";
+if ($_POST['consulta'] == 2) {
+    $consulta = "Pediatría";
+} else if ($_POST['consulta'] == 1) {
+    $consulta = "Medicina General";
+} else if (empty($_POST['consulta'])) {
+    $error = true;
+    $consulta = "";
+}
 
 // Guardamos en variables.
 if (empty($_POST['fecha'])) {
@@ -20,13 +27,13 @@ if (empty($_POST['fecha'])) {
 $fecha = $_POST['fecha'];
 
 // Condicional para el turno.
-if (empty($_POST['turno'])) {
-    $error = true;
-    $turno = "";
-} else if ($_POST['turno'] == 0) {
+if ($_POST['turno'] == 0) {
     $turno = "mañana";
 }else if ($_POST['turno'] == 1) {
     $turno = "tarde";
+} else if (empty($_POST['turno'])) {
+    $error = true;
+    $turno = "";
 } else {
     $turno = "noche";
 }
@@ -127,7 +134,7 @@ if ($error) {
     <div class="mensaje ">
         <h2>Resumen de la cita médica</h2>
         <?= $mensaje ?>
-        <input type="button" value="Volver" class="btn" onclick="window.location.href='/formulario24.html'">
+        <input type="button" value="Volver" class="btn" onclick="window.location.href='formulario24.html'">
     </div>
 
 

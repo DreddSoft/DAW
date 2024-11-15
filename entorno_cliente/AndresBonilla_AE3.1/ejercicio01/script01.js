@@ -37,7 +37,9 @@ function introducir() {
     // Solicitamos el mail por ventana emergente
     let email = prompt("Introduce el email: ");
 
-    const regex = /^([a-zA-Z0-9._-]+)[@,1]([a-zA-Z0-9_-]+)\.[a-z]{2,3}(\.[a-z]{2,4}?)/;
+    // const regex = /^([a-zA-Z0-9._-]+)[@,1]([a-zA-Z0-9_-]+)\.[a-z]{2,3}(\.[a-z]{2,4}?)/;
+
+    const regex = /^([a-zA-Z0-9._-]+)@([a-zA-Z0-9_-]+)\.[a-zA-Z]{2,4}(\.[a-zA-Z]{2,4})?$/;
 
     let checkEmail = regex.test(email);
 
