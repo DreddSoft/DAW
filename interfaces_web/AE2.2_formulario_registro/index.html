@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            place-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        form {
+            border: solid 2px grey;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 2rem;
+            box-shadow: #aca5a57c 8px 8px 8px;
+            background-color: #242424;
+        }
+
+        /* Modo claro */
+        @media (prefers-color-scheme: light) {
+            form {
+                border: solid 2px #535353;
+                border-radius: 10px;
+                padding: 25px;
+                margin: 2rem;
+                box-shadow: grey 8px 8px 8px;
+                background-color: #d1d1d1;
+            }
+        }
+
+        .horizontal {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            border: none;
+        }
+
+        fieldset {
+            border: 1px solid;
+            border-radius: 5px;
+            padding: 15px;
+
+        }
+
+        legend {
+            font-size: x-large;
+            font-weight: bold;
+            border-bottom: 1px solid;
+            padding: 0 5px;
+        }
+
+        .btn {
+            padding: 10px;
+        }
+    </style>
+    <title>Formulario de registro</title>
+</head>
+
+<body>
+
+    <h1>AE2.2 - Andrés Bonilla</h1>
+
+    <form action="#" method="POST">
+
+        <h2>Formulario de registro</h2>
+
+        <!-- Campos de Información Personal -->
+        <fieldset>
+            <legend>Información Personal</legend>
+            <label for="name">Nombre: </label>
+            <input type="text" name="name" id="name" required>
+            <label for="lastname">Apellido:</label>
+            <input type="text" name="lastname" id="lastname" required> 
+            <label for="bday">Fecha de Nacimiento:</label>
+            <input type="date" name="bday" id="bday" required>
+            <fieldset class="horizontal">
+                <legend>Genero</legend>
+                <input type="radio" name="sex" id="sexM" required>
+                <label for="sexM">Masculino</label>
+                <input type="radio" name="sex" id="sexF">
+                <label for="sexF">Femenino</label>
+                <input type="radio" name="sex" id="sexO">
+                <label for="sexO">Otro</label>
+            </fieldset>
+        </fieldset>
+
+        <!-- Campos de información de contacto -->
+        <fieldset>
+            <legend>Información de Contacto</legend>
+            <label for="email">Dirección de Correo Electrónico:</label>
+            <input type="email" name="email" id="email" required>
+            <label for="telf">Número de Teléfono:</label>
+            <input type="tel" name="telf" id="telf" required>
+            <label for="address">Dirección:</label>
+            <textarea name="address" id="address" rows="4"></textarea>
+        </fieldset>
+
+        <!-- Campos de información de cuenta -->
+        <fieldset>
+            <legend>Información de Cuenta</legend>
+            <label for="">Nombre de Usuario:</label>
+            <input type="text" name="user" id="user" required>
+            <label for="passw">Contraseña:</label>
+            <input type="password" name="passw" id="passw" required>
+            <label for="passwConf">Confirmación de contraseña:</label>
+            <input type="password" name="passwConf" id="passwConf" required>
+        </fieldset>
+
+        <!-- Campos de preferencias -->
+        <fieldset>
+            <legend>Preferencias</legend>
+            <label for="color">Selecciona un color favorito:</label>
+            <select name="color" id="color">
+                <optgroup label="Colores favoritos">
+                    <option value="0">Rojo</option>
+                    <option value="1">Azul</option>
+                    <option value="2">Verde</option>
+                    <option value="3">Amarillo</option>
+                </optgroup>
+
+            </select>
+            <fieldset class="horizontal">
+                <label for="terms">Aceptas los términos y condiciones</label>
+                <input type="checkbox" name="terms" id="terms" required>
+            </fieldset>
+
+        </fieldset>
+
+        <fieldset class="horizontal">
+            <button type="submit">Registrarse</button>
+            <button type="reset">Limpiar</button>
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>
