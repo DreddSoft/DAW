@@ -34,3 +34,15 @@ Muestra en la parte destinada para tal efecto de la aplicación web la salida de
 |--------------------------------------------------------------------|--------------------------------|
 | Estamos a 7 días de navidad y faltan 10 días para fin de año 1990. | 27 (7 + 1 + 0 + 1 + 9 + 9 + 0) |
 
+### Ejercicio 3.
+---
+Realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario una frase.
+
+Crea una función que reciba como argumento esa frase y devuelva el número de espacios, dígitos y letras  contenidos en la frase. **Puedes usar expresiones regulares.**
+
+Muestra en la parte destinada para tal efecto de la aplicación web la salida de la función anterior.
+
+|    **ENTRADA**    |            **SALIDA**             |
+|-------------------|-----------------------------------|
+| Si, hoy es dia 10 | 2 dígitos, 4 espacios y 10 letras |
+

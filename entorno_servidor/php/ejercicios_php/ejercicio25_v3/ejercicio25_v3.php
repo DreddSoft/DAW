@@ -1,7 +1,11 @@
 <?php
 
+//! ESTA ES OTRA FORMA
+
+// Primero analizamos si el metodo es POST
 if ($_SERVER['REQUEST_METHOD'] != "POST") {
 
+    // SI no es tiramos abajo el sitio.
     die();
 }
 
@@ -14,7 +18,6 @@ $usuario = "";
 if (!empty($_FILES)) {
     $modoSubida = true;
     $usuario = htmlspecialchars($_POST['user']);
-
 } else {
     $modoSubida = false;
     $usuario = htmlspecialchars($_POST['user']);
@@ -25,8 +28,12 @@ if (!empty($_FILES)) {
 
     // Condicional que verifica el acceso
     if ($usuario == $usuarioCorrecto && $passw == $passwCorrecta) {
-        // header("Location: form_bienve25.html?usuario=$usuario");
-        require "form_bienve25.php";
+
+        //* LA DIFERENCIA PRINCIPAL: envio el usuario como parámetro GET en el header y el archivo no es un html, es un php para controlar las variables.
+
+        // Redireccionar con envío de variables POST
+        header("Location: form_bienve25_v3.php?user=$usuario");
+        exit();
     }
 }
 
@@ -37,7 +44,7 @@ if (!empty($_FILES)) {
  * Ejercicio 25: Envío de ficheros desde un formulario
  * author: @dreddsoft
  * date: 18/11/2024
- * version: 2.0
+ * version: 3.0
  */
 
 ?>
@@ -145,7 +152,7 @@ if (!empty($_FILES)) {
             align-items: center;
         }
     </style>
-    <title>Ejercicio 25 v2</title>
+    <title>Ejercicio 25 v3</title>
 </head>
 
 <body>
@@ -158,7 +165,7 @@ if (!empty($_FILES)) {
     echo "<img src='" . LOGO_PHP . "' alt='' style='place-self: center; width: 200px;'><br>";
 
 
-    echo "<h1 style='text-align: center;'>Ejercicio 25 v2 - subida de imágenes</h1><br>";
+    echo "<h1 style='text-align: center;'>Ejercicio 25 v3 - subida de imágenes</h1><br>";
 
     if ($modoSubida) :
 
@@ -195,11 +202,11 @@ if (!empty($_FILES)) {
     ?>
 
         <?php if ($show && move_uploaded_file($tempImg, $rutaCompleta)):
-        global $usuario;
+            global $usuario;
         ?>
             <main>
                 <h2>Subida de Imagen</h2>
-                <p><?= $usuario . " - " . $mensaje ?></p>
+                <p><?= strtoupper($usuario) . " - " . $mensaje ?></p>
 
                 <img src="<?= $rutaCompleta ?>" alt="Imagen subida" style="width: 300px;">
 
@@ -210,7 +217,7 @@ if (!empty($_FILES)) {
 
             <main>
                 <h2>Subida de Imagen</h2>
-                <p><?= $usuario . " - " . $mensaje ?></p>
+                <p><?= strtoupper($usuario) . " - " . $mensaje ?></p>
 
             </main>
         <?php endif; ?>
