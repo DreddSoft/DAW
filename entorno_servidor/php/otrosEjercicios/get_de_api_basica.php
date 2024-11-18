@@ -15,15 +15,15 @@ Ejecuta la peticion
 y guarda el resultado
 */
 
-$result = curl_exec($ch);
+// $result = curl_exec($ch);
 
 // una alternativa seria utilizar file_get_contents
-// $result = file_get_contents(API_URL); // si solo quieres hacer un GET de una API
+$result = file_get_contents(API_URL); // si solo quieres hacer un GET de una API
 
-$date = json_decode($result, true); // El true nos lo pone en un array asociativo
+$data = json_decode($result, true); // El true nos lo pone en un array asociativo
 
-// Cerrar la conexion
-curl_close($ch);
+// // Cerrar la conexion
+// curl_close($ch);
 
 
 ?>
@@ -46,21 +46,42 @@ curl_close($ch);
             display: grid;
             place-content: center;
         }
+
+        section {
+            place-content: center;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            
+        }
+
+        img {
+            border-radius: 16px;
+            margin-bottom: 1rem;
+        } 
     </style>
     <title>La proxima pelicula de MARVEL</title>
 </head>
 
 <body>
 
-    <main>
-        <pre style="font-size: 8px; overflow: scroll; height: 100px;">
-        <?= var_dump($result) ?>
-    </pre>
+    <?php
 
+    echo "<img src='" . LOGO_PHP . "' alt='' style='place-self: center; width: 200px;'><br>";
+
+    ?>
+
+    <main>
         <section>
-            <img src="" alt="">
+            <img src="<?= $data["poster_url"] ?>" alt="Poster de <?= $data["title"] ?>" width="200">
             <h2>La proxima pelicula de MARVEL</h2>
         </section>
+
+        <hgroup>
+            <h3><?= $data["title"]?> se estrena en <?= $data["days_until"] ?> dias.</h3>
+            <p>Fecha de estreno: <?= date("dd/MM/yyyy", strtotime($data["release_date"])) ?></p>
+            <p>La siguiente es: <b><?= $data["following_production"]["title"] ?></b></p>
+        </hgroup>
     </main>
 
 
