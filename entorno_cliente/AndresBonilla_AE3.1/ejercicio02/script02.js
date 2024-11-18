@@ -65,7 +65,7 @@ function introducir() {
     } else {
         // Informamos
         alert("Ha agotado todos los intentos de registrar el EMAIL. Se cerrara el programa.");
-        mensaje = `La especificada para email y contraseña NO VALIDAS. Email no cumple requisitos.`;
+        mensaje = "La especificada para email y contraseña NO VALIDAS. Email no cumple requisitos.";
     }
 
     // Impresion
@@ -88,9 +88,9 @@ function esEmailValido(email) {
 function esPassValida(password) {
 
     const REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&?])[^\s]{8,16}$/;
-    // Esto ?= es un lookahead: verifica si una condicion cumpole algun punto de la cadena
+    // Esto ?= es un lookahead: verifica si una condicion cumple algun punto de la cadena
     // (?=.*[a-z]) verifica que haya al menos una minuscula
-    // [^\s] \s representa espacio y junto significa cualquier caracter menos espcacio
+    // [^\s] \s representa espacio y junto significa cualquier caracter menos espacio
 
     return (REGEX.test(password))
         ? true
@@ -221,7 +221,7 @@ function pedirPassw(primerPassw) {
 
 }
 
-function impresion(email, password, mensaje) {ñ
+function impresion(email, password, mensaje) {
 
     // Capturamos tabla
     let tabla = document.getElementById("bodyTabla");
