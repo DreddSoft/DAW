@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -92,13 +98,11 @@
             alt="" style="place-self: center; width: 200px;">
 
         <br>
-
         <h2>Subida de imágenes</h2>
-        <!-- Esta es otra opción para guardar la variable del usuario -->
-         <input type="text" name="user" id="user" value="<?= $usuario; ?>" hidden>
+        <h3><?= $_GET['usuario']; ?></h3>
 
         <fieldset>
-            
+
         </fieldset>
 
         <fieldset style="display: flex; justify-content: center;">

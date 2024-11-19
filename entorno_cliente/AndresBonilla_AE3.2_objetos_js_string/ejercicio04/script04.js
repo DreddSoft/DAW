@@ -1,14 +1,17 @@
+// let cnt = 0;
+
+
 function mostrarEnunciado() {
 
     let enunciado = document.getElementById("enunciado");
 
     // Aplica el texto al contenedor del enunciado
-    let enun = "<p><b>Ejercicio 3.</b> Realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario una frase.</p>"
-        + "<p>Crea una función que reciba como argumento esa frase y devuelva el número de espacios, dígitos y letras  contenidos en la frase. <b>Puedes usar expresiones regulares.</b></p>"
+    let enun = "<p><b>Ejercicio 4.</b> Realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario una cadena y el carácter buscado.</p>"
+        + "<p>Crea una función <b>recursiva</b> que cuente el número de veces que el carácter introducido por el usuario aparece en la cadena introducida por el usuario.</b></p>"
         + "<p>Muestra en la parte destinada para tal efecto de la aplicación web la salida de la función anterior.</p>"
         + "<p><b>Ejemplo: </b></p>"
         + "<table><tr><th>ENTRADA</th><th>SALIDA</th></tr>"
-        + "<tr><td>Si, hoy es dia 10</td><td>2 dígitos, 4 espacios y 10 letras.</td></tr></table>";
+        + "<tr><td>Hoy es martes<br>e</td><td>El carácter e aparece 2 veces en la cadena.</td></tr></table>";
 
     enunciado.innerHTML = enun;
 
@@ -41,7 +44,8 @@ function introducir() {
 
     // Variables
     let frase = "";
-    let mensaje = "Error, se ha introducido una frase NO VALIDA.";
+    let mensaje = "Error, se ha introducido una cadena no VALIDA.";
+    let cnt = 0;
 
 
 
@@ -50,9 +54,13 @@ function introducir() {
 
     if (frase != "" && frase != null) {
 
+        let c = "e";
 
+        console.log(cnt);
 
-        mensaje = numberOf(frase);
+        cnt = numberOf(c, cnt, frase);
+
+        mensaje = `El carácter ${c} aparece ` + cnt + " veces en la cadena.";
 
     }
 
@@ -98,57 +106,45 @@ function isTextValid(text) {
 
 }
 
-// Función que devuelve el número de dígitos, espacios y letras
-function numberOf(frase) {
+// Crea una función recursiva que cuente el número de veces que el carácter introducido por el usuario aparece en la cadena introducida por el usuario.
+function numberOf(c, cnt, frase) {
 
-    // digitos, espacios, letras
-    let conts = [0, 0, 0];
+    frase = frase.toString().toLowerCase();
 
-    // Recorremos con un for los caracteres de la frase
-    for (let i = 0; i < frase.length; i++) {
+    let idx = frase.lastIndexOf(c);
 
-        // Recorremos cada caracter y aumentamos los contadores evaluando si son dígitos, letras o espacios.
-
-        let c = frase.charAt(i);
-
-        if (isDigit(c)) conts[0]++;
-
-        if (isSpace(c)) conts[1]++;
-
-        if (isLetter(c)) conts[2]++;
-
+    if (idx == -1) {
+        console.log(`El valor del contador: ${cnt}`);
+        return cnt;
     }
 
-    return `${conts[0]} dígitos, ${conts[1]} espacios, ${conts[2]} letras.`;
+    cnt++;
+    frase = frase.substring(0, idx);
+    return numberOf(c, cnt, frase);
+
+
+}
+
+// Función fácil para confirmar
+function numberOfFacil(frase, c) {
+
+    let pos = 0;
+    let numVeces = 0;
+
+    if (pos == frase.length - 1) {
+        return numVeces;
+    }
+
+    if (frase.chatAt(pos) == c) {
+        numVeces++;
+    }
+
+    pos++;
+    return numberOfFacil(frase, c);
     
 }
 
-// Función para saber si es un espacio
-function isSpace(c) {
 
-    const REGEX = /[\s]/;
-
-    return REGEX.test(c);
-    
-}
-
-// Función para saber si es un digito
-function isDigit(c) {
-
-    const REGEX = /[\d]/;
-
-    return REGEX.test(c);
-    
-}
-
-// Función para saber si es una letra
-function isLetter(c) {
-
-    const REGEX = /[A-Za-záéíóúÁÉÍÓÚ]/;
-
-    return REGEX.test(c);
-    
-}
 
 // Función para la impresión del resultado en la tabla
 function impresion(texto, mensaje) {

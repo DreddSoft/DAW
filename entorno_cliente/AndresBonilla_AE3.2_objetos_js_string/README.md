@@ -42,7 +42,24 @@ Crea una función que reciba como argumento esa frase y devuelva el número de e
 
 Muestra en la parte destinada para tal efecto de la aplicación web la salida de la función anterior.
 
+**Ejemplo:**
+
 |    **ENTRADA**    |            **SALIDA**             |
 |-------------------|-----------------------------------|
 | Si, hoy es dia 10 | 2 dígitos, 4 espacios y 10 letras |
+
+### Ejercicio 4.
+---
+Realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario una cadena y el carácter buscado.
+
+Crea una función **recursiva** que cuente el número de veces que el carácter introducido por el usuario aparece en la cadena introducida por el usuario.
+
+Muestra en la parte destinada para tal efecto de la aplicación web la salida de la función anterior.
+
+**Ejemplo:**
+
+|    **ENTRADA**    |            **SALIDA**             |
+|-------------------|-----------------------------------|
+| Hoy es martes<br>e | El carácter *e* aparece 2 veces en la cadena |
+
 

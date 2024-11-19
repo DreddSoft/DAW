@@ -2,22 +2,21 @@
 
 if ($_SERVER['REQUEST_METHOD'] != "POST") {
 
-    die();
+    die("NO SE HA USADO METODO POST");
 }
 
-// Comprobamos si 
-$usuario = "";
+session_start();
 
 
 
 // Condicional que accede al modo subida de documentos
 if (!empty($_FILES)) {
     $modoSubida = true;
-    $usuario = htmlspecialchars($_POST['user']);
-
+    $usuario = $_SESSION['usuario'];
 } else {
     $modoSubida = false;
-    $usuario = htmlspecialchars($_POST['user']);
+    $_SESSION['usuario'] = htmlspecialchars($_POST['user']);
+    $usuario = htmlspecialchars($_SESSION['usuario']);
     $passw = htmlspecialchars($_POST['passw']);
 
     $usuarioCorrecto = "user1";
@@ -25,8 +24,7 @@ if (!empty($_FILES)) {
 
     // Condicional que verifica el acceso
     if ($usuario == $usuarioCorrecto && $passw == $passwCorrecta) {
-        // header("Location: form_bienve25.html?usuario=$usuario");
-        require "form_bienve25.php";
+        header("Location: form_bienve25.php?usuario=$usuario");
     }
 }
 
@@ -160,6 +158,7 @@ if (!empty($_FILES)) {
 
     echo "<h1 style='text-align: center;'>Ejercicio 25 v2 - subida de imágenes</h1><br>";
 
+
     if ($modoSubida) :
 
         $nombreImg = $_FILES['imagen']['name'];
@@ -177,6 +176,7 @@ if (!empty($_FILES)) {
 
         $rutaTemp = $tempImg . basename($nombreImg);
 
+
         if ($tamanoImg > $tamanoLimite) {
             $mensaje = "Error, el archivo subido es demasiado grande.";
             $show = false;
@@ -188,6 +188,9 @@ if (!empty($_FILES)) {
             $show = false;
         }
 
+
+
+
         $rutaCompleta = $ruta . basename($nombreImg);
 
 
@@ -195,11 +198,11 @@ if (!empty($_FILES)) {
     ?>
 
         <?php if ($show && move_uploaded_file($tempImg, $rutaCompleta)):
-        global $usuario;
+            global $usuario;
         ?>
             <main>
                 <h2>Subida de Imagen</h2>
-                <p><?= $usuario . " - " . $mensaje ?></p>
+                <p><?= $_SESSION['usuario'] . " - " . $mensaje ?></p>
 
                 <img src="<?= $rutaCompleta ?>" alt="Imagen subida" style="width: 300px;">
 
@@ -210,7 +213,7 @@ if (!empty($_FILES)) {
 
             <main>
                 <h2>Subida de Imagen</h2>
-                <p><?= $usuario . " - " . $mensaje ?></p>
+                <p><?= $_SESSION['usuario'] . " - " . $mensaje ?></p>
 
             </main>
         <?php endif; ?>
