@@ -5,3 +5,7 @@
 *.jpg
 *.jpeg
 *.png
+
+
+# Ignorar todos las carpetas .zip
+*.zip

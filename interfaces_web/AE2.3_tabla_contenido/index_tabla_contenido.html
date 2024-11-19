@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            padding: 15px;
+        }
+
+        h1 {
+            place-self: center;
+        }
+
+        h2 {
+            place-self: center;
+        }
+
+        th {
+            text-align: center;
+        }
+    </style>
+    <title>AndresBonilla_AE3.1 - Ejercicio 2</title>
+</head>
+
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
+        alt="Logo Javascript" style="width: 200px; place-self: center; margin-bottom: 50px;">
+
+    <div class="titulo" style="display: grid;">
+        <h1 style="place-self: center;">AndresBonilla_AE2.3</h1>
+        <h2>Creación de tabla de contenido.</h2>
+    </div>
+
+    <!-- Crea una tabla <table> que contendrá la tabla de contenido del libro. -->
+    <table>
+
+        <!-- Agrega una fila de encabezado <thead> a la tabla con una fila <tr>. -->
+        <thead>
+            <tr><!-- Utiliza el atributo colspan para combinar las tres celdas de encabezado en una sola celda de encabezado que tenga el texto «Contenido del Libro». -->
+                <th colspan="3">Contenido del Libro</th>
+            </tr>
+
+            <tr>
+                <!-- En la fila de encabezado, agrega celdas de encabezado <th> para las siguientes columnas: Capítulo, Título del Capítulo y Páginas. -->
+                <th>Capitulo</th>
+                <th>Titulo del Capítulo</th>
+                <th>Páginas</th>
+            </tr>
+        </thead>
+
+        <!-- Ahora, agrega tres filas <tr> en la sección del cuerpo <tbody> de la tabla para representar los primeros tres capítulos del libro. -->
+        <tbody>
+            <!-- Dentro de cada fila, agrega una celda de datos <td> para cada columna (Capítulo, Título del Capítulo y Páginas). Llena estas celdas con información de ejemplo para los primeros tres capítulos del libro. -->
+            <!-- Utiliza el atributo rowspan para combinar las celdas de datos de los capítulos en una sola celda para cada capítulo. Esto indicará cuántas filas ocupa cada capítulo. -->
+            <tr>
+                <td rowspan="3">1</td>
+                <td>Introducción</td>
+                <td>1-5</td>
+            </tr>
+            <tr>
+                <td>Primeros Pasos</td>
+                <td>6-12</td>
+            </tr>
+            <tr>
+                <td>Conceptos Básicos</td>
+                <td>13-20</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2</td>
+                <td>Avanzado</td>
+                <td>21-35</td>
+            </tr>
+            <tr>
+                <td>Ejemplos Básicos</td>
+                <td>36-45</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Conclusiones</td>
+                <td>46-50</td>
+            </tr>
+            <tr>
+                <td rowspan="3">4</td>
+                <td>Inicio</td>
+                <td>51-60</td>
+            </tr>
+            <tr>
+                <td>Medio</td>
+                <td>61-70</td>
+            </tr>
+            <tr>
+                <td>Final</td>
+                <td>71-80</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>El Siple</td>
+                <td>81-82</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>UEPEG</td>
+                <td>83-90</td>
+            </tr>
+            <tr>
+                <td rowspan="2">7</td>
+                <td>JPBRKJZSOX</td>
+                <td>91-100</td>
+            </tr>
+            <tr>
+                <td>UMBMVUWZHD</td>
+                <td>101-110</td>
+            </tr>
+
+
+        </tbody>
+
+    </table>
+
+
+
+</body>
+
+</html>
