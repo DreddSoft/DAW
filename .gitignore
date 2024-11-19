@@ -1,0 +1,7 @@
+# Ignorar los archivos PDF
+*.pdf
+
+# Ignorar cierto tipos de imágenes
+*.jpg
+*.jpeg
+*.png
