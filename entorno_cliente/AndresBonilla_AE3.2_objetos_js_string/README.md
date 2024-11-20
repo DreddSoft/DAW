@@ -62,4 +62,25 @@ Muestra en la parte destinada para tal efecto de la aplicación web la salida de
 |-------------------|-----------------------------------|
 | Hoy es martes<br>e | El carácter *e* aparece 2 veces en la cadena |
 
+### Ejercicio 5.
+---
+Realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario un código de cliente.
+
+Dicho código contiene tres partes separadas por un guión:
+- Dos caracteres:  CP: cliente particular, CE: empresa.
+- Dos dígitos: 10 Local, 11 Autonómico, 12 Nacional, 20 Internacional.
+- Una cifra que indica el número de años de antigüedad del cliente.
+
+Crea una función que decodifique dicho código de cliente. Adicionalmente, si el código es erróneo la función deberá informar del tipo de error o errores.
+
+Muestra en la parte destinada para tal efecto de la aplicación web la salida de la función anterior.
+
+**Ejemplo:**
+
+|    **ENTRADA**    |            **SALIDA**             |
+|-------------------|-----------------------------------|
+| CP 12 3 | **Error:** Introduce el código separado por guiones |
+| CP-12-3 | El código introducido pertenece a un cliente particular de origen nacional con 3 años de antigüedad. |
+| CC-12-3 | **Error:** El tipo de cliente introducido no es correcto |
+
 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplo de contenido incrustado">
+    <meta name="author" content="Dreddsoft">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            padding: 15px;
+        }
+        img {
+            place-self: center;
+            margin-bottom: 50px;
+            border-radius: 18px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            border: 2px solid;
+            border-radius: 18px;
+        }
+
+        .enlaces {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color:brown;
+            padding: 5px 0;
+            border-bottom: 1px solid;
+        }
+
+        a:hover {
+            transform: scale3d(1.5, 1.5, 1.5);
+            color: green;
+            transition: 800ms;
+        }
+
+    </style>
+    <title>AndresBonilla_AE2.4</title>
+</head>
+
+<body>
+
+    <main>
+        <header>
+            <!-- 1. Usar una etiqueta img con los atributos src, alt, width, height -->
+             <h3>Esta imagen es el logo de JavaScript</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
+                alt="Logo Javascript" width="200" height="400" id="imagen">
+            <h1 style="place-self: center;">CONTENIDO INCRUSTADO</h1>
+            <p>Creación de una web utilizando contenido incrustado y marcadores</p>
+            <div class="enlaces">
+                <a href="#imagen">Imagen</a>
+                <a href="#video">Video</a>
+            </div>
+        </header>
+
+        <section>
+            <h3>Entrevistas varias de mi cómico favorito</h3>
+            <!-- 2. Inserta un video de Youtube con iframe -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rB9Z-os6-Ws?si=TQBSipgRX80ifpyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="video"></iframe>
+        </section>
+
+    </main>
+
+
+
+
+
+
+</body>
+
+</html>

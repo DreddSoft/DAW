@@ -1,4 +1,4 @@
-// let cnt = 0;
+
 
 
 function mostrarEnunciado() {
@@ -46,19 +46,24 @@ function introducir() {
     let frase = "";
     let mensaje = "Error, se ha introducido una cadena no VALIDA.";
     let cnt = 0;
+    let cnt2 = 0;
 
 
 
     // Primero pedimos el texto
     frase = introduceTexto();
 
-    if (frase != "" && frase != null) {
+    // Pedimos el caracter, para asergurarnos cogemos el valor de la posicion 0
+    c = introduceCaracter();
 
-        let c = "e";
-
-        console.log(cnt);
+    // Si la frase no esta vacia
+    if (frase != "" && frase != null && c != "" && c != null) {
 
         cnt = numberOf(c, cnt, frase);
+        cnt2 = numberOfFacil(frase, c);
+
+        // Esto es para comparar para mi
+        alert(`Diferencias entre cnt1: ${cnt} y cnt2: ${cnt2}`);
 
         mensaje = `El carácter ${c} aparece ` + cnt + " veces en la cadena.";
 
@@ -106,42 +111,63 @@ function isTextValid(text) {
 
 }
 
+// Función para introducir un caracter
+function introduceCaracter() {
+
+    let c = "";
+
+    while (true) {
+
+        // Pedimos por prompt
+        c = prompt("Introduce un caracter: ").charAt(0);
+
+        // Si el texto es valido y tiene una longitud de 1 se sale del bucle
+        if (isTextValid(c) && c.length == 1) {
+            break;
+        }
+
+    }
+
+    // Devuelve el caracter
+    return c;
+    
+}
+
 // Crea una función recursiva que cuente el número de veces que el carácter introducido por el usuario aparece en la cadena introducida por el usuario.
-function numberOf(c, cnt, frase) {
+function numberOf(c, cnt = 0, frase) {
 
     frase = frase.toString().toLowerCase();
 
     let idx = frase.lastIndexOf(c);
 
+    // Caso de salida: si el indice es igual a -1 (no ha encontrado el caracter)
     if (idx == -1) {
         console.log(`El valor del contador: ${cnt}`);
         return cnt;
     }
 
-    cnt++;
-    frase = frase.substring(0, idx);
-    return numberOf(c, cnt, frase);
+    // En el caso de que encuentre el caracter
+    cnt++;  // aumenta contador
+    frase = frase.substring(0, idx);    // Recortas la frase
+    return numberOf(c, cnt, frase);     // Usas recursiva
 
 
 }
 
-// Función fácil para confirmar
-function numberOfFacil(frase, c) {
+// Función fácil para confirmar recorrer los caracteres con un indice (imitando a un bucle iterador)
+function numberOfFacil(frase, caracter, idx = 0, cnt = 0) {
 
-    let pos = 0;
-    let numVeces = 0;
+    // Pasamos frase a minuscula
+    frase = frase.toLowerCase();
 
-    if (pos == frase.length - 1) {
-        return numVeces;
-    }
+    // Caso de salida: si el indice es igual a la longitud del texto devuelve las veces que se repite
+    if (idx >= frase.length) return cnt;         
 
-    if (frase.chatAt(pos) == c) {
-        numVeces++;
-    }
+    // Si caracter coincide aumenta el contador
+    if (frase[idx] == caracter) cnt++;
 
-    pos++;
-    return numberOfFacil(frase, c);
-    
+    // Volvemos a ejecutar la recursiva
+    return numberOfFacil(frase, caracter, idx + 1, cnt);
 }
 
 
@@ -158,7 +184,7 @@ function impresion(texto, mensaje) {
 
 /**
  * Author: @Dreddsoft
- * Exercise: AE3.2 - ejercicio 3
+ * Exercise: AE3.2 - ejercicio 4
  * Date: 19/11/2024 (dd/MM/yyyy)
  * Version: 1.0
  * */

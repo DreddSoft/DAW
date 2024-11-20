@@ -1,0 +1,128 @@
+:root {
+
+    --main-blanco: #f2f2f2;
+    --main-gris: #d5d5d5;
+    --negro: #232323;
+    --violeta: rgb(59, 37, 59);
+
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--main-blanco);
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+
+}
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+p {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    align-content: center;
+    flex-wrap: wrap;
+
+    & h1 {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+
+    & ul {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        & li {
+            list-style: none;
+
+            & a {
+                text-decoration: none;
+                color: var(--negro);
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: 1px;
+            }
+
+            & a:hover {
+                color: var(--violeta);
+                transition: 350ms;
+            }
+        }
+
+    }
+
+    & button {
+        background-color: transparent;
+        padding: 0 30px;
+        border: 1px solid var(--negro);
+        border-radius: 5px;
+        color: var(--negro);
+        height: 30px;
+
+    }
+
+    & button:hover {
+
+        background-color: var(--negro);
+        color: var(--main-blanco);
+        border: 1px solid var(--main-blanco);
+        transition: 350ms;
+
+    }
+
+}
+
+.upper {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--main-gris);
+    padding: 5rem 0;
+    justify-content: center;
+    align-items: center;
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        gap: 1rem;
+        text-align: center;
+
+        & button {
+            background-color: var(--negro);
+            color: var(--main-blanco);
+            padding: 10px 25px;
+            border: 1px solid var(--main-blanco);
+            border-radius: 6px;
+        }
+    }
+}
