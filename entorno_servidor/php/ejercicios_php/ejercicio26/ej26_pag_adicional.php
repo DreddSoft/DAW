@@ -9,6 +9,11 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 $usuario = strtoupper($_SESSION['usuario']);
+$nombre = $_SESSION['nombre'];
+$apellidos = $_SESSION['apellidos'];
+$edad = $_SESSION['edad'];
+$email = $_SESSION['email'];
+$provincia = $_SESSION['provincia'];
 
 
 define('LOGO_PHP', 'https://imgs.search.brave.com/n47Kd35ttgRyl7BLjYZ3wgbmDxQS-UIZbetG1tGbeqQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8yLzI3L1BI/UC1sb2dvLnN2Zy82/NDBweC1QSFAtbG9n/by5zdmcucG5n');
@@ -31,7 +36,7 @@ define('LOGO_PHP', 'https://imgs.search.brave.com/n47Kd35ttgRyl7BLjYZ3wgbmDxQS-U
     <meta name="author" content="@dreddsoft">
     <link rel="stylesheet" href="estilos.css">
 
-    <title>Ejercicio 26 - Bienvenida</title>
+    <title>Ejercicio 26 - Pagina Adicional</title>
 </head>
 
 <body>
@@ -47,22 +52,32 @@ define('LOGO_PHP', 'https://imgs.search.brave.com/n47Kd35ttgRyl7BLjYZ3wgbmDxQS-U
     <main>
         <div class="centrado">
             <h1>Ejercicio 26</h1>
-            <h2>Bienvenida</h2>
+            <h2>Pagina Adicional</h2>
         </div>
 
 
         <section class="mensaje">
-            <h3>Hola <?= $usuario ?></h3>
+            <h3>Datos del usuario: <?= $usuario ?></h3>
             <p>La fecha de hoy es: <?= date('d/m/Y', strtotime('now')) ?></p>
-            <p>Has podido acceder correctamente a esta pagina de bienvenida</p>
+            <?php
+
+            echo "<p>Nombre del usuario: <b>$nombre</b></p>"
+                . "<p>Apellidos: <b>$apellidos</b></p>"
+                . "<p>Edad: <b>$edad</b></p>"
+                . "<p>Email: <b>$email</b></p>"
+                . "<p>Proveniente de la provincia de <b>$provincia</b></p>";
+
+            ?>
+
         </section>
     </main>
-
 
     <footer>
         <a href="ej26_cerrar_sesion.php"><img src="loguot_icon.svg" alt="Desconectar"></a>
         <?= "<h3 style='bottom: 0; float:initial; display: grid; place-self: center;'>Andrés Bonilla Tardío</h3>" ?>
     </footer>
+
+
 
 </body>
 

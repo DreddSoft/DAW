@@ -42,3 +42,22 @@ Crea un archivo PHP llamado ***ejercicio24.php** que, cuando el usuaruio envíe 
 Ejercicio 25_v2: Usando $_SESSION.
 
 Ejercicio 25_v3: Usando un input:text oculto con el valor del usuario. 
+
+### Ejercicio 26 - Uso de sesiones en PHP.
+Crear un sistema de login básico que permita al usuario acceder a una página de bienvenida con un mensaje personalizado y, a continuación, redirigirloa dos páginas adicionales que solo estará disponibles si el usuario está autenticado.
+
+- Página de login (ej26_login.php): el usuario se autentica con su nombre de usuario y contraseña. Si las credenciales son correctas, se redirigirá a la página de bienvenida.
+- Página de bienvenida (ej26_bienvenida.php): El usuario verá un mensaje de bienvenida y su nombre. Desde esta página podrá dirigirse a otras dos páginas:
+    - Página de datos personales (ej26_datos_personales.php): Un formulario donde el ususario ingrese sus datos personales (nombre, Apellidos, Edad, email, provincia).
+    - Página adicional (ej26_pag_adicional.php): Crear una página con cualquier contenido adicional que desees y donde se vean el nombre personal del usuario, su edad, y la provincia.
+- Crear una página de cierre de sesión (ej26_cerrar_sesion.php) donde el usuario pueda cerrar sesión. Al cerrar sesión, se debe destruir la sesión y se redirige al usuario a la página de login ej26_login.php.
+
+#### INDICACIONES:
+- Usar ``$_SESSION``, para almacenar los datos del usuario. Para ello debes primero incial la funcioón ``session_start();``.
+- Comprobar, antes de obtener a los datos del formulario, que este ha usado POST como método de envío utilizando la información de la variable global ``$_SERVER["REQUEST_METHOD"];``.
+- Verificar que los datos son correctos.
+- Para redirigir a la nueva página usar la siguiente función: 
+    
+    ``header("Location: nueva_pagina.html");``
+    
+    ``exit();``
