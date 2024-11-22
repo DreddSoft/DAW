@@ -7,7 +7,9 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: ej26_login.php");
     exit();
 }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+}
 $usuario = strtoupper($_SESSION['usuario']);
 $nombre = $_SESSION['nombre'];
 $apellidos = $_SESSION['apellidos'];

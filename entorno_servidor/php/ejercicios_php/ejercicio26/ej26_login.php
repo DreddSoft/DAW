@@ -2,8 +2,8 @@
 session_start();
 
 // Verificamos si ya esta autentificado
-if (!isset($_SESSION['usuario'])) {
-    header("Location: ej26_login.php");
+if (isset($_SESSION['usuario'])) {
+    header("Location: ej26_bienvenido.php");
     exit();
 }
 
