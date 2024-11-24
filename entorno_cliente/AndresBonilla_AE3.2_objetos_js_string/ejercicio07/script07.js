@@ -15,7 +15,7 @@ Crea una función que reciba tres argumentos: la frase y las dos palabras anteri
         + "<p>Muestra en la parte destinada para tal efecto de la aplicación web la salida de la función anterior.</p>"
         + "<p><b>Ejemplo: </b></p>"
         + "<table><tr><th>ENTRADA</th><th>SALIDA</th></tr>"
-        + "<tr><td>Ciudad<br>cuidar</td><td>acdiu</td></tr></table>";
+        + "<tr><td>nombre: edad 30:<br>nombre: juan</td><td>nombre: Juan edad: 30</td></tr></table>";
 
     enunciado.innerHTML = enun;
 
@@ -47,59 +47,50 @@ function ocultarEnunciado() {
 function introducir() {
 
     // Pedimos las cadenas de texto
-    const frase1 = prompt("Introduce el primer texto: ");
+    const frase = prompt("Introduce la frase a evaluar: ");
 
-    const frase2 = prompt("Introduce la segunda cadena: ");
+    const palabra1 = prompt("Introduce la primera palabra: ");
+    const palabra2 = prompt("Introduce la segunda palabra: ");
 
     // Eliminamos espacios al principio y al final
-    frase1.trim();
-    frase2.trim();
+    frase.trim();
+    palabra1.trim();
+    palabra2.trim();
 
-    // Comrpobamos con la función
-    let comunes = caracteresComunes(frase1, frase2);
+    // Frase resultado, que llamaremos mensaje
+    let mensaje = insertarPalabra(frase, palabra1, palabra2);
 
     // Impresión
-    impresion(frase1, frase2, comunes);
+    impresion(frase, palabra1, palabra2, mensaje);
 
 }
 
 //* Función para encontrar caractéres comunes
-function caracteresComunes(text1, text2) {
+function insertarPalabra(frase, palabra1, palabra2) {
 
-    // Pasamos a minúsculas y eliminamos espcios en blanco
-    text1 = text1.toLowerCase().split(" ").join("");
-    text2 = text2.toLowerCase().split(" ").join("");
+    const susti = `${palabra1} ${palabra2}`;
 
-    // Se podría haber usado también replace con la regEXP = /\s+/g, "" para sustituir todos los epsacios en blanco, pero no he visto esa función en los apuntes.
+    // Usamos la funcion includes
+    if (frase.includes(palabra1)) {
 
-    // Array comunes
-    comunes = [];
-
-    // Recorremos la primera cadena
-    for (let i = 0; i < text1.length; i++) {
-
-        let c = text1[i];
-
-        // Comprobamos cada caracter si se incluye en la segunda cadena y no esta en el array
-        if (text2.includes(c) && !comunes.includes(c)) {
-            comunes.push(c);
-        }
+        // Sustituimos la primera palabra, por la primera palabra y la segunda seguidas
+        return frase.replace(palabra1, susti);
 
     }
-
-    // Ordenamos los comunes y los juntamos en una cadena de texto
-    return comunes.sort().join("");
     
+    // Si no encuentra la primera palabra, devolver la frase original
+    return frase;
+
 }
 
 
 
 // Función para la impresión del resultado en la tabla
-function impresion(input1, input2, mensaje) {
+function impresion(input1, input2, input3, mensaje) {
 
     let tabla = document.getElementById("bodyTabla");
 
-    tabla.innerHTML += `<tr><td>${input1}<br>${input2}</td><td>${mensaje}</td></tr>`;
+    tabla.innerHTML += `<tr><td>${input1}<br>${input2}<br>${input3}</td><td>${mensaje}</td></tr>`;
 
 
 }
