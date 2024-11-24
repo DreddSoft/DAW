@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            display: grid;
+            place-content: center;
+            padding: 15px;
+        }
+
+        h1 {
+            place-self: center;
+        }
+
+        h2 {
+            place-self: center;
+        }
+
+        .enun-wrapper {
+            display: grid;
+            place-content: center;
+            width: 70vw;;
+        }
+
+        table {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        img {
+            border-radius: 18px;
+        }
+
+    </style>
+    <title>AndresBonilla_AE3.2 - Objetos JavaScript - String</title>
+</head>
+
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="Logo Javascript" style="width: 200px; place-self: center; margin-bottom: 50px;">
+
+    <div class="titulo" style="display: grid;">
+        <h1 style="place-self: center;">AndresBonilla_AE3.2 - Objetos JavaScript - String</h1>
+        <hr>
+        <h2>Ejercicio 7</h2>
+    </div>
+
+    <div class="enun-wrapper">
+        <div id="enunciado" style="display: none; justify-content: center; align-items: center;">
+        </div>
+        <input type="button" value="Ver" onclick="mostrarEnunciado();" id="ver" style="padding: 10px 15px; width: 200px; place-self: center;">
+        <input type="button" value="ocultar" onclick="ocultarEnunciado();" id="ocultar" style="display:  none; padding: 10px 15px; width: 200px; place-self: center;">
+    </div>
+    <hr>
+
+    <div class="resultado" style="display: grid; place-content: center;">
+        <table style="width: 70vw; display: grid; place-self: center; place-content: center;" id="tabla">
+            <tbody id="bodyTabla">
+                <tr>
+                    <th style="text-align: center;">ENTRADA</th>
+                    <th style="text-align: center;">SALIDA</th>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="button" value="Introducir" style="padding: 10px 15px; width: 200px; place-self: center;"
+            onclick="introducir();">
+    </div>
+
+    <script src="script07.js"></script>
+
+</body>
+
+<!-- 
+* Author: @Dreddsoft
+* Exercise: AE3.2 - Ejercicio 7
+* Date: 24/11/2024
+* Version: 1.0
+-->
+
+</html>
