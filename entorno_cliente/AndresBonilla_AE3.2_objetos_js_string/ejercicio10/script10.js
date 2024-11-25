@@ -72,14 +72,14 @@ function encriptar() {
             // Obtener el caracter actual
             let c = frase.charAt(i);
 
-            // Calcular el nuevo carácter sumando el desplazamiento al código Unicode
+            // Calcular el nuevo caracter sumando el desplazamiento
             let cNew = String.fromCharCode(c.charCodeAt(0) + desplazamiento);
             mensajeEncriptado += cNew;
 
             console.log(`El caracter: ${c}, el desplazamiento: ${desplazamiento}`);
 
             // Si es un espacio, reiniciar pero transformando antes el espacio
-            if (c === " ") {
+            if (desplazamiento == 5) {
                 desplazamiento = 0;
             }
 
@@ -98,7 +98,7 @@ function encriptar() {
 
 function desencriptar() {
 
-    let frase = "Fuwi%fu#fn#ngqwfpl";
+    let frase = "Fuwi%fu#iq!ohrxblh";
     let clave = prompt("Introduce la clave: ");
     let mensaje = "";
 
@@ -114,14 +114,14 @@ function desencriptar() {
             // Obtener el caracter actual
             let c = frase.charAt(i);
 
-            // Calcular el nuevo carácter sumando el desplazamiento al código Unicode
+            // Calcular el nuevo caracter descontando el desplazamiento
             let cNew = String.fromCharCode(c.charCodeAt(0) - desplazamiento);
             mensajeDesencriptado += cNew;
 
             console.log(`El caracter: ${c}, el desplazamiento: ${desplazamiento}`);
 
             // Si es un espacio, reiniciar pero transformando antes el espacio
-            if (cNew === " ") {
+            if (desplazamiento == 5) {
                 desplazamiento = 0;
             }
 
