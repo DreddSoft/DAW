@@ -90,7 +90,8 @@ function introducir() {
             // Hacemos una purga si no tienen la palabra error
             for (let i = 0; i < errores.length; i++) {
 
-                if (!errores[i].includes("Error")) {
+                console.log(errores[i]);
+                if (!errores[i].includes("<b>Error:</b>")) {
                     errores[i] = "";
                 }
 
@@ -192,7 +193,7 @@ function terceraParteCodigo(parte) {
 
     return (tmp < 0 || tmp > 15)
         ? "<b>Error:</b> La antiguedad introducida NO ES VALIDA."
-        : tmp;
+        : tmp + "";
 
 }
 
