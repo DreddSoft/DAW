@@ -1,0 +1,58 @@
+.cta-container {
+    /* 
+        - Imagen de fondo.
+        - Que cubra el contenedor.
+        - Alinear verticalmente la imagen.
+        - Colocarla en el centro del contenedor.
+        - relleno de 60px alrededor del contenido.
+    */
+    background-image: url("gato.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.cta-text {
+    /* 
+        - Ajuta el tamaño a 28px.
+        - Utiliza negrita.
+     */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+button.cta-button {
+    /*
+    * color de fondo #626bb2.
+    * texto en blanco #fff.
+    * padding 15px vertical.
+    * padding 30px horizontal.
+    * sin bordes.
+    * bordes redondeados.
+    * tamaño de fuente 20px.
+    * texto en mayúsculas.
+    * que cambie el cursor al pasar por encima.
+    */
+    background-color: #626bb2;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/*
+* Author: @Dreddsoft
+* Exercise: AE2.8 - Call To Action
+* Date: 26/11/2024
+* Version: 1.0
+*/

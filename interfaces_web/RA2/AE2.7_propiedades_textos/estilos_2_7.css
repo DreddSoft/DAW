@@ -1,0 +1,54 @@
+p + p {
+    color: green;
+}
+.text-indent{
+    text-indent: 30px;
+}
+
+.text-align {
+    text-align: right;
+}
+
+.text-decoration {
+    text-decoration: underline;
+}
+
+.letter-spacing {
+    letter-spacing: 3px;
+}
+
+.word-spacing {
+    word-spacing: 10px;
+}
+
+.text-transform {
+    text-transform: uppercase;
+}
+
+.line-height {
+    line-height: 70px;
+}
+
+table tr td {
+    border: solid 1px grey;
+    height: 100px;
+}
+
+.a {
+    vertical-align: top;
+}
+
+.b {
+    vertical-align: middle;
+}
+
+.c {
+    vertical-align: bottom;
+}
+
+/*
+* Author: @Dreddsoft
+* Exercise: AE2.7 - Propiedades de los textos
+* Date: 26/11/2024
+* Version: 1.0
+*/
