@@ -1,4 +1,5 @@
 <?php
+// session_set_cookie_params(60);
 session_start();
 
 // echo $_SESSION['nombre'];
@@ -17,6 +18,12 @@ if (isset($_COOKIE['nombre_usu'])) {
 
 } else {
     $nombreUsuario = "";
+}
+
+$email = $_SESSION['email'];
+
+if (!isset($_SESSION['email'])) {
+    $email = "";
 }
 
 ?>
@@ -213,7 +220,7 @@ if (isset($_COOKIE['nombre_usu'])) {
     </header>
     <main>
         <h3>¡Hola <?= $nombreUsuario ?>!</h3>
-        <p>Tu correo es: <?= $_SESSION['email'] ?></p>
+        <p>Tu correo es: <?= $email ?></p>
         <button><a href="ej28_cerrar_sesion.php">Cerrar sesión</a></button>
     </main>
     <footer>

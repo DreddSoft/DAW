@@ -1,0 +1,43 @@
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: #200026;
+
+}
+
+h1::before {
+    content: "\1F63B";
+}
+
+h1::after {
+    content: "\1F63B";
+
+}
+
+/*
+Establece un estilo personalizado para la lista, como color de texto, tipo de
+fuente o espaciado, según tus preferencias.
+*/
+li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    color: #460e50;
+    letter-spacing: 1px;
+    list-style: none;
+    text-align: center;
+
+}
+
+li::before {
+    content: "\1F63B";
+    padding-right: 10px;
+
+}
+
+/*
+* Author: @Dreddsoft
+* Exercise: AE2.9 - Creación de un listado con Emoji Utilizando
+* Date: 26/11/2024
+* Version: 1.0
+*/
