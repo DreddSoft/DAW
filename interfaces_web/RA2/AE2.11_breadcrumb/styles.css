@@ -1,0 +1,133 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+main {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    height: 25vh;
+    margin: 2rem 0;
+}
+
+/* 2. Dentro del archivo CSS, asigna la fuente Arial y establece un relleno de 0.5em alrededor del breadcrumb. */
+div.breadcrumb {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5em;
+}
+
+/* 3. Establece los estilos para los enlaces dentro del breadcrumb. Asigna el color #0095eb, elimina la decoración de texto, y ponlo en negrita. */
+.breadcrumb a {
+    color: #0095eb;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* 4. Define los estilos de cambio de color al hacer hover en los enlaces. Cuando el usuario pase el cursor sobre un enlace, cambia el color del texto a #006196 y subraya el texto. */
+.breadcrumb a:hover {
+    cursor: pointer;
+    color: #006196;
+    /* text-decoration: underline; */
+    /* Explicación: Creo que pides que usemos text-decoration, pero al haberle puestos símbolos html tipo << >> queda mejor aplicacionle un border-bottom. */
+    border-bottom: 1px solid #006196;
+}
+
+/* 5. Define los estilos para el enlace con la clase right. Utiliza float: right; para alinear este enlace a la derecha del breadcrumb. */
+.right {
+    float: right;
+}
+
+.right::after {
+    padding-left: 5px;
+    content: "\226B";
+}
+
+
+/* 6. Define los estilos para el enlace con la clase left. Utiliza float: left; para alinear este enlace a la izquierda del breadcrumb. */
+.left {
+    float: left;
+}
+
+.left::before {
+    padding-right: 5px;
+    content: "\226A";
+}
+
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 0.5rem 0;
+    background-color: #dab8aa;
+
+}
+
+header img {
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: #200026;
+}
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dab8aa;
+    padding: 1rem 0;
+}
+
+footer h3 {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #200026;
+
+}
+
+footer a {
+
+    text-decoration: none;
+    color: #49111c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 5px;
+
+}
+
+footer a:hover {
+    color: #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+
+}
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+
+/*
+* Author: @Dreddsoft
+* Exercise: AE2.11 - Creación de un breadcrumb navegacional
+* Date: 27/11/2024
+* Version: 1.0
+*/

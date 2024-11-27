@@ -1,0 +1,150 @@
+/* 1.1 Utiliza la fuente «Arial» para todo el documento. */
+/* 1.2 Centra el texto horizontalmente en todos los elementos. */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+
+}
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+main {
+    /* display: flex; */
+    /* flex-direction: column;
+    align-items: center; */
+    height: 50%;
+    margin: 0 0 2rem 0;
+    
+}
+
+/** Estilos de la tabla:
+- Establece un ancho del 80% para la tabla, de manera que ocupe el 80% del ancho disponible en la ventana.
+- Centra la tabla horizontalmente con un margen superior de 20 píxeles.
+- Coloca el título en la parte inferior de la tabla. 
+*/
+.styled-table {
+    width: 80%;
+    margin: 20px auto 0 auto;
+    caption-side: bottom;
+
+}
+
+/** Estilos del título de la tabla:
+- Utiliza un tamaño de fuente de 20 píxeles.
+- Añade un espacio de 10 píxeles alrededor del título. */
+.styled-table h1 {
+    font-size: 20px;
+    padding: 10px;
+}
+
+/** Estilos de las celdas de encabezado (th) y de datos (td):
+- Añade un espacio de 10 píxeles alrededor de todas las celdas.
+- Establece un fondo azul (#009688) para las celdas de encabezado con texto blanco (#fff).
+- Agrega un borde sólido de 1 píxel con color gris claro (#ddd) a todas las celdas. */
+th {
+    margin: 10px;
+    background-color: #009688;
+    color: #fff;
+    border: 1px solid #ddd;
+}
+
+/** Estilos para filas impares del cuerpo de la tabla:
+- Aplica un fondo gris claro (#f2f2f2) a las filas impares del cuerpo de la tabla. */
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/** Estilo al pasar el cursor sobre una fila del cuerpo de la tabla:
+- Cambia el fondo de la fila a un tono de verde claro (#c7e2e0) al pasar el cursor sobre ella. */
+tr:hover {
+    background-color: #c7e2e0;
+}
+
+/** Estilo para la tercera columna (Precio) de las filas del cuerpo de la tabla:
+- Agrega el símbolo del euro (€) después de los valores en la tercera columna (Precio) de las filas del cuerpo de la tabla. */
+
+
+
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+
+
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 0.5rem 0;
+    background-color: #dab8aa;
+    height: 30%;
+
+}
+
+header img {
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: #200026;
+}
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dab8aa;
+    padding: 1rem 0;
+    height: 20%;
+}
+
+footer h3 {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #200026;
+
+}
+
+footer a {
+
+    text-decoration: none;
+    color: #49111c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 5px;
+
+}
+
+footer a:hover {
+    color: #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+
+}
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+
+/*
+* Author: @Dreddsoft
+* Exercise: AE2.11 - Creación de un breadcrumb navegacional
+* Date: 27/11/2024
+* Version: 1.0
+*/

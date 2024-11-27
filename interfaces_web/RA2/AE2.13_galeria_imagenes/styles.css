@@ -1,0 +1,126 @@
+/* 1. En el archivo CSS, define el estilo global para todos los elementos utilizando el selector *. Establece el margen a 0. */
+* {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    /* margin: 0; */
+    height: 100%;
+
+}
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    margin: 0 0 2rem 0;
+}
+
+/* 2. Establece los estilos para el título. Centra el texto, establece un fondo de color #EDEEEE, color de texto orange, un borde inferior de 3px solid #4caf50, y un relleno de 30px. */
+h2 {
+    width: 100%;
+    text-align: center;
+    background-color: #EDEEEE;
+    color: orange;
+    border-bottom: 3px solid #4caf50;
+    padding: 30px;
+    
+}
+
+/* 3. Define los estilos para el contenedor de imágenes. Establece un ancho máximo de 500px y centrar el elemento horizontalmente con margin: 0 auto;. */
+.galeria-imagenes {
+    max-width: 500px;
+    margin: 0 auto;
+
+}
+
+/* 4. Establece los estilos para los elementos <img> dentro de la galería. Utiliza float: left; para alinear las imágenes a la izquierda, agrega un relleno de 1.2em para separar las imágenes y aplica los estilos de cambio de color al hacer hover. Cuando el usuario pase el cursor sobre una imagen, cambia el fondo de color a #e8f1f4. */
+.galeria-imagenes img {
+    float: left;
+    padding: 1.2em;
+    cursor: pointer;
+}
+
+.galeria-imagenes img:hover {
+    background-color: #e8f1f4;
+}
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+
+
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 0.5rem 0;
+    background-color: #dab8aa;
+    height: 30%;
+
+}
+
+header img {
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: #200026;
+}
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dab8aa;
+    padding: 1rem 0;
+    height: 20%;
+}
+
+footer h3 {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #200026;
+
+}
+
+footer a {
+
+    text-decoration: none;
+    color: #49111c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 5px;
+
+}
+
+footer a:hover {
+    color: #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+
+}
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+
+/*
+* Author: @Dreddsoft
+* Exercise: AE2.11 - Creación de un breadcrumb navegacional
+* Date: 27/11/2024
+* Version: 1.0
+*/

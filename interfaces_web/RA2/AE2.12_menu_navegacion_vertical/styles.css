@@ -1,0 +1,145 @@
+* {
+    /* 1. Establece que todos los elementos dentro de la página utilicen la fuente Arial. */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+
+}
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    margin: 2rem 0;
+}
+
+/* 2. Dale a la lista (ul) con la clase “menu” un ancho de 140px, elimina las viñetas de lista, establece los márgenes y relleno a 0 y agrega un borde de 1px sólido con el color #FFC83D. */
+ul.menu {
+    width: 140px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #FFC83D;
+}
+
+/* 3. Cada elemento de la lista (li) debe tener un borde inferior de 1px sólido con el color #FFC83D. El último elemento de la lista no debe tener un borde inferior. */
+.menu li {
+    border-bottom: solid 1px #FFC83D;
+
+}
+
+.menu li:last-child {
+    border-bottom: none;
+}
+
+
+
+/* 4. Los enlaces (<a>) dentro de los elementos de la lista deben ocupar todo el ancho disponible, centrar su texto, no mostrar subrayado y tener un color de texto de #333. Además, deben tener un relleno de 5px y un fondo de color #E5F3FE. */
+
+/** Parte de las propiedades las he metido en el elemento "li" */
+
+.menu li a {
+
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+    background-color: #E5F3FE;
+    
+}
+
+/* 5. Cuando el cursor esté sobre un enlace, el fondo del enlace debe cambiar a #c8e2f7. */
+.menu li a:hover {
+    background-color: #c8e2f7;
+}
+
+/* 6. Agrega un emoji «👉» antes del texto de cada enlace utilizando pseudo-elementos. */
+.menu li a::before {
+    content: "\1F449";
+}
+
+
+
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 0.5rem 0;
+    background-color: #dab8aa;
+    height: 30%;
+
+}
+
+header img {
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: #200026;
+}
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dab8aa;
+    padding: 1rem 0;
+    height: 20%;
+}
+
+footer h3 {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #200026;
+
+}
+
+footer a {
+
+    text-decoration: none;
+    color: #49111c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 5px;
+
+}
+
+footer a:hover {
+    color: #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+
+}
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+
+/*
+* Author: @Dreddsoft
+* Exercise: AE2.11 - Creación de un breadcrumb navegacional
+* Date: 27/11/2024
+* Version: 1.0
+*/
