@@ -49,96 +49,41 @@ function impresion(input1, input2, mensaje) {
 
 }
 
+function jugar() {
 
-function encriptar() {
+    //* La aplicación solicitará al usuario, mediante una ventana emergente, un número del 1 al 8 correspondiente a una cantidad de combinaciones.
 
-    let frase = "Este es el mensaje";
-    let clave = prompt("Introduce la clave: ");
-    let mensaje = "";
+    let cantidadCombinaciones = combinaciones();
 
-    if (clave == "12345") {
-
-        // encriptar el mensaje
-        // para ello debemos sacar el caracter unicode
-        let mensajeEncriptado = "";
-        let desplazamiento = 0;
-        for (let i = 0; i < frase.length; i++) {
-
-            desplazamiento++;
-            // Obtener el caracter actual
-            let c = frase.charAt(i);
-
-            // Calcular el nuevo caracter sumando el desplazamiento
-            let cNew = String.fromCharCode(c.charCodeAt(0) + desplazamiento);
-            mensajeEncriptado += cNew;
-
-            console.log(`El caracter: ${c}, el desplazamiento: ${desplazamiento}`);
-
-            // Si es un espacio, reiniciar pero transformando antes el espacio
-            if (desplazamiento == 5) {
-                desplazamiento = 0;
-            }
-
-
-        }
-
-        mensaje = `<b>Mensaje cifrado:</b> ${mensajeEncriptado}`;
-
-    } else {
-        mensaje = "<b>Error: </b>Clave erronea.";
-    }
-
-    impresion(frase, clave, mensaje);
-
+    // Muestra el resultado temporal
+    alert(cantidadCombinaciones);
+    
 }
 
-function desencriptar() {
+// Función complementaria para sacar el número de combinaciones y controlar errores
+function combinaciones() {
 
-    let frase = "Fuwi%fu#iq!ohrxblh";
-    let clave = prompt("Introduce la clave: ");
-    let mensaje = "";
+    // Pedir un numero
+    let num = parseInt(prompt("Introduce un número de combinaciones entre 1 y 8, ¿Cuántas combinaciones?"));
 
-    if (clave == "12345") {
+    while (isNaN(num) || num < 1 || num > 8) { // Mientras que sea menor que 1 y mayor que 8
 
-        // encriptar el mensaje
-        // para ello debemos sacar el caracter unicode
-        let mensajeDesencriptado = "";
-        let desplazamiento = 0;
-        for (let i = 0; i < frase.length; i++) {
-
-            desplazamiento++;
-            // Obtener el caracter actual
-            let c = frase.charAt(i);
-
-            // Calcular el nuevo caracter descontando el desplazamiento
-            let cNew = String.fromCharCode(c.charCodeAt(0) - desplazamiento);
-            mensajeDesencriptado += cNew;
-
-            console.log(`El caracter: ${c}, el desplazamiento: ${desplazamiento}`);
-
-            // Si es un espacio, reiniciar pero transformando antes el espacio
-            if (desplazamiento == 5) {
-                desplazamiento = 0;
-            }
-
-        }
-
-        mensaje = `<b>Mensaje descifrado:</b> ${mensajeDesencriptado}`;
-
-    } else {
-        mensaje = "<b>Error: </b>Clave erronea.";
+        // Volvemos a pedir e informamos
+        num = parseInt(prompt("Error, recuerda un número entre 1 y 8. ¿Qué número eliges?"));
     }
 
-    impresion(frase, clave, mensaje);
-
+    return num;
+    
 }
+
+
 
 
 
 /**
  * Author: @Dreddsoft
- * Exercise: AE3.2 - ejercicio 10
- * Date: 24/11/2024 (dd/MM/yyyy)
+ * Exercise: AE3.3 - ejercicio 01
+ * Date: 28/11/2024 (dd/MM/yyyy)
  * Version: 1.0
  * */
 
