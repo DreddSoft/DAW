@@ -1,0 +1,126 @@
+:root {
+
+    --base-color-50: #fdf3f3;
+    --base-color-100: #fbe9e8;
+    --base-color-200: #f7d4d5;
+    --base-color-300: #f0b1b4;
+    --base-color-400: #e7858b;
+    --base-color-500: #da5964;
+    --base-color-600: #c5394c;
+    --base-color-700: #a52b3f;
+    --base-color-800: #8b2639;
+    --base-color-900: #772437;
+    --base-color-950: #49111c;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background: var(--base-color-200);
+
+}
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+
+}
+
+main div {
+    box-sizing: content-box;
+    text-align: center;
+    padding: 2rem;
+    width: 500px;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+
+
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+header {
+    display: flex;
+    flex-direction: roww;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 0.5rem 0;
+    background-color: var(--base-color-900);
+    color: var(--base-color-50);
+    gap: 2rem;
+
+}
+
+header img {
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: var(--base-color-50);
+}
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    background-color: var(--base-color-700);
+    padding: 1rem 0;
+}
+
+footer h3 {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: var(--base-color-50);
+
+}
+
+footer a {
+
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px solid transparent;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 5px;
+
+}
+
+footer a:hover {
+    color: var(--base-color-100);
+    border-bottom: 1px solid #f2f2f2;
+    text-shadow: #f2f2f2 1px 0 10px;
+
+}
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+
+/*
+* Author: @Dreddsoft
+* Exercise: AE2.15 - Overflow
+* Date: 29/11/2024
+* Version: 1.0
+*/

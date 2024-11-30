@@ -1,0 +1,180 @@
+:root {
+
+    --base-color-50: #fdf3f3;
+    --base-color-100: #fbe9e8;
+    --base-color-200: #f7d4d5;
+    --base-color-300: #f0b1b4;
+    --base-color-400: #e7858b;
+    --base-color-500: #da5964;
+    --base-color-600: #c5394c;
+    --base-color-700: #a52b3f;
+    --base-color-800: #8b2639;
+    --base-color-900: #772437;
+    --base-color-950: #49111c;
+}
+
+body {
+    margin: 0;
+    background: var(--base-color-200);
+
+}
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+main {
+
+    margin: 0 auto;
+
+
+}
+
+/** La etiqueta <article> flota a la izquierda, tiene un ancho de 350 px, un alto de 140px, el fondo es de color #F7F3F3 y tiene un márgen de 10px. */
+main article {
+    display: block;
+    float: left;
+    width: 350px;
+    height: 140px;
+    background-color: #f7f3f3;
+    margin: 10px;
+}
+
+/* La etiqueta <img> tiene un padding de 20px, un ancho de 100px y flota a la izquierda. */
+main img {
+    display: block;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+/** La clase .datos-productos flota a la derecha, tiene un padding de 20 píxeles y un ancho de 190 píxeles. Al usar padding, no te olvides de la propiedad box-sizing: border-box; (quítala y ponla para ver cómo excede el contenido y al no caber se descuadra). */
+.datos-productos {
+    float: right;
+    padding: 20px;
+    width: 190px;
+    box-sizing: border-box;
+
+}
+
+/** La clase .borrar flota a la derecha, tiene un padding superior e inferior de 0 px y de 5px a derecha e izquierda, tiene un borde sólido de 1px de color negro, tiene un border-radius de 5 px, un margen superior de -10 px y un margen izquierdo de 10 px. */
+.borrar {
+    float: right;
+    padding: 0 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 -10px 0 10px;
+}
+
+/** La clase .nombre flota a la derecha y está en negrita. */
+.nombre {
+    float: right;
+    font-weight: bold;
+}
+
+/** La clase .precio flota a la derecha tiene un color de texto de #666, un tamaño de fuente de 14px y un margen superior e inferior de 5px, recuerda que los elementos anteriores son floats y que si no ponemos clear:both; quedarán pegados a los anteriores en vez de en el lugar que queremos (el elemento es movido hacia abajo para limpiar elementos flotantes). */
+.precio {
+    float: right;
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0;
+    clear: both;
+}
+
+/** La clase .colores debe tener también clear:both por el mismo motivo que la clase precio. */
+.colores {
+    clear: both;
+}
+
+/** La etiqueta <li> debe tener un ancho de 20px y un alto de 20px, display:inline-block (para que tenga en cuenta los valores de width y height que se asignen. Prueba a modificarlo por display:inline y verás que con esa propiedad no tiene en cuenta los valores de width y height definidos), tiene un border-radius de 12.5px un margen izquierdo de 5px, fondo burlywood y un borde sólido de 1px de color negro. */
+li {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 12.5px;
+    margin-left: 10px;
+    background-color: burlywood;
+    border: 1px solid black;
+}
+
+
+
+/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+
+
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+header {
+    display: flex;
+    flex-direction: roww;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 0.5rem 0;
+    background-color: var(--base-color-900);
+    color: var(--base-color-50);
+    gap: 2rem;
+
+}
+
+header img {
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: var(--base-color-50);
+}
+
+/* ESTILOS PARA EL HEADER PERSONALIZADO */
+
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    background-color: var(--base-color-700);
+    padding: 1rem 0;
+}
+
+footer h3 {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: var(--base-color-50);
+
+}
+
+footer a {
+
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px solid transparent;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 5px;
+
+}
+
+footer a:hover {
+    color: var(--base-color-100);
+    border-bottom: 1px solid #f2f2f2;
+    text-shadow: #f2f2f2 1px 0 10px;
+
+}
+
+/* ESTILOS PARA EL FOOTER PERSONALIZADO */
+
+/*
+* Author: @Dreddsoft
+* Exercise: AE2.16 - Miniatura
+* Date: 29/11/2024
+* Version: 1.0
+*/

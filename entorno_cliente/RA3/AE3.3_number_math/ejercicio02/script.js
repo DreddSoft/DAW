@@ -3,13 +3,14 @@ function mostrarEnunciado() {
     let enunciado = document.getElementById("enunciado");
 
     // Aplica el texto al contenedor del enunciado
-    let enun = "<p><b>Ejercicio 1.</b> Realiza una aplicación web que simule el comportamiento del juego de La Primitiva propiedad de Loterías y Apuestas del Estado.</p>"
+    let enun = "<p><b>Ejercicio 2.</b> Realiza una aplicación web que simule el comportamiento del juego de La Quiniela propiedad de Loterías y Apuestas del Estado.</p>"
         + "<p><b><i>Nota:</i></b> La finalidad de este ejercicio es puramente académica, juega responsablemente sólo si eres mayor de edad. En ningún caso se pretende fomentar la ludopatía.</p>"
         + "<p>La aplicación solicitará al usuario, mediante una ventana emergente, un número del 1 al 8 correspondiente a una cantidad de combinaciones.</p>"
         + "<p>A continuación, se mostrará en la parte destinada para tal efecto, un boleto con el número de combinaciones, introducido por el usuario, generadas de forma aleatoria.</p>"
-        + "<p>Cada combinación consta de 6 números del 1 al 49. En una combinación, los números no se pueden repetir. Cada boleto tiene un número del 1 al 10, correspondiente al reintegro.</p>"
+        + "<p>Cada combinación consta de 14 enfrentamientos entre dos equipos, donde hay tres opciones 1 X 2 (1 gana el equipo local, X empate y 2 gana el equipo visitante).</p>"
+        + "<p>Cada boleto tiene una combinación extra donde se elige 0 1 2 M (representa el número de goles marcados por ese equipo, M 3 o más goles), correspondiente al Pleno al 15.</p>"
         + "<p>A continuación, se muestra una captura de la aplicación web <a src='https://juegos.loteriasyapuestas.es/jugar/la-primitiva/apuesta/' target='_blank'>https://juegos.loteriasyapuestas.es/jugar/la-primitiva/apuesta/</a>, para que sirva de inspiración y ayuda.</p>"
-        + "<img src='quiniela.jpg' alt='Ejemplo de juegos' style='place-self: center'>";
+        + "<img src='../image-1.png' alt='Ejemplo de juegos' style='place-self: center'>";
 
     enunciado.innerHTML = enun;
 
@@ -44,35 +45,18 @@ function jugar() {
     //* La aplicación solicitará al usuario, mediante una ventana emergente, un número del 1 al 8 correspondiente a una cantidad de combinaciones.
 
     let numCombinaciones = combinaciones();
-    let combinacion = [];
+    let partidos = ["Valencia-Betis", "At. Madrid-Alavés", "Las Palmas-Mallorca", ""];
     let contenido = "";
 
     let tabla = document.getElementById("bodyTabla");
 
-    for (let i = 0; i < numCombinaciones; i++) {
+    titulines = impresionPartidos();
 
-        combinacion = crearCombinacion(combinacion);
+    // Esto es un random que genera 0, 1 y 2.
+    randomNum = Math.floor(Math.random() * 3);
 
-        // Impresion
-        contenido += `<div class="capa-combinaciones">`
-            + `<strong>${i + 1}</strong>`
-            + `<div class="listado-combinacion">`
-            + `<input type="text" name="item-combinacion${0}" id="item-combinacion${0}" value="${combinacion[0]}" class="item-combinacion">`
-            + `<input type="text" name="item-combinacion${1}" id="item-combinacion${1}" value="${combinacion[1]}" class="item-combinacion">`
-            + `<input type="text" name="item-combinacion${2}" id="item-combinacion${2}" value="${combinacion[2]}" class="item-combinacion">`
-            + `<input type="text" name="item-combinacion${3}" id="item-combinacion${3}" value="${combinacion[3]}" class="item-combinacion">`
-            + `<input type="text" name="item-combinacion${4}" id="item-combinacion${4}" value="${combinacion[4]}" class="item-combinacion">`
-            + `<input type="text" name="item-combinacion${5}" id="item-combinacion${5}" value="${combinacion[5]}" class="item-combinacion">`
-            + `</div></div><br>`;
+    alert(`Prueba de un random: ${randomNum}`)
 
-    }
-
-    // Añadir el reintegro al contenido
-    contenido += `<input type="text" name="reintegro" id="reintegro" value="${reintegro()}" class="reintegro">`;
-
-
-    // Cerrar la celda, la fila y la tabla
-    tabla.innerHTML += `<tr><td>Numero de combinaciones: ${numCombinaciones}</td><td>${contenido}</td><tr>`;
 
 }
 
@@ -117,18 +101,11 @@ function crearCombinacion() {
 
 }
 
-function reintegro() {
-
-    // Crear un numero random del 0 al 9
-    return parseInt((Math.random() * 9) + 1);
-    
-}
-
 
 /**
  * Author: @Dreddsoft
- * Exercise: AE3.3 - ejercicio 01
- * Date: 28/11/2024 (dd/MM/yyyy)
+ * Exercise: AE3.3 - ejercicio 02
+ * Date: 29/11/2024 (dd/MM/yyyy)
  * Version: 1.0
  * */
 
