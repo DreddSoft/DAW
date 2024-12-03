@@ -6,6 +6,7 @@
     --dim-gray: #c5b3b3;
     --light-orange: #F1D6B8;
     --eggplant: #4B3B47;
+    --gris-boton-boleto: #989b9b;
 
     --50: #f8f7f8;
     --100: #f3f0f3;
@@ -21,9 +22,8 @@
 }
 
 body {
-    display: grid;
-    place-content: center;
-    padding: 2rem;
+    box-sizing: border-box;
+    margin: 0;
     background-color: var(--400);
     font-family: 'Poppins', sans-serif;
 }
@@ -151,7 +151,9 @@ footer a:hover {
     text-shadow: #f3f0f3 3px 0 10px;
 } 
 
-input[type="button"], button {
+
+
+.ipt-btn, .btn {
     padding: 10px 15px;
     width: 200px;
     place-self: center;
@@ -166,13 +168,12 @@ input[type="button"], button {
 
 }
 
-input[type="button"]:hover, button:hover {
+.ipt-btn:hover, .btn:hover {
     background-color: var(--900);
     color: var(--100);
     border: 2px solid var(--100);
 
 }
-
 
 .capa-combinaciones {
     display: flex;
@@ -219,55 +220,8 @@ input[type="button"]:hover, button:hover {
     margin: 2px 4px 2px 4px;
 }
 
-.boleto-juego {
-    background-color: var(--50);
-    width: 100%;
-}
-
-.contenedor-nombres-completos {
-    display: flex;
-    flex-direction: column;
-}
-
-.item-nombre {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    text-align: left;
-    margin-bottom: 8px;
-    margin: 0;
-    /* padding: 2px; */
-    color: #505050;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    
-    
-}
-
-.item-nombre:nth-child(even) {
-    background-color: rgba(227, 6, 19, 0.05);
-}
 
 
-.item-nombre strong {
-    vertical-align: middle;
-    padding: 5px 10px 5px 5px;
-}
 
-.partido {
-    vertical-align: middle;
-    width: 75%;
-    height: 25px;
-    color: rgb(80, 80, 80);
-    display: inline-block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    box-sizing: border-box;
-    padding: 5px 5px 5px 10px;
-    border: solid 1px #ddd;
-    border-radius: 15px;
-    font-weight: 600;
-    overflow: hidden;
-    
-}
+
+

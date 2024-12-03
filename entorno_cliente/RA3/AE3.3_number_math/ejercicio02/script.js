@@ -42,63 +42,38 @@ function ocultarEnunciado() {
 
 function jugar() {
 
-    //* La aplicación solicitará al usuario, mediante una ventana emergente, un número del 1 al 8 correspondiente a una cantidad de combinaciones.
+    let prueba = 2;
 
-    let numCombinaciones = combinaciones();
-    let partidos = ["Valencia-Betis", "At. Madrid-Alavés", "Las Palmas-Mallorca", ""];
-    let contenido = "";
-
-    let tabla = document.getElementById("bodyTabla");
-
-    titulines = impresionPartidos();
-
-    // Esto es un random que genera 0, 1 y 2.
-    randomNum = Math.floor(Math.random() * 3);
-
-    alert(`Prueba de un random: ${randomNum}`)
-
+    crearBloques(prueba);
 
 }
 
-// Función complementaria para sacar el número de combinaciones y controlar errores
-function combinaciones() {
 
-    // Pedir un numero
-    let num = parseInt(prompt("Introduce un número de combinaciones entre 1 y 8, ¿Cuántas combinaciones?"));
+function controlarBoton(idBoton) {
 
-    while (isNaN(num) || num < 1 || num > 8) { // Mientras que sea menor que 1 y mayor que 8
+    // Obtenemos el elemento padre del boton, la fila
+    let fila = document.getElementById(`${idBoton}`).parentElement;
 
-        // Volvemos a pedir e informamos
-        num = parseInt(prompt("Error, recuerda un número entre 1 y 8. ¿Qué número eliges?"));
+    // Obtenemos todos los botones de la fila
+    let botones = fila.querySelectorAll('button');
+
+    // Recorremos los botones
+    for (let i = 0; i < botones.length; i++) {
+
+        // Borramos todas las clases de seleccionado
+        botones[i].classList.remove('seleccionado');
     }
 
-    return num;
-
+    // Aplicamos el estilos seleccionado al marcado
+    document.querySelector(`#${idBoton}`).classList.add('seleccionado');
+    
 }
 
-function crearCombinacion() {
+function borrarCarrusel(id) {
 
-    let combinacion = [];
-
-    for (let i = 0; i < 6; i++) {
-        // Random entero entre 1 y 49
-        let randomNum = parseInt((Math.random() * 49) + 1);
-        console.log(`El primer numero random es: ${randomNum}`);
-
-        // Seguimos creando random hasta que no este en combinaciones, asi evitamos la repeticion
-        while (combinacion.includes(randomNum)) {
-
-            randomNum = parseInt((Math.random() * 49) + 1);
-            console.log(`EL random estaba repetido, el nuevo es: ${randomNum}`);
-
-        }
-
-        // Insertamos en combinaciones
-        combinacion.push(randomNum);
-    }
-
-    return combinacion;
-
+    // Ocultamos el carrusel
+    document.getElementById(`carrusel${id}`).style.display = "none";
+    
 }
 
 

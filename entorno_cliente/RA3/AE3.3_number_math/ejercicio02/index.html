@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>AndresBonilla_AE3.3 - Objetos JavaScript - Number y Math</title>
 </head>
 
@@ -38,42 +40,193 @@
     <div class="enun-wrapper">
         <div id="enunciado" style="display: none; justify-content: center; align-items: center;">
         </div>
-        <input type="button" value="VER" onclick="mostrarEnunciado();" id="ver">
-        <input type="button" value="OCULTAR" onclick="ocultarEnunciado();" id="ocultar" style="display: none;">
+        <input type="button" value="VER" onclick="mostrarEnunciado();" id="ver" class="ipt-btn">
+        <input type="button" value="OCULTAR" onclick="ocultarEnunciado();" id="ocultar" style="display: none;"
+            class="ipt-btn">
     </div>
 
 
-    <div class="boleto-juego" style="display: grid; place-content: center;">
-        <div class="boleto-partidos">
-            <div class="borderado">
-                <div class="contenedor-nombres-completos">
-                    <ul>
-                        <li class="item-nombre"><strong>1.</strong><div class="partido">Valencia-Betis</div></li>
-                        <li class="item-nombre"><strong>2.</strong><div class="partido">At. Madrid-Alavés</div></li>
-                        <li class="item-nombre"><strong>3.</strong><div class="partido">Las Palmas-Mallorca</div></li>
-                        <li class="item-nombre"><strong>4.</strong><div class="partido">Girona-Espanyol</div></li>
-                        <li class="item-nombre"><strong>5.</strong><div class="partido">Celta-Barcelona</div></li>
-                        <li class="item-nombre"><strong>6.</strong><div class="partido">Osasuna-Villareal</div></li>
-                        <li class="item-nombre"><strong>7.</strong><div class="partido">Sevilla-Rayo Vallecano</div></li>
-                        <li class="item-nombre"><strong>8.</strong><div class="partido">Leganés-Real Madrid</div></li>
-                        <li class="item-nombre"><strong>9.</strong><div class="partido">Granada-Cádiz</div></li>
-                        <li class="item-nombre"><strong>10.</strong><div class="partido">Córdoba-R. Zaragoza</div></li>
-                        <li class="item-nombre"><strong>11.</strong><div class="partido">Málaga-Racing de Santander</div></li>
-                        <li class="item-nombre"><strong>12.</strong><div class="partido">Deportivo-Sporting</div></li>
-                        <li class="item-nombre"><strong>13.</strong><div class="partido">Huesca-Castellón</div></li>
-                        <li class="item-nombre"><strong>14.</strong><div class="partido">Elche-R. Oviedo</div></li>
+    <main>
 
-                        
-                    </ul>
-                </div>
-                <div class="partidos-pleno">
-                    <ul>
-                        <li class="item-nombre"><strong>15.</strong><div class="partido">Athletic Club-Real Sociedad</div></li>
+        <div class="wrapper">
+            <div class="partidos-container">
+                <div class="espacio"></div>
+                <div class="partidos">
+                    <div class="partido">
+                        <strong>1.</strong>
+                        <div class="titulo-partido">
+                            Valencia-Betis
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>2.</strong>
+                        <div class="titulo-partido">
+                            At. Madrid-Alavés
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>3.</strong>
+                        <div class="titulo-partido">
+                            Las Palmas-Mallorca
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>4.</strong>
+                        <div class="titulo-partido">
+                            Girona-Espanyol
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>5.</strong>
+                        <div class="titulo-partido">
+                            Celta-Barcelona
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>6.</strong>
+                        <div class="titulo-partido">
+                            Osasuna-Villareal
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>7.</strong>
+                        <div class="titulo-partido">
+                            Sevilla-Rayo Vallecano
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>8.</strong>
+                        <div class="titulo-partido">
+                            Leganés-Real Madrid
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>9.</strong>
+                        <div class="titulo-partido">
+                            Granada-Cádiz
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>10.</strong>
+                        <div class="titulo-partido">
+                            Córdoba-R. Zaragoza
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>11.</strong>
+                        <div class="titulo-partido">
+                            Málaga-Racing de Santander
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>12.</strong>
+                        <div class="titulo-partido">
+                            Deportivo-Sporting
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>13.</strong>
+                        <div class="titulo-partido">
+                            Huesca-Castellón
+                        </div>
+                    </div>
+                    <div class="partido">
+                        <strong>14.</strong>
+                        <div class="titulo-partido">
+                            Elche-R. Oviedo
+                        </div>
+                    </div>
 
-                    </ul>
                 </div>
             </div>
+            <div class="resultados-container">
+                <div class="carrusel" id="carrusel1">
+                    <div class="bloque">
+                        <strong>Bloque 1</strong>
+                        <button class="ico-papelera" id="1" onclick="borrarCarrusel(this.id)"><i class="fa fa-trash"></i></button>
+                    </div>
+                    <div class="resultados-carrusel">
+                        <div class="resultado" id="r1">
+                            <button class="boleto-btn" id="b1" onclick="controlarBoton(this.id)">1</button>
+                            <button class="boleto-btn" id="b2" onclick="controlarBoton(this.id)">X</button>
+                            <button class="boleto-btn" id="b3" onclick="controlarBoton(this.id)">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                        <div class="resultado" id="row1">
+                            <button class="boleto-btn">1</button>
+                            <button class="boleto-btn">X</button>
+                            <button class="boleto-btn">2</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
+
+    </main>
+
+    <div class="controles">
+        <button class="btn" onclick="jugar();">JUGAR</button>
     </div>
 
     <footer>
