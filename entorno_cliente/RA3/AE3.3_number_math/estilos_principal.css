@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --verder-primitiva: #008547;
+
+    --dim-gray: #c5b3b3;
+    --light-orange: #F1D6B8;
+    --eggplant: #4B3B47;
+    --gris-boton-boleto: #989b9b;
+
+    --bg-blanco: #ffffff;
+    --bg-gris: #dbe1e5;
+    --bg-azul-oscuro: #077ec20a;
+    --bg-azul-claro: #077ec2;
+    --bg-azul-medio: #067abe;
+
+
+    --blanco: #ffffff;
+    --amarillo: #eab842;
+    --azul-claro: #74bacd;
+    --naranja: #d16929;
+    --verde-oliva: #7a8634;
+    --rojo-claro: #dc3f47;
+    --azul-1: #077ec2;
+    --azul-2: #107bbf;
+    --azul-3: #097abf;
+    --azul-4: #007ac0;
+    --verde: #008547;
+    --rojo: #cb1517;
+    --violeta: #6b3e98;
+    --gris: #505050;
+    --azul-5: #001367;
+    --negro: #000000;
+
+    /* --50: #f8f7f8;
+    --100: #f3f0f3;
+    --200: #e9e1e9;
+    --300: #d8c9d6;
+    --400: #bea8bc;
+    --500: #a88ca4;
+    --600: #91718a;
+    --700: #795d73;
+    --800: #664e60;
+    --900: #4b3b47;
+    --950: #32252f; */
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: var(--bg-blanco);
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+
+
+}
+
+.menuHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.menuHeader .mh-cont {
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+    border-right: 1px solid var(--azul-4);
+}
+
+.mh-cont:last-of-type {
+    border-right: none;
+}
+
+.menuHeader .mh-cont img {
+    width: 23px;
+    height: 23px;
+    margin-right: 5px;
+}
+
+.menuHeader .mh-cont a {
+    color: var(--azul-3);
+    font-family: 'PublicSans-Regular', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.0833333333333333rem;
+    float: left;
+    padding: 2px 0 0 6px;
+    text-decoration: none;
+}
+
+.menuHeader .mh-cont button {
+    border: none;
+    color: var(--blanco);
+    background: var(--azul-3);
+    text-transform: uppercase;
+    text-align: center;
+    padding: .2125rem 1.875rem;
+    font-family: 'PublicSans-Regular', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: .125rem;
+    font-size: 1rem;
+}
+
+.menuHeader .mh-cont select {
+    color: var(--azul-3);
+    font-family: 'PublicSans-Regular', Arial, sans-serif;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid var(--azul-3);
+    padding: .24rem 30px .24rem .24rem;
+    font-size: .85rem;
+    width: 100%;
+    line-height: 1em;
+    border-radius: 0;
+}
+
+/* ESTILOS PARA EL MENU DE NAVEGACION */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 1rem;
+    word-wrap: normal;
+}
+
+nav ul li {
+    padding: 20px;
+}
+
+nav ul li:hover {
+    background-image: linear-gradient(to top, rgba(0, 133, 71, 0.1), #fff);
+}
+
+
+
+
+/* ESTILOS PARA HEADERS */
+h1 {
+    place-self: center;
+    color: var(--azul-4);
+}
+
+h2 {
+    place-self: center;
+    color: var(--azul-4);
+}
+
+/* ENUNCIADO */
+.enun-wrapper {
+    display: grid;
+    place-content: center;
+}
+
+#enunciado {
+    margin: 1rem 0;
+}
+
+
+table {
+    display: flex;
+    width: 70vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table tr {
+    border: 1px solid;
+}
+
+table th,
+td {
+    border: 1px solid;
+    min-width: 400px;
+    padding: 1rem;
+    background-color: var(--100);
+}
+
+/* ESTILOS PARA FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(7, 126, 194, 0.04);
+    padding: 2rem 0;
+}
+
+footer h3 {
+    color: var(--azul-3);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--azul-5);
+    transition: 0.3s;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+footer a:hover {
+    color: var(--amarillo);
+    border-bottom: 2px solid var(--azul-5);
+    text-shadow: #f3f0f3 3px 0 10px;
+}
+
+/* ESTILOS PARA BOTONES PERSONALIZADOS COMUNES */
+.boton-primitiva {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 10px;
+    border: solid 1px #008547;
+    background-color: #fff;
+    color: #008547;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.boton-primitiva:active {
+    color: #fff;
+    background-color: #008547;
+}
+
+
+
+.boton-confirma-apuesta {
+    margin-bottom: 30px;
+    padding: 17px 20px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+    background-color: #f68829;
+    border-radius: 5px;
+    box-shadow: 3px 2px 5px 0 #ccc;
+    cursor: pointer;
+    width: 400px;
+}
+
+.boton-confirma-apuesta:hover {
+    transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+/* ESTILOS PARA LA PRIMITIVA */
+.capa-combinaciones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.capa-combinaciones strong {
+    font-size: 20px;
+    color: var(--verder-primitiva);
+}
+
+.item-combinacion {
+    cursor: pointer;
+    border: 1px solid var(--verder-primitiva);
+    color: var(--verder-primitiva);
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 1px;
+    border-radius: 1.95rem;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    margin: 2px 4px 2px 4px;
+}
+
+.reintegro {
+    cursor: pointer;
+    border: 1px solid var(--verder-primitiva);
+    color: var(--verder-primitiva);
+    background-color: rgba(0, 133, 71, 0.15);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 1px;
+    border-radius: 1.95rem;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    margin: 2px 4px 2px 4px;
+}

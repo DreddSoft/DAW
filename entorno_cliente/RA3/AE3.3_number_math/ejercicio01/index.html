@@ -4,42 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../estilos_principal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>AndresBonilla_AE3.3 - Objetos JavaScript - Number y Math</title>
 </head>
 
 <body>
 
     <header>
-        <div>
             <div class="title">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
-                    alt="Logo Javascript" style="width: 150px; place-self: center; margin-bottom: 50px;">
+                <img src="../logo_loterias.svg" alt="Logo loterias y apuestas del estado"
+                    style="width: 150px; place-self: center; margin-bottom: 50px;">
 
-                <h1 style="place-self: center;">Objetos JavaScript - Number y Math</h1>
+                    <div class="menuHeader">
+                        <div class="mh-cont">
+                            <img src="../boton_entrar.svg" alt="icono de entrar">
+                            <a href="#">Entrar</a>
+                        </div>
+                        <div class="mh-cont">
+                            <button>REGISTRO</button>
+                        </div>
+                        <div class="mh-cont">
+                            <select name="idioma" id="idioma">
+                                <option value="es">Castellano</option>
+                                <option value="ca">Catalan</option>
+                                <option value="en">English</option>
+                                <option value="de">Deutsch</option>
+                            </select>
+                        </div>
+                    </div>
             </div>
-
+            <h1 style="place-self: center;">Objetos JavaScript - Number y Math</h1>
             <nav>
                 <ul>
-                    <li><a href="../ejercicio01/index.html">Ejercicio 1</a></li>
-                    <li><a href="../ejercicio02/index.html">Ejercicio 2</a></li>
-                    <li><a href="../ejercicio03/index.html">Ejercicio 3</a></li>
-                    <li><a href="../ejercicio04/index.html">Ejercicio 4</a></li>
+                    <li><a href="../ejercicio01/index.html"><img src="../icono_LAPR_topaz.svg" alt="Primitiva" width="100"></a></li>
+                    <li><a href="../ejercicio02/index.html"><img src="../icono_LAQU_topaz.svg" alt="Quiniela" width="100"></a></li>
                 </ul>
 
             </nav>
-        </div>
-        <hr>
     </header>
 
-    <h2>Ejercicio 01</h2>
+    <h2>Ejercicio 01 | La Primitiva</h2>
 
 
     <div class="enun-wrapper">
         <div id="enunciado" style="display: none; justify-content: center; align-items: center;">
         </div>
-        <input type="button" value="VER" onclick="mostrarEnunciado();" id="ver" class="ipt-btn">
-        <input type="button" value="OCULTAR" onclick="ocultarEnunciado();" id="ocultar" style="display: none;" class="ipt-btn">
+        <input type="button" value="VER" onclick="mostrarEnunciado();" id="ver" class="boton-primitiva">
+        <input type="button" value="OCULTAR" onclick="ocultarEnunciado();" id="ocultar" style="display: none; place-self: center;"
+            class="boton-primitiva">
     </div>
 
 
@@ -53,7 +66,7 @@
             </tbody>
         </table>
         <br>
-        <button onclick="jugar();" class="btn">JUGAR</button>
+        <button onclick="jugar();" class="boton-confirma-apuesta" style="place-self: center;">CONFIRMA TU APUESTA</button>
     </div>
 
     <footer>

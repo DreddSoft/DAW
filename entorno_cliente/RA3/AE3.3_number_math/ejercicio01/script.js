@@ -43,15 +43,21 @@ function jugar() {
 
     //* La aplicación solicitará al usuario, mediante una ventana emergente, un número del 1 al 8 correspondiente a una cantidad de combinaciones.
 
-    let numCombinaciones = combinaciones();
-    let combinacion = [];
+    let numCombinaciones = cuantasCombinaciones();
+    let combinaciones = [];
     let contenido = "";
+    let mensaje = "";
 
     let tabla = document.getElementById("bodyTabla");
 
+    // Este bucle genera las combinaciones de cada tirada y las prepara para impresión
     for (let i = 0; i < numCombinaciones; i++) {
 
-        combinacion = crearCombinacion(combinacion);
+        // Creamos una array temporal para la combinacion y usamos la funcion
+        let combinacion = crearCombinacion();
+
+        // En el array combinaciones guardamos cada combinacion
+        combinaciones.push(combinacion);
 
         // Impresion
         contenido += `<div class="capa-combinaciones">`
@@ -68,16 +74,55 @@ function jugar() {
     }
 
     // Añadir el reintegro al contenido
-    contenido += `<input type="text" name="reintegro" id="reintegro" value="${reintegro()}" class="reintegro">`;
+    let reintegro = generaReintegro();
+    contenido += `<input type="text" name="reintegro" id="reintegro" value="${reintegro}" class="reintegro">`;
 
+    // Generamos la combinación ganador
+    //let combinacionGanadora = crearCombinacion(); Generada automaticamente, pero la paso manual para comprobar
+    let combinacionGanadora = [3, 20, 21, 24, 31, 34]
+    //let reintegroGanador = generaReintegro();
+    let reintegroGanador = 8;
+    let premioTotal = 0;
+
+
+
+
+    // Crear el segundo mensaje de impresion, el del premio por combinacion
+    for (let i = 0; i < combinaciones.length; i++) {
+
+        let aciertos = cuantosAciertos(combinaciones[i], combinacionGanadora);
+
+        let premio = calcularPremio(aciertos, aciertoReintegro(reintegro, reintegroGanador));
+
+        mensaje += `<p>La combinacion ${i + 1} ha tenido ${aciertos} aciertos, con un premio de: ${premio} EUROS.</p>`
+
+        premioTotal += premio;
+
+    }
+
+    // Sumamos la combinacion ganadora
+    mensaje += `<div class="capa-combinaciones">`
+            + `<strong>Combinacion ganadora: </strong>`
+            + `<div class="listado-combinacion">`
+            + `<input type="text" name="item-combinacion${0}" id="item-combinacion${0}" value="${combinacionGanadora[0]}" class="item-combinacion">`
+            + `<input type="text" name="item-combinacion${1}" id="item-combinacion${1}" value="${combinacionGanadora[1]}" class="item-combinacion">`
+            + `<input type="text" name="item-combinacion${2}" id="item-combinacion${2}" value="${combinacionGanadora[2]}" class="item-combinacion">`
+            + `<input type="text" name="item-combinacion${3}" id="item-combinacion${3}" value="${combinacionGanadora[3]}" class="item-combinacion">`
+            + `<input type="text" name="item-combinacion${4}" id="item-combinacion${4}" value="${combinacionGanadora[4]}" class="item-combinacion">`
+            + `<input type="text" name="item-combinacion${5}" id="item-combinacion${5}" value="${combinacionGanadora[5]}" class="item-combinacion">`
+            + `</div></div><br>`;
+
+
+    // Sumamos al mensaje el reintegro ganador:
+    mensaje += `<input type="text" name="reintegro" id="reintegro" value="${reintegroGanador}" class="reintegro">`;
 
     // Cerrar la celda, la fila y la tabla
-    tabla.innerHTML += `<tr><td>Numero de combinaciones: ${numCombinaciones}</td><td>${contenido}</td><tr>`;
+    tabla.innerHTML += `<tr><td>Numero de combinaciones: ${numCombinaciones}${mensaje}<p>Tu apuesta genera un total de: ${premioTotal}</p></td><td>${contenido}</td><tr>`;
 
 }
 
 // Función complementaria para sacar el número de combinaciones y controlar errores
-function combinaciones() {
+function cuantasCombinaciones() {
 
     // Pedir un numero
     let num = parseInt(prompt("Introduce un número de combinaciones entre 1 y 8, ¿Cuántas combinaciones?"));
@@ -117,11 +162,60 @@ function crearCombinacion() {
 
 }
 
-function reintegro() {
+function generaReintegro() {
 
     // Crear un numero random del 0 al 9
     return parseInt((Math.random() * 9) + 1);
-    
+
+}
+
+// Funcion para calcular el balor del premio por combinacion
+function calcularPremio(aciertos, reintegroCheck) {
+
+    if (aciertos == 6 && reintegroCheck) {
+        return 139838160;
+    } else if (aciertos == 0 && reintegroCheck) {
+        return 57;
+    } else {
+        switch (aciertos) {
+            case 6:
+                return 13983816;
+            case 5:
+                return 2330636;
+            case 4:
+                return 55491;
+            case 3:
+                return 1032;
+            default:
+                return 0;
+        }
+    }
+
+}
+
+// Funcion para calcular los aciertos por combinacion
+function cuantosAciertos(combinacion, combinacionGanadora) {
+
+    let aciertos = 0;
+
+    // Comparamos cada digito de la combinacion con el de la ganador
+    for (let i = 0; i < combinacion.length; i++) {
+
+        if (combinacion[i] == combinacionGanadora[i]) {
+            aciertos++;
+        }
+
+    }
+
+    return aciertos;
+
+}
+
+// Funcion que calcula si se ha acertado el reintegro
+function aciertoReintegro(reintegro, reintegroGanador) {
+
+    return (reintegro == reintegroGanador);
+
 }
 
 

@@ -42,12 +42,113 @@ function ocultarEnunciado() {
 
 function jugar() {
 
-    let prueba = 2;
+    // Variables
+    let resultadoPartidosGanador = [1, 0, 0, 1, 2, 2, 0, 1, 0, 2, 2, 1, 0, 0];
+    let pleno15Ganador = 0;
+    let apuestas = [];
+    let reintegros = [];
+    let premioTotal = 0;
+    let mensaje = "";
 
-    crearBloques(prueba);
+    // Capturamos las apuestas del usuario
+    apuestas = apuestasDelUsuario();
+
+    // Capturar las apuestas por el reintegro
+    reintegros = apuestaPorElReintegro();
+
+    for (let i = 0; i < apuestas.length; i++) {
+
+        // Calculamos los aciertos por apuesta (por tirada)
+        let aciertos = cuantosAciertos(resultadoPartidosGanador, apuestas[i], pleno15Ganador, reintegros);
+
+        // Calculamos el premio por carrusel
+        let premio = calcularPremio(aciertos);
+
+        // Sumamos al total
+        premioTotal += premio;
+
+        // Creamos el mensaje
+        mensaje += `<p>El Bloque ${i + 1} ha tenido ${aciertos} aciertos y un premio de: ${premio} EUROS.</p>`;
+
+    }
+
+    mensaje += `<p>El premio total recibido es de: ${premioTotal} EUROS.</p>`;
+
+    // Hacemos display en div preparado para eso
+    let display = document.querySelector("#display");
+
+    // Añadimos el contenido
+    display.innerHTML += mensaje;
+
+    // Mostramos el display
+    display.style.display = "flex";
 
 }
 
+// Funcion para recuperar las apuestas del usuario
+function apuestasDelUsuario() {
+
+    // capturamos el numero de carruseles
+    const divCarruseles = document.querySelectorAll("div.carrusel");
+    let numCarruseles = 0;
+    let apuestas = [];
+
+    // Contador de carruseles manual
+    for (let i = 0; i < divCarruseles.length; i++) {
+
+        if (divCarruseles[i].style.display != "none") {
+            numCarruseles++;
+        }
+    }
+
+    // Recogemos los valores de las apuestas del usuario por carrusel disponible
+    for (let j = 1; j <= numCarruseles; j++) {
+        apuestas[j - 1] = [];
+
+        // for para las 14 filas
+        for (let i = 1; i <= 14; i++) {
+
+            // sacamos la fila
+            let fila = document.querySelector(`#c${j}r${i}`);
+            let valor = fila.querySelector(".seleccionado").value;
+
+            console.log(valor);
+            apuestas[j - 1].push(valor);
+        }
+    }
+
+
+    return apuestas;
+
+}
+
+// Función para capturar las elecciones del reintegro
+function apuestaPorElReintegro() {
+
+    // Los reintegros
+    let reintegros = [];
+    let seleccionado = 0;
+
+    // Capturamos las 2 filas del reintegro
+    let fila1 = document.querySelector("#c15r1");
+    let fila2 = document.querySelector("#c15r2");
+
+    // Sacamos los valores seleccionados
+    seleccionado = fila1.querySelector(".seleccionado").value;
+
+    if (seleccionado) {
+        reintegros.push(seleccionado);
+    }
+
+    seleccionado = fila2.querySelector(".seleccionado").value;
+
+    if (seleccionado) {
+        reintegros.push(seleccionado);
+    }
+
+    return reintegros;
+
+}
 
 function controlarBoton(idBoton) {
 
@@ -65,16 +166,81 @@ function controlarBoton(idBoton) {
     }
 
     // Aplicamos el estilos seleccionado al marcado
+    console.log(`El id: ${idBoton}`);
     document.querySelector(`#${idBoton}`).classList.add('seleccionado');
-    
+
 }
 
 function borrarCarrusel(id) {
 
     // Ocultamos el carrusel
-    document.getElementById(`carrusel${id}`).style.display = "none";
-    
+    document.getElementById(`c${id}`).style.display = "none";
+
 }
+
+// Pleno al 15 76527504
+// 14 4782969
+// 13 170820
+// 12 13140
+// 11 1643
+// 10 299
+
+// Función para calcular el premio
+function calcularPremio(aciertos) {
+
+    switch (aciertos) {
+
+        case 15:
+            return 76527504;
+
+        case 14:
+            return 4782969;
+
+        case 13:
+            return 170820;
+
+        case 12:
+            return 13140;
+
+        case 11:
+            return 1643;
+
+        case 10:
+            return 299;
+
+        default:
+            return 0;
+
+    }
+
+}
+
+// Función para calcular los aciertos
+function cuantosAciertos(resultadoPartidosGanador, apuesta, pleno15Ganador, reintegro) {
+
+    let aciertos = 0;
+
+    // Calcular aciertos normales
+    for (let i = 0; i < resultadoPartidosGanador.length; i++) {
+
+        if (apuesta[i] == resultadoPartidosGanador[i]) {
+            aciertos++;
+        }
+
+    }
+
+    for (let j = 0; j < reintegro.length; j++) {
+
+        if (reintegro[j] == pleno15Ganador) {
+            aciertos++;
+        }
+
+    }
+
+    return aciertos;
+
+}
+
 
 
 /**

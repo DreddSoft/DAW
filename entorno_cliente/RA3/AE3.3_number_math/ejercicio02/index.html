@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../estilos_principal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>AndresBonilla_AE3.3 - Objetos JavaScript - Number y Math</title>
 </head>
@@ -13,221 +13,1192 @@
 <body>
 
     <header>
-        <div>
-            <div class="title">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
-                    alt="Logo Javascript" style="width: 150px; place-self: center; margin-bottom: 50px;">
+        <div class="title">
+            <img src="../logo_loterias.svg" alt="Logo loterias y apuestas del estado"
+                style="width: 150px; place-self: center; margin-bottom: 50px;">
 
-                <h1 style="place-self: center;">Objetos JavaScript - Number y Math</h1>
+            <div class="menuHeader">
+                <div class="mh-cont">
+                    <img src="../boton_entrar.svg" alt="icono de entrar">
+                    <a href="#">Entrar</a>
+                </div>
+                <div class="mh-cont">
+                    <button>REGISTRO</button>
+                </div>
+                <div class="mh-cont">
+                    <select name="idioma" id="idioma">
+                        <option value="es">Castellano</option>
+                        <option value="ca">Catalan</option>
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
             </div>
-
-            <nav>
-                <ul>
-                    <li><a href="../ejercicio01/index.html">Ejercicio 1</a></li>
-                    <li><a href="../ejercicio02/index.html">Ejercicio 2</a></li>
-                    <li><a href="../ejercicio03/index.html">Ejercicio 3</a></li>
-                    <li><a href="../ejercicio04/index.html">Ejercicio 4</a></li>
-                </ul>
-
-            </nav>
         </div>
-        <hr>
+        <h1 style="place-self: center;">Objetos JavaScript - Number y Math</h1>
+        <nav>
+            <ul>
+                <li><a href="../ejercicio01/index.html"><img src="../icono_LAPR_topaz.svg" alt="Primitiva"
+                            width="100"></a></li>
+                <li><a href="../ejercicio02/index.html"><img src="../icono_LAQU_topaz.svg" alt="Quiniela"
+                            width="100"></a></li>
+            </ul>
+
+        </nav>
     </header>
 
-    <h2>Ejercicio 02</h2>
+    <h2>Ejercicio 02 | La Quiniela</h2>
 
 
     <div class="enun-wrapper">
         <div id="enunciado" style="display: none; justify-content: center; align-items: center;">
         </div>
-        <input type="button" value="VER" onclick="mostrarEnunciado();" id="ver" class="ipt-btn">
-        <input type="button" value="OCULTAR" onclick="ocultarEnunciado();" id="ocultar" style="display: none;"
-            class="ipt-btn">
+        <input type="button" value="VER" onclick="mostrarEnunciado();" id="ver" class="boton-quiniela">
+        <input type="button" value="OCULTAR" onclick="ocultarEnunciado();" id="ocultar"
+            style="display: none; place-self: center;" class="boton-quiniela">
     </div>
 
 
     <main>
 
-        <div class="wrapper">
-            <div class="partidos-container">
-                <div class="espacio"></div>
-                <div class="partidos">
-                    <div class="partido">
-                        <strong>1.</strong>
-                        <div class="titulo-partido">
-                            Valencia-Betis
+        <div class="main-container">
+            <div class="wrapper">
+                <div class="partidos-container">
+                    <div class="espacio"></div>
+                    <div class="partidos">
+                        <div class="partido">
+                            <strong>1.</strong>
+                            <div class="titulo-partido">
+                                Valencia-Betis
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>2.</strong>
-                        <div class="titulo-partido">
-                            At. Madrid-Alavés
+                        <div class="partido">
+                            <strong>2.</strong>
+                            <div class="titulo-partido">
+                                At. Madrid-Alavés
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>3.</strong>
-                        <div class="titulo-partido">
-                            Las Palmas-Mallorca
+                        <div class="partido">
+                            <strong>3.</strong>
+                            <div class="titulo-partido">
+                                Las Palmas-Mallorca
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>4.</strong>
-                        <div class="titulo-partido">
-                            Girona-Espanyol
+                        <div class="partido">
+                            <strong>4.</strong>
+                            <div class="titulo-partido">
+                                Girona-Espanyol
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>5.</strong>
-                        <div class="titulo-partido">
-                            Celta-Barcelona
+                        <div class="partido">
+                            <strong>5.</strong>
+                            <div class="titulo-partido">
+                                Celta-Barcelona
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>6.</strong>
-                        <div class="titulo-partido">
-                            Osasuna-Villareal
+                        <div class="partido">
+                            <strong>6.</strong>
+                            <div class="titulo-partido">
+                                Osasuna-Villareal
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>7.</strong>
-                        <div class="titulo-partido">
-                            Sevilla-Rayo Vallecano
+                        <div class="partido">
+                            <strong>7.</strong>
+                            <div class="titulo-partido">
+                                Sevilla-Rayo Vallecano
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>8.</strong>
-                        <div class="titulo-partido">
-                            Leganés-Real Madrid
+                        <div class="partido">
+                            <strong>8.</strong>
+                            <div class="titulo-partido">
+                                Leganés-Real Madrid
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>9.</strong>
-                        <div class="titulo-partido">
-                            Granada-Cádiz
+                        <div class="partido">
+                            <strong>9.</strong>
+                            <div class="titulo-partido">
+                                Granada-Cádiz
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>10.</strong>
-                        <div class="titulo-partido">
-                            Córdoba-R. Zaragoza
+                        <div class="partido">
+                            <strong>10.</strong>
+                            <div class="titulo-partido">
+                                Córdoba-R. Zaragoza
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>11.</strong>
-                        <div class="titulo-partido">
-                            Málaga-Racing de Santander
+                        <div class="partido">
+                            <strong>11.</strong>
+                            <div class="titulo-partido">
+                                Málaga-Racing de Santander
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>12.</strong>
-                        <div class="titulo-partido">
-                            Deportivo-Sporting
+                        <div class="partido">
+                            <strong>12.</strong>
+                            <div class="titulo-partido">
+                                Deportivo-Sporting
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>13.</strong>
-                        <div class="titulo-partido">
-                            Huesca-Castellón
+                        <div class="partido">
+                            <strong>13.</strong>
+                            <div class="titulo-partido">
+                                Huesca-Castellón
+                            </div>
                         </div>
-                    </div>
-                    <div class="partido">
-                        <strong>14.</strong>
-                        <div class="titulo-partido">
-                            Elche-R. Oviedo
+                        <div class="partido">
+                            <strong>14.</strong>
+                            <div class="titulo-partido">
+                                Elche-R. Oviedo
+                            </div>
                         </div>
+
                     </div>
+                </div>
+                <div class="resultados-container">
+                    <!-- BLOQUE 1 -->
+                    <div class="carrusel" id="c1">
+                        <div class="bloque">
+                            <strong>Bloque 1</strong>
+                            <button class="ico-papelera" id="1" onclick="borrarCarrusel(this.id)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="resultados-carrusel">
+                            <div class="resultado" id="c1r1">
+                                <button class="boleto-btn" id="c1r1b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r1b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r1b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r2">
+                                <button class="boleto-btn" id="c1r2b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r2b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r2b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r3">
+                                <button class="boleto-btn" id="c1r3b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r3b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r3b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r4">
+                                <button class="boleto-btn" id="c1r4b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r4b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r4b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r5">
+                                <button class="boleto-btn" id="c1r5b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r5b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r5b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r6">
+                                <button class="boleto-btn" id="c1r6b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r6b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r6b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r7">
+                                <button class="boleto-btn" id="c1r7b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r7b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r7b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r8">
+                                <button class="boleto-btn" id="c1r8b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r8b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r8b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r9">
+                                <button class="boleto-btn" id="c1r9b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r9b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r9b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r10">
+                                <button class="boleto-btn" id="c1r10b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r10b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r10b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r11">
+                                <button class="boleto-btn" id="c1r11b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r11b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r11b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r12">
+                                <button class="boleto-btn" id="c1r12b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r12b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r12b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r13">
+                                <button class="boleto-btn" id="c1r13b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r13b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r13b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c1r14">
+                                <button class="boleto-btn" id="c1r14b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c1r14b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c1r14b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BLOQUE 2 -->
+                    <div class="carrusel" id="c2">
+                        <div class="bloque">
+                            <strong>Bloque 2</strong>
+                            <button class="ico-papelera" id="2" onclick="borrarCarrusel(this.id)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="resultados-carrusel">
+                            <div class="resultado par" id="c2r1">
+                                <button class="boleto-btn" id="c2r1b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r1b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r1b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r2">
+                                <button class="boleto-btn" id="c2r2b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r2b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r2b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r3">
+                                <button class="boleto-btn" id="c2r3b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r3b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r3b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r4">
+                                <button class="boleto-btn" id="c2r4b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r4b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r4b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r5">
+                                <button class="boleto-btn" id="c2r5b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r5b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r5b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r6">
+                                <button class="boleto-btn" id="c2r6b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r6b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r6b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r7">
+                                <button class="boleto-btn" id="c2r7b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r7b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r7b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r8">
+                                <button class="boleto-btn" id="c2r8b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r8b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r8b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r9">
+                                <button class="boleto-btn" id="c2r9b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r9b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r9b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r10">
+                                <button class="boleto-btn" id="c2r10b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r10b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r10b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r11">
+                                <button class="boleto-btn" id="c2r11b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r11b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r11b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r12">
+                                <button class="boleto-btn" id="c2r12b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r12b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r12b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r13">
+                                <button class="boleto-btn" id="c2r13b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r13b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r13b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c2r14">
+                                <button class="boleto-btn" id="c2r14b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c2r14b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c2r14b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BLOQUE 3 -->
+                    <div class="carrusel" id="c3">
+                        <div class="bloque">
+                            <strong>Bloque 3</strong>
+                            <button class="ico-papelera" id="3" onclick="borrarCarrusel(this.id)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="resultados-carrusel">
+                            <div class="resultado" id="c3r1">
+                                <button class="boleto-btn" id="c3r1b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r1b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r1b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r2">
+                                <button class="boleto-btn" id="c3r2b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r2b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r2b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r3">
+                                <button class="boleto-btn" id="c3r3b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r3b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r3b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r4">
+                                <button class="boleto-btn" id="c3r4b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r4b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r4b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r5">
+                                <button class="boleto-btn" id="c3r5b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r5b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r5b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r6">
+                                <button class="boleto-btn" id="c3r6b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r6b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r6b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r7">
+                                <button class="boleto-btn" id="c3r7b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r7b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r7b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r8">
+                                <button class="boleto-btn" id="c3r8b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r8b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r8b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r9">
+                                <button class="boleto-btn" id="c3r9b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r9b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r9b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r10">
+                                <button class="boleto-btn" id="c3r10b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r10b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r10b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r11">
+                                <button class="boleto-btn" id="c3r11b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r11b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r11b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r12">
+                                <button class="boleto-btn" id="c3r12b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r12b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r12b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r13">
+                                <button class="boleto-btn" id="c3r13b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r13b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r13b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c3r14">
+                                <button class="boleto-btn" id="c3r14b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c3r14b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c3r14b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BLOQUE 4 -->
+                    <div class="carrusel" id="c4">
+                        <div class="bloque">
+                            <strong>Bloque 4</strong>
+                            <button class="ico-papelera" id="4" onclick="borrarCarrusel(this.id)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="resultados-carrusel">
+                            <div class="resultado par" id="c4r1">
+                                <button class="boleto-btn" id="c4r1b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r1b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r1b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r2">
+                                <button class="boleto-btn" id="c4r2b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r2b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r2b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r3">
+                                <button class="boleto-btn" id="c4r3b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r3b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r3b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r4">
+                                <button class="boleto-btn" id="c4r4b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r4b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r4b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r5">
+                                <button class="boleto-btn" id="c4r5b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r5b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r5b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r6">
+                                <button class="boleto-btn" id="c4r6b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r6b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r6b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r7">
+                                <button class="boleto-btn" id="c4r7b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r7b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r7b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r8">
+                                <button class="boleto-btn" id="c4r8b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r8b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r8b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r9">
+                                <button class="boleto-btn" id="c4r9b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r9b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r9b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r10">
+                                <button class="boleto-btn" id="c4r10b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r10b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r10b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r11">
+                                <button class="boleto-btn" id="c4r11b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r11b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r11b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r12">
+                                <button class="boleto-btn" id="c4r12b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r12b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r12b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r13">
+                                <button class="boleto-btn" id="c4r13b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r13b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r13b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c4r14">
+                                <button class="boleto-btn" id="c4r14b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c4r14b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c4r14b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BLOQUE 5 -->
+                    <div class="carrusel" id="c5">
+                        <div class="bloque">
+                            <strong>Bloque 5</strong>
+                            <button class="ico-papelera" id="5" onclick="borrarCarrusel(this.id)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="resultados-carrusel">
+                            <div class="resultado" id="c5r1">
+                                <button class="boleto-btn" id="c5r1b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r1b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r1b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r2">
+                                <button class="boleto-btn" id="c5r2b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r2b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r2b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r3">
+                                <button class="boleto-btn" id="c5r3b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r3b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r3b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r4">
+                                <button class="boleto-btn" id="c5r4b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r4b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r4b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r5">
+                                <button class="boleto-btn" id="c5r5b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r5b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r5b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r6">
+                                <button class="boleto-btn" id="c5r6b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r6b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r6b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r7">
+                                <button class="boleto-btn" id="c5r7b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r7b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r7b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r8">
+                                <button class="boleto-btn" id="c5r8b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r8b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r8b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r9">
+                                <button class="boleto-btn" id="c5r9b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r9b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r9b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r10">
+                                <button class="boleto-btn" id="c5r10b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r10b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r10b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r11">
+                                <button class="boleto-btn" id="c5r11b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r11b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r11b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r12">
+                                <button class="boleto-btn" id="c5r12b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r12b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r12b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r13">
+                                <button class="boleto-btn" id="c5r13b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r13b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r13b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c5r14">
+                                <button class="boleto-btn" id="c5r14b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c5r14b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c5r14b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BLOQUE 6 -->
+                    <div class="carrusel" id="c6">
+                        <div class="bloque">
+                            <strong>Bloque 6</strong>
+                            <button class="ico-papelera" id="6" onclick="borrarCarrusel(this.id)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="resultados-carrusel">
+                            <div class="resultado par" id="c6r1">
+                                <button class="boleto-btn" id="c6r1b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r1b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r1b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r2">
+                                <button class="boleto-btn" id="c6r2b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r2b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r2b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r3">
+                                <button class="boleto-btn" id="c6r3b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r3b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r3b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r4">
+                                <button class="boleto-btn" id="c6r4b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r4b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r4b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r5">
+                                <button class="boleto-btn" id="c6r5b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r5b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r5b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r6">
+                                <button class="boleto-btn" id="c6r6b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r6b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r6b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r7">
+                                <button class="boleto-btn" id="c6r7b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r7b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r7b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r8">
+                                <button class="boleto-btn" id="c6r8b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r8b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r8b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r9">
+                                <button class="boleto-btn" id="c6r9b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r9b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r9b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r10">
+                                <button class="boleto-btn" id="c6r10b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r10b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r10b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r11">
+                                <button class="boleto-btn" id="c6r11b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r11b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r11b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r12">
+                                <button class="boleto-btn" id="c6r12b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r12b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r12b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r13">
+                                <button class="boleto-btn" id="c6r13b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r13b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r13b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c6r14">
+                                <button class="boleto-btn" id="c6r14b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c6r14b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c6r14b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BLOQUE 7 -->
+                    <div class="carrusel" id="c7">
+                        <div class="bloque">
+                            <strong>Bloque 7</strong>
+                            <button class="ico-papelera" id="7" onclick="borrarCarrusel(this.id)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="resultados-carrusel">
+                            <div class="resultado" id="c7r1">
+                                <button class="boleto-btn" id="c7r1b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r1b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r1b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r2">
+                                <button class="boleto-btn" id="c7r2b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r2b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r2b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r3">
+                                <button class="boleto-btn" id="c7r3b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r3b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r3b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r4">
+                                <button class="boleto-btn" id="c7r4b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r4b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r4b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r5">
+                                <button class="boleto-btn" id="c7r5b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r5b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r5b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r6">
+                                <button class="boleto-btn" id="c7r6b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r6b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r6b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r7">
+                                <button class="boleto-btn" id="c7r7b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r7b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r7b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r8">
+                                <button class="boleto-btn" id="c7r8b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r8b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r8b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r9">
+                                <button class="boleto-btn" id="c7r9b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r9b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r9b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r10">
+                                <button class="boleto-btn" id="c7r10b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r10b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r10b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r11">
+                                <button class="boleto-btn" id="c7r11b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r11b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r11b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r12">
+                                <button class="boleto-btn" id="c7r12b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r12b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r12b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r13">
+                                <button class="boleto-btn" id="c7r13b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r13b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r13b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado" id="c7r14">
+                                <button class="boleto-btn" id="c7r14b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c7r14b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c7r14b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BLOQUE 8 -->
+                    <div class="carrusel" id="c8">
+                        <div class="bloque">
+                            <strong>Bloque 8</strong>
+                            <button class="ico-papelera" id="8" onclick="borrarCarrusel(this.id)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="resultados-carrusel">
+                            <div class="resultado par" id="c8r1">
+                                <button class="boleto-btn" id="c8r1b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r1b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r1b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r2">
+                                <button class="boleto-btn" id="c8r2b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r2b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r2b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r3">
+                                <button class="boleto-btn" id="c8r3b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r3b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r3b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r4">
+                                <button class="boleto-btn" id="c8r4b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r4b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r4b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r5">
+                                <button class="boleto-btn" id="c8r5b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r5b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r5b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r6">
+                                <button class="boleto-btn" id="c8r6b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r6b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r6b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r7">
+                                <button class="boleto-btn" id="c8r7b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r7b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r7b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r8">
+                                <button class="boleto-btn" id="c8r8b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r8b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r8b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r9">
+                                <button class="boleto-btn" id="c8r9b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r9b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r9b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r10">
+                                <button class="boleto-btn" id="c8r10b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r10b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r10b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r11">
+                                <button class="boleto-btn" id="c8r11b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r11b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r11b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r12">
+                                <button class="boleto-btn" id="c8r12b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r12b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r12b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r13">
+                                <button class="boleto-btn" id="c8r13b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r13b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r13b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                            <div class="resultado par" id="c8r14">
+                                <button class="boleto-btn" id="c8r14b1" onclick="controlarBoton(this.id)"
+                                    value="1">1</button>
+                                <button class="boleto-btn" id="c8r14b2" onclick="controlarBoton(this.id)"
+                                    value="0">X</button>
+                                <button class="boleto-btn" id="c8r14b3" onclick="controlarBoton(this.id)"
+                                    value="2">2</button>
+                            </div>
+                        </div>
+
+                    </div>
+
 
                 </div>
-            </div>
-            <div class="resultados-container">
-                <div class="carrusel" id="carrusel1">
-                    <div class="bloque">
-                        <strong>Bloque 1</strong>
-                        <button class="ico-papelera" id="1" onclick="borrarCarrusel(this.id)"><i class="fa fa-trash"></i></button>
-                    </div>
-                    <div class="resultados-carrusel">
-                        <div class="resultado" id="r1">
-                            <button class="boleto-btn" id="b1" onclick="controlarBoton(this.id)">1</button>
-                            <button class="boleto-btn" id="b2" onclick="controlarBoton(this.id)">X</button>
-                            <button class="boleto-btn" id="b3" onclick="controlarBoton(this.id)">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                        <div class="resultado" id="row1">
-                            <button class="boleto-btn">1</button>
-                            <button class="boleto-btn">X</button>
-                            <button class="boleto-btn">2</button>
-                        </div>
-                    </div>
 
+            </div>
+            <div class="reintegro-wrapper">
+                <div class="partidos-container">
+                    <div class="partido">
+                        <strong>15.</strong>
+                        <div class="titulo-partido">
+                            Getafe-Espanyol
+                        </div>
+                    </div>
                 </div>
+                <div class="reintegro-container">
+                    <div class="reintegro-carrusel">
+                        <div class="resultado" id="c15r1">
+                            <button class="boleto-btn" id="c15r1b1" onclick="controlarBoton(this.id)"
+                                value="0">0</button>
+                            <button class="boleto-btn" id="c15r1b2" onclick="controlarBoton(this.id)"
+                                value="1">1</button>
+                            <button class="boleto-btn" id="c15r1b3" onclick="controlarBoton(this.id)"
+                                value="2">2</button>
+                            <button class="boleto-btn" id="c15r1b4" onclick="controlarBoton(this.id)"
+                                value="3">M</button>
+                        </div>
+                        <div class="resultado" id="c15r2">
+                            <button class="boleto-btn" id="c15r2b1" onclick="controlarBoton(this.id)"
+                                value="0">0</button>
+                            <button class="boleto-btn" id="c15r2b2" onclick="controlarBoton(this.id)"
+                                value="1">1</button>
+                            <button class="boleto-btn" id="c15r2b3" onclick="controlarBoton(this.id)"
+                                value="2">2</button>
+                            <button class="boleto-btn" id="c15r2b4" onclick="controlarBoton(this.id)"
+                                value="3">M</button>
+                        </div>
 
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="display" id="display" >
+            <h4>Tu resultado: </h4>
+
+        </div>
+
+        <div class="controles">
+            <button class="boton-confirma-apuesta" onclick="jugar();" style="place-self: center;">CONFIRMA TU
+                APUESTA</button>
         </div>
 
     </main>
 
-    <div class="controles">
-        <button class="btn" onclick="jugar();">JUGAR</button>
-    </div>
+
 
     <footer>
         <h3>DAW | Entorno Cliente</h3>

@@ -7,19 +7,14 @@
     --gris: #4f4f4f;
     --rojo-claro: #f7dddd;
 
+    --rojo1: #ff6873;
+    --rojo2: #e37c80;
+    --rojo3: #e44441;
+    --rojo4: #de1e1a;
+    --rojo5: #cb1517;
+    --rojo6: #bf0811;
+    --rojo7: #e30613b3;
 
-
-    --50: #f8f7f8;
-    --100: #f3f0f3;
-    --200: #e9e1e9;
-    --300: #d8c9d6;
-    --400: #bea8bc;
-    --500: #a88ca4;
-    --600: #91718a;
-    --700: #795d73;
-    --800: #664e60;
-    --900: #4b3b47;
-    --950: #32252f;
 }
 
 
@@ -38,8 +33,22 @@
     background-color: none;
 }
 
-main {
-    background-color: #f2f2f2;
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:fit-content ;
+    margin-bottom: 2rem;
+    place-self: center;
 
 }
 
@@ -74,10 +83,11 @@ main {
     margin-bottom: 5px;
     align-items: center;
     padding: 2px 5px;
+    height: 25px;
 }
 
 .partido:nth-child(even) {
-    background-color: var(--rojo-claro);
+    background-color: rgba(227, 6, 19, 0.05);
 }
 
 .partido strong {
@@ -94,6 +104,11 @@ main {
     white-space: nowrap;
     overflow: hidden;
 
+}
+
+.resultados-container {
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -115,7 +130,6 @@ main {
     margin: 1rem 1rem;
 
 }
-
 .resultado {
     display: flex;
     flex-direction: row;
@@ -135,7 +149,66 @@ main {
 }
 
 .seleccionado {
-    background-color: var(--rojo);
+    background-color: var(--rojo4) !important;
     border: 1px solid black;
     color: black;
+}
+
+.par button {
+    background-color: rgba(227, 6, 19, 0.05);
+}
+
+.controles {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* ESTILOS PARA BOTONES QUINIELA */
+.boton-quiniela {
+    font-size: .9rem;
+    font-weight: normal;
+    padding: 10px;
+    border: solid 1px var(--rojo4);
+    background-color: #fff;
+    color: var(--rojo4);
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.boton-quiniela:active {
+    color: #fff;
+    background-color: var(--rojo4);
+}
+
+/* ESTILOS PARA EL REINTEGRO */
+.reintegro-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 1rem 0;
+    background-color: rgba(227, 6, 19, 0.05);
+}
+
+.reintegros-container {
+    margin: 0 2rem 0 1rem;
+}
+
+.display {
+    display: none;
+    flex-direction: column;
+    place-self: center;
+    text-align: start;
+    padding: 2rem;
+    border: 2px solid var(--rojo4);
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.display h4 {
+    color: var(--rojo4);
 }
