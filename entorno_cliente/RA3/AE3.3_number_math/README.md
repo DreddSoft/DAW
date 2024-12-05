@@ -23,6 +23,7 @@ A continuación, se muestra una captura de la aplicación web https://juegos.lot
 
 ![Ejemplo de juegos de loterias y apuestas del estado](image.png)
 
+
 ### Ejercicio 2.
 Realiza una aplicación web que simule el comportamiento del juego de La Quiniela propiedad de Loterías y Apuestas del Estado.
 
