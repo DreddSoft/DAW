@@ -44,7 +44,7 @@ function jugar() {
 
     // Variables
     let resultadoPartidosGanador = [1, 0, 0, 1, 2, 2, 0, 1, 0, 2, 2, 1, 0, 0];
-    let pleno15Ganador = 0;
+    let pleno15Ganador = [2,0];
     let apuestas = [];
     let reintegros = [];
     let premioTotal = 0;
@@ -56,6 +56,7 @@ function jugar() {
     // Capturar las apuestas por el reintegro
     reintegros = apuestaPorElReintegro();
 
+    // Con un bucle recorremos todos los bloques de apuestas
     for (let i = 0; i < apuestas.length; i++) {
 
         // Calculamos los aciertos por apuesta (por tirada)
@@ -88,7 +89,7 @@ function jugar() {
 // Funcion para recuperar las apuestas del usuario
 function apuestasDelUsuario() {
 
-    // capturamos el numero de carruseles
+    // capturamos todos los carruseles
     const divCarruseles = document.querySelectorAll("div.carrusel");
     let numCarruseles = 0;
     let apuestas = [];
@@ -96,6 +97,7 @@ function apuestasDelUsuario() {
     // Contador de carruseles manual
     for (let i = 0; i < divCarruseles.length; i++) {
 
+        // si el carrusel tiene un display diferente de none aumentamos contador 
         if (divCarruseles[i].style.display != "none") {
             numCarruseles++;
         }
@@ -112,7 +114,8 @@ function apuestasDelUsuario() {
             let fila = document.querySelector(`#c${j}r${i}`);
             let valor = fila.querySelector(".seleccionado").value;
 
-            console.log(valor);
+            // console.log(valor);
+            // Guardamos el valor seleccionado en el array de apuestas
             apuestas[j - 1].push(valor);
         }
     }
@@ -229,12 +232,20 @@ function cuantosAciertos(resultadoPartidosGanador, apuesta, pleno15Ganador, rein
 
     }
 
+    let aciertoReintegro = 0;
+
+    // Con un for recorremos la apuestas del usuario y las correctas
     for (let j = 0; j < reintegro.length; j++) {
 
-        if (reintegro[j] == pleno15Ganador) {
-            aciertos++;
+        // Si el reintegro del usuario coincide con el pleno ganador aumentamos el aciertoReintegro
+        if (reintegro[j] == pleno15Ganador[j]) {
+            aciertoReintegro++;
         }
+    }
 
+    // Si se cumple que aciertoReintegro = 2 (el usuario ha acertado el reintegro) aumentamos un acierto
+    if (aciertoReintegro == 2) {
+        aciertos++;
     }
 
     return aciertos;
