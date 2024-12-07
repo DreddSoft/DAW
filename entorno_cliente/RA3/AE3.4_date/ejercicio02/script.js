@@ -68,23 +68,32 @@ function mostrarResultado() {
     // Pedimos la 1ra fecha
     let fecha1 = introduceFecha();
 
-    // Convertimos la fecha
-    fecha1 = convertirToFecha(fecha1);
-
     // Pedimos la 2da fecha
     let fecha2 = introduceFecha();
 
-    // convertimos la fecha
-    fecha2 = convertirToFecha(fecha2);
+
+    let mensajeEntrada = `${fecha1.toLocaleString("es-ES")}<br>${fecha2.toLocaleString("es-ES")}`;
 
 
-    alert(fecha1);
+    // console.log(`Obtener el anno: ${prueba.getFullYear()}`);
+    // console.log(`Obtener el mes: ${prueba.getMonth()}`);
+    // console.log(`Obtener el dia: ${prueba.getDate()}`);
 
-    alert(fecha2);
+    // console.log(`Obtener la hora: ${prueba.getHours()}`);
+    // console.log(`Obtener los minutos: ${prueba.getMinutes()}`);
+    // console.log(`Obtener los segundos: ${prueba.getSeconds()}`);
+
+
+    //TODO: Aqui hay que usar una funcion que devuelva un string con la diferencia en 
+    let mensaje = diferenciaEntreDosFechas(fecha1, fecha2);
+
+    // let diff = prueba - prueba2;
+    // diffFecha = new Date(diff);
+    //alert(fecha1.toLocaleString("es-ES"));
 
     // Impresion
-    //impresion(mensajeEntrada, mensaje);
-    
+    impresion(mensajeEntrada, mensaje);
+
 }
 
 // Funcion introducir fehca
@@ -98,11 +107,19 @@ function introduceFecha() {
 
     // Si no cumple el formato, volvemos a repetir la funcion
     if (!REGEX.test(fecha)) {
+        alert("Formato de fecha incorrecto");
         return introduceFecha();
     }
 
-    return fecha;
-    
+    let fechaTipoDate;
+
+    if (!(fechaTipoDate = convertirToFecha(fecha))) {
+        alert("Fecha de tipo incorrecto.");
+        return introduceFecha();
+    }
+
+    return fechaTipoDate;
+
 }
 
 // Funcion convertir string en fecha
@@ -114,12 +131,129 @@ function convertirToFecha(fechaString) {
     // Separamos las partes de la fecha por la barra
     let fechaPartes = partes[0].split("/");
 
+    // Lo dividimos en variables para que sea mas comprensible
+    let anno = parseInt(fechaPartes[0]);
+    let mes = parseInt(fechaPartes[1]);
+    let dia = parseInt(fechaPartes[2]);
+
     // Separamos las partes de la hora por los :
     let horaPartes = partes[1].split(":");
 
+    // Dividimos las horas para que sea mas comprensible
+    let hora = parseInt(horaPartes[0]);
+    let min = parseInt(horaPartes[1]);
+    let seg = parseInt(horaPartes[2]);
+
+    // Controlamos que la fecha es valida
+    if (!controlarPartesDeFecha(anno, mes, dia)) {
+        return false;
+    }
+
+    // Controlamos las partes de la hora
+    if (!controlarPartesDeHora(hora, min, seg)) {
+        return false;
+    }
+
     // Devolvemos un constructor de fecha con todos los parametros
-    return new Date(fechaPartes[0], fechaPartes[1], fechaPartes[2], horaPartes[0], horaPartes[1], horaPartes[2]);
+    return new Date(anno, mes - 1, dia, hora, min, seg);
+
+}
+
+// funcion para controlar partesDeFecha
+function controlarPartesDeFecha(anno, mes, dia) {
+
+    // Controlamos que no introduzca un mes mas grande que 12 o menor 0
+    if (mes <= 0 || mes > 12) {
+        return false;
+    }
+
+    // controlamos si es anio bisiesto
+    if ((anno % 4 == 0 && anno % 100 != 0) || (anno % 4 == 0 && anno % 100 == 0 && anno % 400 == 0)) {
+
+        // y el mes es febrero
+        if (mes == 2) {
+            // Que el dia no sea mayor a 29
+            if (dia > 29) {
+                return false;
+            }
+        }
+    } else {    // si no es bisiesto
+        if (mes == 2) { // y es febrero
+            // que dia no sea mayor a 28
+            if (dia > 28) {
+                return false;
+            }
+        }
+    }
+
+    // Arrays
+    let mesesDe30 = [4, 6, 9, 11];
+
+    // si el mes tiene 30 dias
+    if (mesesDe30.includes(mes) && (dia < 0 || dia > 30)) {
+        return false;
+
+    } else {    // cualquier otro mes
+        if (dia < 0 || dia > 31) {
+            return false;
+        }
+    }
+
+    // Cualquier otra cosa 
+    return true;
+
+}
+
+// Funcion para controlar partesDeHora
+function controlarPartesDeHora(hora, min, seg) {
+
+    if (hora < 0 || hora > 24) {
+        return false;
+    }
+
+    if (min < 0 || min > 60) {
+        return false;
+    }
+
+    if (seg < 0 || seg > 60) {
+        return false;
+    }
+
+    return true;
+
+}
+
+// Diferencia entre dos fechas
+function diferenciaEntreDosFechas(fecha1, fecha2) {
+
+
+    // La resta de una fecha en otro devuelve el resultado en milisegundos de la diferencia
+    // Math.abs para devolver el valor absoluto
+    let diffMS = Math.abs(fecha1 - fecha2);
+
+    // los dias
+    // Pasamos los milisegundos a dias 
+    let temp = diffMS / (1000 * 60 * 60 * 24);
+    let dias = Math.floor(temp); 
+    temp = temp - dias;
     
+    // Horas
+    // El restante en temp lo pasamos a horas
+    temp = temp * 24;
+    let horas = Math.floor(temp);
+    temp = temp - horas;
+
+    // Minutos
+    temp = temp * 60;
+    let minutos = Math.floor(temp);
+    temp = temp - minutos;
+    
+    // Segundos
+    temp = temp * 60;
+    let segundos = Math.round(temp);
+
+    return `entre ambas fechas han transcurrido ${dias} dias, ${horas} horas, ${minutos} minutos y ${segundos} segundos.`;
+
 }
 
 // Funcion para impresion
@@ -130,5 +264,5 @@ function impresion(input, mensaje) {
 
     // Insertamos el mensaje en el htm
     tabla.innerHTML += `<tr><td>${input}</td><td>${mensaje}</td></tr>`;
-    
+
 }

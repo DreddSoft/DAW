@@ -152,6 +152,7 @@ th, td {
     border: 1px solid var(--black1);
     min-width: 300px;
     padding: 0.7rem 1rem;
+    text-align: center;
 }
 
 .controles {
