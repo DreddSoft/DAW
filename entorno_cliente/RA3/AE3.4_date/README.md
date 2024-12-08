@@ -47,3 +47,19 @@ Muestra en la parte destinada para tal efecto de la aplicación web la salida de
 | ----------- | ---------- |
 | 01/02/2000  | 29 dias    |
 | 01/12/2024  | 31 dias    |
+
+### Ejercicio 4
+Realiza una aplicación web dónde se solicite por pantalla, mediante una ventana emergente, al usuario una fecha.
+
+Crea una función/método para el objeto Date, denominada getWeek, que devuelva el número de semana para la fecha introducida.
+
+Según la norma ISO 8601, las semanas comienzan en lunes y si el año comienza antes del viernes esa es la semana 1 del año, en caso contrario esa es la última semana del año anterior. Si el año termina antes del jueves esa última semana se cuenta como semana 1 del año siguiente.
+
+Muestra en la parte destinada para tal efecto de la aplicación web la salida de la función anterior.
+
+**Ejemplo:**
+
+| **ENTRADA** | **SALIDA**                                                                                    |
+| ----------- | --------------------------------------------------------------------------------------------- |
+| 12/09/2024  | El número de semana para la fecha introducida es 37                                           |
+| 01/01/2023  | El número de semana para la fecha introducida es 52 (ya que corresponde a la semana anterior) |
