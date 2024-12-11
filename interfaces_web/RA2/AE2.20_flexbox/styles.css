@@ -1,138 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
 
-    --base-color-50: #fdf3f3;
-    --base-color-100: #fbe9e8;
-    --base-color-200: #f7d4d5;
-    --base-color-300: #f0b1b4;
-    --base-color-400: #e7858b;
-    --base-color-500: #da5964;
-    --base-color-600: #c5394c;
-    --base-color-700: #a52b3f;
-    --base-color-800: #8b2639;
-    --base-color-900: #772437;
-    --base-color-950: #49111c;
+    --main-color: #050C2B;
+    --dark-main: #232F64;
+    --light-main: #586395;
+    --lighter-main: #A1ABD8;
+
+    --bg-white: #f1f1f1;
+
+    --dark1: #111116;
+    --dark2: #393949;
+    --dark3: #6D6D8D;
+    --dark4: #A1ABD8;
+
+    --light1: #A1ABD8;
+    --light2: #C1C7E1;
+    --light3: #E2E3E7;
+    --light4: #F2F2F2;
+
+    --error-1: #FF1B1C;
+    --error-2: #FF1B1C;
+    --error-3: #FF8687;
+    --error-4: #FFC2C2;
+
+    --warning-1: #CCA43B;
+    --warning-2: #E7C875;
+    --warning-3: #EBDAAE;
+    --warning-4: #FFF6DF;
+
+    --info-1: #050C2B;
+    --info-2: #232F64;
+    --info-3: #586395;
+    --info-4: #A1ABD8;
+
+    --exito-1: #285943;
+    --exito-2: #47906F;
+    --exito-3: #67CC9E;
+    --exito-4: #93FFCE;
+
 }
 
 body {
     margin: 0;
     box-sizing: border-box;
-    background-color: var(--base-color-50);
-    font-family:Arial, Helvetica, sans-serif;
-    display: grid;
-    grid-row: ;
+    padding: 0;
+    background-color: var(--bg-white);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ESTILOS PARA LOS Hs */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 48px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* ESTILOS PARA EL header */
+/* Para dispositivos de escritorio, la aplicación web tendrá un encabezado que tenga un elemento a la izquierda (logo corporativo) y otro a la derecha (menú de navegación). */
+
+header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.upper {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: transparent;
+    transition: background-color 0.3s;
 
 }
 
-/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
 
+.upper.scrolled {
+    background-color: var(--dark1);
+}
 
-/* ESTILOS REQUERIDOS PARA EL EJERCICIO */
+.upper-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
 
+.upper-left a {
+    border-bottom: 1px solid transparent;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--dark1);
+    letter-spacing: 1px;
+    transition: 300ms;
 
+}
 
-/* ESTILOS PARA EL HEADER PERSONALIZADO */
-header {
+.upper-left a:hover {
+    border-bottom: 1px solid var(--dark1);
+}
+
+#logo {
+    width: 225px;
+}
+
+.upper-right {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0 0.5rem 0;
-    background-color: var(--base-color-900);
-    color: var(--base-color-50);
-    gap: 2rem;
-
+    padding: 0 10px;
+    gap: 20px;
 }
 
-header a {
-    border: 2px solid white;
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
-    padding: 25px;
-    border-radius: 50px;
+nav {
+    display: flex;
+    gap: 5px;
+}
+
+nav a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    cursor: pointer;
     text-decoration: none;
+    padding: 10px 20px;
+    color: var(--dark1);
+    border-radius: 8px;
+    transition: 400ms;
+    letter-spacing: 1px;
 }
 
-nav ul {
-    list-style: none;
+nav a:hover {
+    background-color: rgba(161, 171, 216, 0.1);
+
+}
+
+.activo {
+    font-weight: 700;
+}
+
+.search-container {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
 }
 
-nav ul li a {
-    color: white;
+.search-icon {
+    cursor: pointer;
+}
+
+.search-icon:active {
+    transform: translateY(4px);
+
+}
+
+.search-input {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    font-weight: 300;
-    border-radius: 0px;
-    border: none;
-    border-bottom: 1px solid transparent;
-    padding: 20px;
-}
-
-nav ul li a:hover {
-    background-color: grey;
-    color: black;
-    border-bottom: 1px solid black;
-}
-
-header h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 32px;
     text-align: center;
-    color: var(--base-color-50);
+    padding: 10px 20px;
+    border: 1px solid var(--dark3);
+    border-radius: 6px;
 }
 
-/* ESTILOS PARA EL HEADER PERSONALIZADO */
+.hidden {
+    display: none;
+}
 
+.show {
+    display: block;
+}
 
-/* ESTILOS PARA EL FOOTER PERSONALIZADO */
-footer {
-
+.lower {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.bg-dark {
+    background-color: var(--dark-main);
+    color: white;
+}
+
+/* ESTILOS PARA EL CALL TO ACTION */
+.carrusel {
+    position: relative;
     width: 100%;
-    bottom: 0;
-    background-color: var(--base-color-950);
-    padding: 1rem 0;
+    height: 80vh;
+    overflow: hidden;
 }
 
-footer h3 {
+.slider-box {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
 
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 28px;
+.slide {
+    display: flex;
+    flex: auto;
+    background-image: url("./assets/plato1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.cta {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     text-align: center;
-    color: var(--base-color-50);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.);
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+
+    /* Para dispositivos móviles, la aplicación web tendrá un encabezado que tenga un elemento arriba (logo corporativo) y otro abajo (menú de navegación). Ambos elementos deben encontrarse centrados. */
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .upper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        justify-content: space-between;
+
+    }
+
+    .upper-left {
+        gap: 0;
+    }
+
+    .upper-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 15px 0;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--dark-main);
+        color: white;
+    }
+
 
 }
 
-footer a {
 
-    text-decoration: none;
-    color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-bottom: 1px solid transparent;
-    font-size: 14px;
-    transition: 0.3s;
-    padding: 5px;
 
-}
-
-footer a:hover {
-    color: var(--base-color-100);
-    border-bottom: 1px solid #f2f2f2;
-    text-shadow: #f2f2f2 1px 0 10px;
-    transform: scaleX(110%);
-
-}
-
-/* ESTILOS PARA EL FOOTER PERSONALIZADO */
 
 /*
 * Author: @Dreddsoft
-* Exercise: AE2.17 - usos del Media Queries
-* Date: 02/12/2024
+* Exercise: AE2.20 - Web Kiosco Fernando FLEXBOX
+* Date: 11/12/2024
 * Version: 1.0
 */
