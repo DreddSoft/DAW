@@ -5,11 +5,16 @@ const enlaces = document.querySelectorAll(".nav-link");
 const iconoSearch = document.querySelector("#search-icon");
 const inputSearch = document.querySelector("#search-input");
 
-// Nuestra url
-const pathActual = window.location.pathname.split("/").pop();
+// Capturar boton esp
+const esp = document.querySelector("#esp");
 
-// Aplicar el estilo activo al que este en ese mometo
+// Nuestra url
+let pathActual = window.location.pathname.split("/").pop();
+
+//* Aplicar el estilo activo al que este en ese mometo
 enlaces.forEach(link => {
+
+
 
     // Si coincide el atirbuto href con el path actyual
     if (link.getAttribute('href') == pathActual) {
@@ -23,6 +28,15 @@ enlaces.forEach(link => {
 
 
 });
+
+//* Para el año de copyright
+// Cogemos el texto del copy
+let textoCopy = document.querySelector(".derechos");
+
+// Sacamos la fecha de hoy
+let fecha = new Date();
+
+textoCopy.innerHTML += ` ${fecha.getFullYear()}`;
 
 // eventos
 document.querySelector("#search-icon").addEventListener('click', () => {
@@ -43,6 +57,13 @@ document.querySelector(".upper").addEventListener('scroll', () => {
     } else {
         document.querySelector(".upper").classList.remove("bg-dark");
     }
+
+});
+
+esp.addEventListener('click', () => {
+
+    console.log("ENTRA");
+    window.location.href = "idioma.html";
 
 });
 

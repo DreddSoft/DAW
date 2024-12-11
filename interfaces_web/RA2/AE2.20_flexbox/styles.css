@@ -94,14 +94,10 @@ header {
     justify-content: space-between;
     padding: 10px 20px;
     background-color: transparent;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 
 }
 
-
-.upper.scrolled {
-    background-color: var(--dark1);
-}
 
 .upper-left {
     display: flex;
@@ -110,7 +106,7 @@ header {
     gap: 20px;
 }
 
-.upper-left a {
+.url {
     border-bottom: 1px solid transparent;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -122,7 +118,7 @@ header {
 
 }
 
-.upper-left a:hover {
+.url:hover {
     border-bottom: 1px solid var(--dark1);
 }
 
@@ -213,23 +209,24 @@ nav a:hover {
 }
 
 /* ESTILOS PARA EL CALL TO ACTION */
-.carrusel {
+.cta-wrapper {
     position: relative;
     width: 100%;
     height: 80vh;
     overflow: hidden;
 }
 
-.slider-box {
+.gif-box {
     display: flex;
     width: 100%;
     height: 100%;
+    z-index: 0;
 }
 
-.slide {
+.gif {
     display: flex;
     flex: auto;
-    background-image: url("./assets/plato1.jpg");
+    background-image: url("./assets/nuestras-recetas-salgado.gif");
     background-size: cover;
     background-position: center;
 }
@@ -245,11 +242,156 @@ nav a:hover {
     text-align: center;
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.);
-    background: rgba(0, 0, 0, 0.2);
-    width: 100%;
-    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4rem;
+    border-radius: 5px;
+    /* width: 100%;
+    height: 100%; */
     justify-content: center;
     align-items: center;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btns button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--light4);
+    background-color: var(--main-color);
+    text-align: center;
+    border: 1px solid var(--main-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 350ms;
+}
+
+.btns button:hover {
+    background-color: var(--light4);
+    color: var(--main-color);
+}
+
+.btns button:active {
+    transform: translateY(4px);
+}
+
+.btns button img {
+    width: 25px;
+}
+
+
+/* ESTILOS PARA EL MAIN DE IDIOMA.HTML */
+main {
+    margin: 3rem 0;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.bloque {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.bloque a img {
+    height: 200px;
+    width: 150px;
+}
+
+
+
+/* el svg tendra hover y puntero personalizado */
+
+
+
+/* ESTILOS PARA EL FOOTER */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: var(--dark-main);
+
+}
+
+.foo_title a {
+    display: block;
+    padding: 0.7rem 1.2rem;
+    color: var(--light4);
+    /* Fuentes */
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-bottom: 2px solid var(--light4);
+    transition: 350ms;
+}
+
+.foo_title a:hover {
+    transform: scaleX(1.2);
+}
+
+.copyright span {
+    font-size: 16px;
+    color: var(--light4);
+}
+
+.copyright span a {
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: var(--light3);
+    text-decoration: none;
+    transition: 350ms;
+    padding: 0 5px;
+    border-bottom: 1px solid transparent;
+}
+
+.copyright span a:hover {
+    color: var(--warning-1);
+    text-shadow: 0 0 2px var(--light4);
+    border-color: var(--warning-1);
+
+}
+
+.rrss ul li {
+    list-style: none;
+
+}
+
+.rrss ul li a {
+    display: block;
+    color: var(--light4);
+    text-decoration: none;
+    padding: 10px;
+    transition: 400ms;
+}
+
+.rrss ul li a:hover {
+    text-shadow: 0 0 2px var(--light4);
+    color: var(--warning-2);
 }
 
 /* Estilos para dispositivos móviles */
@@ -270,6 +412,8 @@ nav a:hover {
         align-items: center;
         padding: 5px;
         justify-content: space-between;
+        position: initial;
+        background-color: transparent;
 
     }
 
@@ -301,6 +445,13 @@ nav a:hover {
         align-items: center;
         background-color: var(--dark-main);
         color: white;
+    }
+
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
 
