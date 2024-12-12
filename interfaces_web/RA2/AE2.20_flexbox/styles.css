@@ -259,7 +259,7 @@ nav a:hover {
     gap: 1rem;
 }
 
-.btns button {
+.boton-1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -278,17 +278,45 @@ nav a:hover {
     transition: 350ms;
 }
 
-.btns button:hover {
+.boton-1:hover {
     background-color: var(--light4);
     color: var(--main-color);
 }
 
-.btns button:active {
+.boton-1:active {
     transform: translateY(4px);
 }
 
-.btns button img {
+.boton-1 img {
     width: 25px;
+}
+
+.boton-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--main-color);
+    background-color: var(--light4);
+    text-align: center;
+    border: 1px solid var(--main-color);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px var(--dark2);
+    transition: 350ms ease-in-out;
+}
+.boton-2:hover {
+    background-color: var(--main-color);
+    color: var(--light4);
+}
+
+.boton-2:active {
+    transform: translateY(4px);
 }
 
 
@@ -300,29 +328,289 @@ main {
 .contenedor {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    padding: 2rem 0;
 }
 
 
 .bloque {
     display: flex;
     flex-direction: column;
+    width: 200px;
+    height: 250px;
     gap: 1rem;
 
 }
 
-.bloque a img {
+.bloque a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloque a svg {
     height: 200px;
     width: 150px;
+    fill: var(--info-1);
+    transition: 300ms ease-in-out;
+}
+
+.bloque a svg:hover {
+    fill: var(--exito-1);
+}
+
+.otro_enlace {
+    text-decoration: none;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    color: var(--info-2);
+}
+
+/* Cursores personalizados */
+#contacto {
+    cursor: url("./assets/icon-telf.svg"), pointer;
+}
+
+#menu {
+    cursor: url("./assets/icon-menu.svg"), pointer;
+}
+
+#vinos {
+    cursor: url("./assets/icon-vino.svg"), pointer;
+}
+
+/* ESTILOS PARA LOS PLATOS DEL MENU */
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    border-top: 2px solid var(--info-2);
+    color: var(--info-1);
+}
+
+section:nth-child(odd) {
+    background-color: var(--info-3);
+    color: white;
+
+}
+
+.section-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.plato {
+    /* width: 300px; */
+    padding: 10px 0;
+    border: 2px solid var(--dark-main);
+    background-color: var(--bg-white);
+    border-radius: 6px;
+    display: flex;
+    flex: 0 0 24%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    transition: 450ms;
+
+}
+
+.plato:hover {
+    transform: scale(1.1);
+}
+
+.plato label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark1);
+    text-decoration: underline;
+}
+
+.plato small {
+    font-size: 12px;
+    color: var(--error-1);
+
+}
+
+.plato img {
+    width: 250px;
 }
 
 
+/* ESTILOS PARA VINOS */
+.vino {
+    /* width: 300px; */
+    padding: 10px 0;
+    border: 2px solid var(--dark-main);
+    background-color: var(--bg-white);
+    border-radius: 6px;
+    display: flex;
+    flex: 0 0 32%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    transition: 450ms;
 
-/* el svg tendra hover y puntero personalizado */
+}
+
+.vino img {
+    width: 250px;
+}
+
+.vino p {
+    color: var(--info-1);
+
+}
 
 
+/* ESTILOS PARA EL MAPA Y FORMULARIO */
+.mapa-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mapa-title {
+    background-color: var(--info-2);
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.mapa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(88, 99, 149, 0.3);
+    padding: 2rem 0;
+}
+
+.mapa iframe {
+    border: 1px solid var(--dark-main);
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px var(--dark3);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+form {
+    border: 2px solid var(--dark-main);
+    background-color: var(--info-4);
+    border-radius: 9px;
+    padding: 1rem 1.3rem;
+}
+
+form h3 {
+    color: var(--light4);
+}
+
+.barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--dark2);
+    background-color: rgb(197, 197, 197);
+    padding: 1rem 0;
+}
+
+.sitios {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--light2);
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--light4);
+    transition: background-color 0.3s, border-color 0.3s;
+
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--exito-2);
+    border-color: var(--exito-1);
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    margin: 1rem 0;
+    border: 1px solid var(--dark3);
+    border-radius: 5px;
+    /* width: 100%; */
+}
+
+legend {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--info-2);
+    padding: 0 10px;
+}
+
+fieldset input {
+    text-align: start;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0.7rem 1.3rem 0.7rem 2rem;
+    border: 1px solid var(--info-2);
+    width: 60%;
+    border-radius: 8px;
+    transition: 0.4s ease-in-out;
+
+}
+
+fieldset input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--dark2);
+}
+
+fieldset input:focus {
+    width: 80%;
+    box-shadow: 0 0 2px 3px var(--light-main);
+}
 
 /* ESTILOS PARA EL FOOTER */
 footer {

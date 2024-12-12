@@ -18,20 +18,20 @@
       <div class="upper-left">
         <!-- ● El logo corporativo dirigirá a la página principal cada vez que se pulse. -->
         <a href="index.html"><img src="./assets/logo_kiosco_fernando.png" alt="Logo del Kiosco Fernando" id="logo"></a>
-        <a href="#">www.kioscofernando.com</a>
+        <a href="#" class="url">www.kioscofernando.com</a>
       </div>
       <div class="upper-right">
         <nav>
           <!-- Cada uno de los elementos del menú de navegación dirigirá a la página a la que hacen referencia.  -->
           <a class="nav-link" href="index.html">Inicio</a>
-          <a class="nav-link" href="#">Reservas y Contacto</a>
-          <a class="nav-link" href="#">Menú</a>
-          <a class="nav-link" href="#">Carta Vinos</a>
+          <a class="nav-link" href="reservasContacto.html">Reservas y Contacto</a>
+          <a class="nav-link" href="menu.html">Menú</a>
+          <a class="nav-link" href="vinos.html">Carta Vinos</a>
         </nav>
         <div class="search-container">
           <input type="text" class="search-input hidden" id="search-input" placeholder="Buscar...">
           <span class="material-icons search-icon" id="search-icon">search</span>
-        </div>    
+        </div>
       </div>
     </div>
     <div class="lower">
@@ -42,11 +42,64 @@
   </header>
   <main>
 
+    <div class="mapa-container">
+      <div class="mapa-title">
+        <h2>Ubicación de nuestro restaurante</h2>
+      </div>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1598.6834798600485!2d-3.990118!3d36.737762!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72398abb3f7737%3A0x318c8c3c56229057!2sKiosco%20Fernando!5e0!3m2!1ses!2ses!4v1733992797005!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    
+    <div class="form-container">
+      <form action="">
+        <h3>Formulario de reserva</h3>
+        <div class="barra-container">
+          <div class="barra">
+            <label for="">Barra</label>
+          </div>
+          <div class="sitios">
+            <input type="checkbox" name="sitio" id="s1">
+            <input type="checkbox" name="sitio" id="s2">
+            <input type="checkbox" name="sitio" id="s3">
+            <input type="checkbox" name="sitio" id="s4">
+            <input type="checkbox" name="sitio" id="s5">
+            <input type="checkbox" name="sitio" id="s6">
+            <input type="checkbox" name="sitio" id="s7">
+            <input type="checkbox" name="sitio" id="s8">
+          </div>
+        </div>
+        <fieldset>
+          <legend>Datos Personales</legend>
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+          <input type="tel" name="telf" id="telf" placeholder="Teléfono" required>
+          <input type="email" name="mail" id="mail" placeholder="Email" required>
+        </fieldset>
+        <div class="btns">
+          <button type="submit" class="boton-2"><i class="material-icons">send</i></button>
+          <button type="reset" class="boton-2"><i class="material-icons">refresh</i></button>
+        </div>
+      </form>
+    </div>
+
 
   </main>
   <footer>
-    <h3>Diseño de Interfaces Web</h3>
-    <a href="https://github.com/DreddSoft">@Dreddsoft</a>
+
+    <div class="foo_title">
+      <a href="index.html">Kiosco Fernando</a>
+    </div>
+    <div class="copyright">
+      <span class="derechos">Todos los derechos reservados &#169; <a href="https://github.com/DreddSoft"
+          target="_blank">@Dreddsoft</a></span>
+    </div>
+    <div class="rrss">
+      <ul>
+        <li><a href="#"><i class="fa fa-instagram"></i> @kioscof</a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i> @kfernando</a></li>
+        <li><a href="#"><i class="fa fa-facebook"></i> @kioscofernando</a></li>
+      </ul>
+    </div>
   </footer>
   <script src="script.js"></script>
 </body>
