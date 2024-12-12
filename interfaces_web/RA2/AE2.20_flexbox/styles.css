@@ -98,6 +98,16 @@ header {
 
 }
 
+.icon-personalizado-bandera-spain {
+    content: url("assets/spain-country-flag-icon.svg");
+    width: 25px;
+}
+
+.icon-personalizado-bandera-uk {
+    content: url("assets/united-kingdom-flag-icon.svg");
+    width: 25px;
+}
+
 
 .upper-left {
     display: flex;
@@ -322,7 +332,11 @@ nav a:hover {
 
 /* ESTILOS PARA EL MAIN DE IDIOMA.HTML */
 main {
-    margin: 3rem 0;
+    padding:  2rem 0;
+}
+
+.main-vinos {
+    padding: 0;
 }
 
 .contenedor {
@@ -454,6 +468,12 @@ section:nth-child(odd) {
 
 
 /* ESTILOS PARA VINOS */
+.vinos {
+    height: 100%;
+    margin: 0;
+    padding: 3rem 1rem;
+}
+
 .vino {
     /* width: 300px; */
     padding: 10px 0;
@@ -530,6 +550,14 @@ form {
 
 form h3 {
     color: var(--light4);
+}
+
+.barra-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
 }
 
 .barra {

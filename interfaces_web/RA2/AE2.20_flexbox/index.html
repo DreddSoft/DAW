@@ -9,13 +9,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="styles.css">
-  <title>AE2.20 - Flexbox</title>
+  <link rel="shortcut icon" href="assets/kiosco_fernando.ico" type="image/x-icon">
+  <title>Kiosco Fernando</title>
 </head>
 
 <body>
 
   <header>
-    <div class="upper">
+    <!--! Para no quitarlo del todo, por eventlistener que tengo en el javascript, le doy un display none -->
+    <div class="upper" style="display: none;">
       <div class="upper-left">
         <!-- ● El logo corporativo dirigirá a la página principal cada vez que se pulse. -->
         <a href="index.html"><img src="./assets/logo_kiosco_fernando.png" alt="Logo del Kiosco Fernando" id="logo"></a>
@@ -23,7 +25,7 @@
       </div>
       <div class="upper-right">
         <nav>
-          <!-- Cada uno de los elementos del menú de navegación dirigirá a la página a la que hacen referencia.  -->
+          <!-- Cada uno de los elementos del menú de navegación dirigirá a la página a la que hacen referencia. -->
           <a class="nav-link" href="index.html">Inicio</a>
           <a class="nav-link" href="reservasContacto.html">Reservas y Contacto</a>
           <a class="nav-link" href="menu.html">Menú</a>
@@ -48,8 +50,8 @@
         <h3>Reserva tu sitio con nosotros</h3>
         <p>No te pierdas los mejores sabores</p>
         <div class="btns">
-          <button class="boton-1" id="esp">Español<img src="./assets/spain-country-flag-icon.svg" alt="Bandera de España"></button>
-          <button class="boton-1">English<img src="./assets/united-kingdom-flag-icon.svg" alt="Bandera de Inglaterra"></button>
+          <button class="boton-1" id="esp">Español<i class="icon-personalizado-bandera-spain"></i></button>
+          <button class="boton-1">English<i class="icon-personalizado-bandera-uk"></i></button>
         </div>
       </div>
       <div class="gif-box">
