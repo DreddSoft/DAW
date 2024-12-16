@@ -50,15 +50,29 @@ group by J.nombreJuego;
 
 
 -- 8. Mostrar el número de participantes de cada torneo (llamar a la columna “noparticipantes”), ciudad donde se celebró, incluyendo todos los campeonatos en los que no hubo ningún participante.
-select T.idTorneo, 
-count(JG.*) as noparticipantes, 
-C.nombreCiudad 
-from Jugadores as JG
-left join Torneos_Jugad as TJ on TJ.idJugador = JG.idJugador
-right join Torneos as T on T.idTorneo = TJ.idTorneo
-left join Ciudades as C on C.idCiudad = T.idCiudad
-group by  noparticipantes;
+select T.idTorneo,
+count(J.idJugador) as noparticipantes,
+C.nombreCiudad
+from Torneos as T
+left join Torneos_Jugad as TJ on TJ.idTorneo = T.idTorneo
+left join Jugadores as J on J.idJugador = TJ.idJugador
+inner join Ciudades as C on C.idCiudad = T.idCiudad
+group by T.idTorneo
+order by T.idTorneo;
 
 -- 9. Mostrar el DNI, nombre y primer apellido (concatenados) y teléfono de los jugadores que no han participado en competición alguna.
+select concat(JG.dniJugador, " ", JG.nombreJug, " ", JG.ap1Jug) as datosJugador
+, JG.telfJug as teléfono
+from Jugadores as JG
+left join Torneos_Jugad as TJ on TJ.idJugador = JG.idJugador
+where JG.idJugador not in (select TJ2.idJugador from Torneos_Jugad as TJ2 order by TJ2.idJugador);
 
 -- 10. Mostrar la provincia y ciudad, donde no se ha celebrado ninguna competición.
+select  
+C.provincia,
+C.nombreCiudad, 
+count(T.idTorneo)
+from Ciudades as C
+left join Torneos as T on T.idCiudad = C.idCiudad
+group by C.nombreCiudad, C.provincia
+having count(T.idTorneo) = 0;

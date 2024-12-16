@@ -90,6 +90,8 @@ $subTotal = 0;
             <button type="submit">Vaciar el carrito</button>
         </form>
 
+        <?php var_dump($_SESSION['carrito']); ?>
+
 
     </main>
 
