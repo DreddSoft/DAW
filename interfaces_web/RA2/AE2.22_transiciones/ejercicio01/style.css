@@ -1,0 +1,152 @@
+:root {
+    /* COLORES */
+    --color-bg-main: #694873;
+    --color-bg-hover: #16302B;
+
+    /* PROPIEDADES DE FUENTES */
+    --font-color-main: #f2f2f2;
+    --font-color-hover: red;
+    --font-size-base: 16px;
+    --font-size-hover: 22px;
+
+
+
+    /* OTRAS PROPIEDADES */
+    --border-radius-hover: 100px;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    line-height: 180px;
+    background-color: var(--color-bg-main);
+    color: var(--font-color-main);
+    font-size: var(--font-size-base);
+    border: 6px solid transparent;
+    cursor: pointer;
+    transition: 1s;
+
+}
+
+/* 1. Cambia el color de fondo del contenedor */
+div:nth-child(1) {
+    transition: background-color 1s ease-in-out;
+}
+
+div:nth-child(1):hover {
+    background-color: var(--color-bg-hover);
+
+}
+
+/* 2. Cambia el tamaño de las letras del contenedor */
+div:nth-child(2) {
+    transition: font-size 1s ease-in;
+}
+
+div:nth-child(2):hover {
+    font-size: var(--font-size-hover);
+}
+
+/* 3. Cambia el color de las letras del contenedor */
+
+div:nth-child(3) {
+    transition: color 1s ease-out;
+}
+
+div:nth-child(3):hover {
+    color: var(--font-color-hover);
+}
+
+/* 4. Cambia el valor del interlineado */
+
+div:nth-child(4) {
+    transition: line-height 1s ease-out;
+}
+
+div:nth-child(4):hover {
+    line-height: 20px;
+}
+
+/* 5. Cambia el valor de la propiedad border-radius del contenedor. */
+
+div:nth-child(5) {
+    transition: border-radius 1s ease-out;
+}
+
+div:nth-child(5):hover {
+    border-radius: var(--border-radius-hover);
+}
+
+/* 6. Cambia el valor de la sombra del contenedor. */
+div:nth-child(6) {
+    transition: box-shadow 1s ease-out;
+}
+
+div:nth-child(6):hover {
+    box-shadow: 8px 8px 4px #5e5d5d;
+}
+
+/* 7. Cambia la opacidad del contenedor. */
+div:nth-child(7) {
+    transition: opacity 1s ease-out;
+}
+
+div:nth-child(7):hover {
+    opacity: 0.5;
+}
+
+/* 8. El borde */
+div:nth-child(8) {
+    transition: border 1s ease-out;
+}
+
+div:nth-child(8):hover {
+    border: 6px dotted blue;
+}
+
+/* 9. Mayúscula */
+div:nth-child(9) {
+    transition: width 1s ease-out;
+}
+
+div:nth-child(9):hover {
+    width: 200px;
+}
+
+/* 10. La altura */
+div:nth-child(10) {
+    transition: height 1s ease-out;
+}
+
+div:nth-child(10):hover {
+    height: 200px;
+}
