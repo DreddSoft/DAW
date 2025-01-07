@@ -44,3 +44,45 @@ fechaN as fechaNacimiento,
 YEAR(CURRENT_DATE) - YEAR(fechaN) AS edad
 FROM jugadores;
 
+-- 6. Calcular la edad de los jugadores de la forma solicitada en el apartado 5, es decir, el identificativo del jugador, nombre y primer apellido (concatenado en una columna: 'Nombre y Apellido'), el teléfono, la fecha de nacimiento y una columna llamada 'Edad', en la que aparezca la edad de cada uno de los jugadores, pero considerando para el cálculo, el año, el més y el día.
+
+SELECT 
+idJugador,
+CONCAT(nombreJug, " ", ap1Jug, " ", COALESCE(ap2Jug, "")) AS "Nombre y Apellido",
+telfJug as teléfono,
+DATE_FORMAT(fechaN, '%d/%m/%Y') as fechaNacimiento,
+CASE 
+    WHEN DATE_FORMAT(CURRENT_DATE(), '%j') > DATE_FORMAT(fechaN, '%j') THEN YEAR(CURRENT_DATE()) - YEAR(fechaN)
+    ELSE YEAR(CURRENT_DATE()) - YEAR(fechaN) - 1
+END AS Edad
+FROM jugadores;
+
+-- 7. Crear una vista con el nombre y edad de los jugadores en base a la consulta anterior.
+CREATE VIEW datosBaseJugador AS 
+SELECT 
+idJugador,
+CONCAT(nombreJug, " ", ap1Jug, " ", COALESCE(ap2Jug, "")) AS "Nombre y Apellido",
+telfJug as telefono,
+DATE_FORMAT(fechaN, '%d/%m/%Y') as fechaNacimiento,
+CASE 
+    WHEN DATE_FORMAT(CURRENT_DATE(), '%j') > DATE_FORMAT(fechaN, '%j') THEN YEAR(CURRENT_DATE()) - YEAR(fechaN)
+    ELSE YEAR(CURRENT_DATE()) - YEAR(fechaN) - 1
+END AS Edad
+FROM jugadores;
+
+-- Consultar la vista
+SELECT * FROM datosBaseJugador;
+
+-- 8. Obtener un listado con el Nombre, Ap1, Teléfono y edad, de los jugadores con edad comprendida entre 23 y 30 años.
+SELECT "Nombre y Apellido", teléfono, Edad FROM datosbasejugador
+WHERE Edad BETWEEN 23 AND 30
+ORDER BY Edad;
+
+-- 9. Cambiar la palabra ‘Poker’ por ‘Póquer’ en todos los registros que aparezca. Usar la función REPLACE.
+SELECT * FROM juegos;
+
+UPDATE juegos
+SET nombreJuego = REPLACE(nombreJuego, "Poker", "Póquer")
+WHERE LOWER(nombreJuego) like '%poker%';
+
+SELECT * FROM juegos;
