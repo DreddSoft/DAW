@@ -1,0 +1,95 @@
+:root {
+    /* COLORES */
+    --color-bg-main: #694873;
+    --color-bg-hover: #16302B;
+
+    /* PROPIEDADES DE FUENTES */
+    --font-color-main: #f2f2f2;
+    --font-color-hover: red;
+    --font-size-base: 16px;
+    --font-size-hover: 22px;
+
+
+
+    /* OTRAS PROPIEDADES */
+    --border-radius-hover: 100px;
+}
+
+body {
+    box-sizing: border-box;
+    min-height: 100vdh;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #694873;
+}
+
+/* ESTILOS PARA EL EJERCICIO */
+
+
+li {
+    /* Alinear en línea horizontalmente: Alinear los enlaces horizontalmente en el menú. */
+    display: inline-block;
+    /* Quitar viñetas de la lista: Elimina las viñetas del listado. */
+    list-style: none;
+
+    /* Aplicar márgenes horizontales: Añade márgenes horizontales de 5px a los enlaces del menú para separarlos ligeramente. */
+    margin: 0 5px;
+
+}
+
+li a {
+    display: block;
+    /* Eliminar subrayado: Elimina el subrayado de los enlaces en el menú. */
+    text-decoration: none;
+    /* Definir color de texto: Establece el color de texto en blanco (#fff) para que los enlaces se muestren en color blanco. */
+    color: #fff;
+    /* Establecer relleno: Define un relleno de 10px en la parte superior e inferior y 15px en los lados para dar espacio a los enlaces del menú. */
+    padding: 10px 15px;
+    /* Agregar transiciones suaves: Implementa una transición suave de 0.5 segundos en todas las propiedades para que los cambios de estilo sean fluidos. */
+    transition: 1s ease;
+    -moz-transition: 1s ease;
+    -webkit-transition: 1s ease;
+
+    /* Color de fondo predeterminado: Define un color de fondo predeterminado para los enlaces en el menú. Por ejemplo, el color #3498db. */
+    background-color: #3498db;
+
+    /* Bordes redondeados: Aplica bordes redondeados con un valor de 5px a los enlaces. */
+    border-radius: 5px;
+}
+
+/* Estilos al pasar el ratón: Personaliza los estilos para los enlaces cuando el ratón pasa sobre ellos. 
+ - Cambia el color de fondo a #1f587d
+ - escala aumentando el tamaño ligeramente de los enlaces utilizando transformaciones. */
+li a:hover {
+    background-color: #1f587d;
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
+

@@ -1,23 +1,8 @@
-:root {
-    /* COLORES */
-    --color-bg-main: #694873;
-    --color-bg-hover: #16302B;
-
-    /* PROPIEDADES DE FUENTES */
-    --font-color-main: #f2f2f2;
-    --font-color-hover: red;
-    --font-size-base: 16px;
-    --font-size-hover: 22px;
-
-
-
-    /* OTRAS PROPIEDADES */
-    --border-radius-hover: 100px;
-}
-
 body {
     box-sizing: border-box;
+    min-height: 100vdh;
     margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -46,11 +31,70 @@ nav {
     display: flex;
     flex-direction: row;
     background-color: black;
-    color: white;
 }
 
-a {
+nav a {
     text-decoration: none;
     padding: 25px;
-    background: linear-gradient(180deg, yellow 10%, black 100%);
+    color: white;
+    
+}
+
+footer a {
+    text-decoration: none;
+    color: #694873;
+}
+
+.link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.link:hover > span {
+    height: 100%;
+}
+
+.fondo {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* SERVICIOS */
+.servicios {
+    border-top: 0.5em solid yellow;
+
+}
+
+.servicios > span {
+    background: yellow;
+}
+
+/* PROYECTOS */
+.proyectos {
+    border-top: 0.5em solid green;
+}
+
+.proyectos > span {
+    background: green;
+}
+
+/* RECURSOS */
+.recursos {
+    border-top: 0.5em solid red;
+}
+
+.recursos > span {
+    background: red;
+}
+
+
+/* CONTACTO */
+.contacto {
+    border-top: 0.5em solid violet;
+}
+
+.contacto > span {
+    background: violet;
 }

@@ -60,6 +60,8 @@ div {
 /* 1. Cambia el color de fondo del contenedor */
 div:nth-child(1) {
     transition: background-color 1s ease-in-out;
+    -moz-transition: background-color 1s ease-in-out;
+    -webkit-transition: background-color 1s ease-in-out;
 }
 
 div:nth-child(1):hover {
@@ -70,6 +72,8 @@ div:nth-child(1):hover {
 /* 2. Cambia el tamaño de las letras del contenedor */
 div:nth-child(2) {
     transition: font-size 1s ease-in;
+    -moz-transition: font-size 1s ease-in;
+    -webkit-transition: font-size 1s ease-in;
 }
 
 div:nth-child(2):hover {
@@ -80,6 +84,8 @@ div:nth-child(2):hover {
 
 div:nth-child(3) {
     transition: color 1s ease-out;
+    -moz-transition: color 1s ease-out;
+    -webkit-transition: color 1s ease-out;
 }
 
 div:nth-child(3):hover {
@@ -90,6 +96,8 @@ div:nth-child(3):hover {
 
 div:nth-child(4) {
     transition: line-height 1s ease-out;
+    -moz-transition: line-height 1s ease-out;
+    -webkit-transition: line-height 1s ease-out;
 }
 
 div:nth-child(4):hover {
@@ -100,6 +108,8 @@ div:nth-child(4):hover {
 
 div:nth-child(5) {
     transition: border-radius 1s ease-out;
+    -moz-transition: border-radius 1s ease-out;
+    -webkit-transition: border-radius 1s ease-out;
 }
 
 div:nth-child(5):hover {
@@ -109,6 +119,8 @@ div:nth-child(5):hover {
 /* 6. Cambia el valor de la sombra del contenedor. */
 div:nth-child(6) {
     transition: box-shadow 1s ease-out;
+    -moz-transition: box-shadow 1s ease-out;
+    -webkit-transition: box-shadow 1s ease-out;
 }
 
 div:nth-child(6):hover {
@@ -118,6 +130,8 @@ div:nth-child(6):hover {
 /* 7. Cambia la opacidad del contenedor. */
 div:nth-child(7) {
     transition: opacity 1s ease-out;
+    -moz-transition: opacity 1s ease-out;
+    -webkit-transition: opacity 1s ease-out;
 }
 
 div:nth-child(7):hover {
@@ -127,6 +141,8 @@ div:nth-child(7):hover {
 /* 8. El borde */
 div:nth-child(8) {
     transition: border 1s ease-out;
+    -moz-transition: border 1s ease-out;
+    -webkit-transition: border 1s ease-out;
 }
 
 div:nth-child(8):hover {
@@ -136,6 +152,8 @@ div:nth-child(8):hover {
 /* 9. Mayúscula */
 div:nth-child(9) {
     transition: width 1s ease-out;
+    -moz-transition: width 1s ease-out;
+    -webkit-transition: width 1s ease-out;
 }
 
 div:nth-child(9):hover {
@@ -145,6 +163,8 @@ div:nth-child(9):hover {
 /* 10. La altura */
 div:nth-child(10) {
     transition: height 1s ease-out;
+    -moz-transition: height 1s ease-out;
+    -webkit-transition: height 1s ease-out;
 }
 
 div:nth-child(10):hover {
