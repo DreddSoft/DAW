@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root {
+    /* FUENTES */
+    --fuente-base: 'Open Sans', sans-serif;
+    --fuente-titulos: 'Montserrat', sans-serif;
+
+    /* Background colors */
+    --bg-blanco-base: #ffffff;
+    --bg-blanco-2: #f8f9fa;
+    --bg-blanco-3: #f1f3f4;
+    --bg-blanco-4: #e8f0fe;
+    --bg-yellow-1: #fef7e0;
+    --bg-yellow-2: #fde293;
+    --bg-blue-1: #dadce0;
+    --bg-blue-2: #1a73e8;
+    --bg-blue-3: #174ea6;
+    --bg-green-1: #ceead6;
+    --bg-green-2: #188038;
+
+    /* Colores de Fuente */
+    --fwhite: #ffffff;
+    --forange: #d56e0c;
+    --fgreen: #188038;
+    --fblue: #1967d2;
+    --fgrey: #5f6368;
+    --fviolet: #551a8b;
+    --fblack1: #202124;
+    --fblack2: #1010104d;
+    --fblack3: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente-base);
+
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+}
+
+.headline1 {
+
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -1px;
+    color: var(--fblack1);
+    word-wrap: normal;
+
+}
+
+.headline2 {
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -1px;
+    color: var(--fblack1);
+    word-wrap: normal;
+
+}
+
+.headline3 {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -1px;
+    color: var(--fblack1);
+    word-wrap: normal;
+
+}
+
+.headline4 {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -1px;
+    color: var(--fgrey);
+    word-wrap: normal;
+
+}
+
+/* ESTILOS DEL HEADER */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    background-color: var(--bg-blanco-base);
+    box-shadow: 3px 0 8px rgb(212, 212, 212);
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1rem;
+    
+
+}
+
+.logo img {
+    border-radius: 10px;
+    width: 50px;
+}
+
+.logo h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--fgrey);
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 70px;
+}
+
+header nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f6368;
+    text-decoration: none;
+    font-family: var(--fuente-base);
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    height: 100%;
+    padding: 0 10px;
+}
+
+header nav a:hover {
+    color: #202124;
+    background-color: #f8f9fa;
+}
+
+/* ESTILOS DEL HEADER */
+
+/* ESTILOS DEL MAIN */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+
+}
+
+.enunciado {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    gap: 2rem;
+    margin: 2rem 0;
+
+}
+
+.enunciado-texto {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 64px;
+    background-color: #fef7e0;
+    border-radius: 24px;
+    overflow-y: scroll;
+    width: 300px;
+    height: 100%;
+
+}
+ 
+.enunciado-texto p {
+    color: var(--fgrey);    
+}
+
+.enunciado-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 64px;
+    background-color: #1a73e8;
+    border-radius: 24px;
+    overflow: hidden;
+    width: 300px;
+    height: 100%;
+}
+
+.enunciado-btns h4 {
+    color: #fff;
+}
+
+
+.ejercicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.texto span {
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+    letter-spacing: -1px;
+    font-family: var(--fuente-base);
+    font-weight: 700;
+    color: var(--fblack1);
+}
+
+.especial {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #ceead6;
+    color: #188038 !important;
+    border-radius: 48px;
+    gap: 10px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 3.25rem !important; 
+    letter-spacing: -1px;
+    font-weight: 700 !important; 
+    padding: 5px 30px;
+
+}
+
+.especial i {
+    font-size: 3.25rem !important; 
+}
+
+
+/* ESTILOS DEL MAIN */
+/* ESTILOS DEL FOOTER */
+
+footer {
+
+    bottom: 0;
+    gap: 1rem;
+    background-color: var(--bg-blanco-3);
+    color: var(--fgrey);
+    box-shadow: -3px 0 8px rgb(212, 212, 212);
+}
+
+.footer_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+}
+
+.footer_content a {
+    text-decoration: none;
+    color: var(--fgrey);
+    transition: 400ms ease-in-out;
+}
+
+.footer_content a:hover {
+    color: var(--fblue);
+}
+
+/* ESTILOS DEL FOOTER */
+
+.hidden {
+    display: none;
+}
+
+.border-bottom {
+    border-bottom: 1px solid var(--bg-blue-2);
+    color: #202124;
+    background-color: #f8f9fa;
+}
+
+.myButton1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0rem;
+    font-family: var(--fuente-base);
+    font-weight: 500;
+    padding: 8px 20px;
+    background-color: #1a73e8;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 24px;
+    border: none;
+    transition: 300ms ease-in;
+    -moz-transition: 300ms ease-in;
+    -webkit-transition: 300ms ease-in;
+
+}
+
+.myButton1:hover {
+    background-color: #185abc;
+}
+
+.myButton2 {
+    background-color: #fff;
+    color: #1967d2;
+    border-radius: 32px;
+    gap: 12px;
+    padding: 20px 32px;
+    min-width: 200px;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    letter-spacing: 0rem;
+    border: none;
+    font-family: var(--fuente-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 300ms ease-in;
+    -moz-transition: 300ms ease-in;
+    -webkit-transition: 300ms ease-in;
+}
+
+.myButton2 i {
+    margin-right: 12px;
+}
+
+.myButton2:hover {
+    background-color: #e8f0fe;
+}
+
+/* TEXT-COLORS */
+.text-blue {
+    color: var(--fblue);
+}

@@ -26,7 +26,6 @@ enlaces.forEach(link => {
         link.classList.remove('activo');
     }
 
-
 });
 
 //* Para el año de copyright

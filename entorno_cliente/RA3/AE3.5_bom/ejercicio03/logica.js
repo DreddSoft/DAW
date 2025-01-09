@@ -2,10 +2,28 @@
 const btnShow = document.querySelector("#btn-show");
 const btnHide = document.querySelector("#btn-hide");
 let enunciado = document.querySelector("#enunciado-texto");
+const enlaces = document.querySelectorAll(".nav-link");
+
+// Sacamos el path actual
+let pathActual = window.location.pathname.split("/").pop();
+
+//* Aplicar el estilo border-bottom al que este en ese mometo
+enlaces.forEach(link => {
+
+    // Si coincide el atirbuto href con el path actyual
+    if (link.getAttribute('href') == pathActual) {
+        // añadimos la clase
+        link.classList.add('border-bottom');
+
+    } else {
+        // Al resto se lo quitamos
+        link.classList.remove('border-bottom');
+    }
+
+});
 
 // Usamos el evento de carga de contenido
 addEventListener('DOMContentLoaded', () => {
-
 
     tuSistemaOperativo();
 });

@@ -3,13 +3,6 @@ const btnShow = document.querySelector("#btn-show");
 const btnHide = document.querySelector("#btn-hide");
 const btnNewWindow = document.querySelector("#btn-newWindow");
 
-document.querySelector("#enunciado-texto").innerHTML = 
-    "<b>Ejercicio 1.</b>" + 
-    "<p>Implementa una página web que contenga un botón <Nueva ventana>.<br>" +
-    "Al clicar sobre este, se generará una nueva ventana (pop-up) con una resolución 720p y debe mostrar el menú y su barra de herramientas." +
-    "(Haz uso de las propiedades y métodos del objeto window)</p>";
-
-
 //* EVENT LISTENER
 btnShow.addEventListener('click', () => {
 
