@@ -104,6 +104,10 @@ header {
 
 }
 
+.chrome {
+    gap: 5px !important;
+}
+
 .logo img {
     border-radius: 10px;
     width: 50px;
@@ -113,6 +117,10 @@ header {
     font-size: 24px;
     font-weight: 600;
     color: var(--fgrey);
+}
+
+.chrome h3 {
+    letter-spacing: -1px;
 }
 
 header nav {

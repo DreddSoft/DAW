@@ -1,11 +1,8 @@
 // Capturar botones
 const btnShow = document.querySelector("#btn-show");
 const btnHide = document.querySelector("#btn-hide");
-const btnDownload = document.querySelector("#btn-descargar");
 let enunciado = document.querySelector("#enunciado-texto");
 const enlaces = document.querySelectorAll(".nav-link");
-const navegadorMsj = document.querySelector("#navegador");
-const sistemaOperativo = document.querySelector("#SO");
 
 // Sacamos el path actual
 let pathActual = window.location.pathname.split("/").pop();
@@ -28,20 +25,7 @@ enlaces.forEach(link => {
 // Usamos el evento de carga de contenido
 addEventListener('DOMContentLoaded', () => {
 
-
-
-    // Aplicar el sistema operativo
-    if (btnDownload) {
-        btnDownload.innerHTML += ` ${tuSistemaOperativo()}`;
-    }
-
-    tuNavegadorWeb();
-
-    if (sistemaOperativo) {
-        sistemaOperativo.innerHTML += `Tu sistema operativo: ${tuSistemaOperativo()}`;
-    }
-    
-
+    tuSistemaOperativo();
 });
 
 //* EVENT LISTENER
@@ -75,19 +59,6 @@ if (btnHide) {
 }
 
 
-//* Condicional y eventlistener para el botón descargar
-if (btnDownload) {
-    btnDownload.addEventListener('click', () => {
-
-
-        // Obtener la altura máxima de pantalla
-        let h = screen.height;
-
-        window.open("https://www.google.com/intl/es_es/chrome/next-steps.html?statcb=1&installdataindex=empty&defaultbrowser=0", "popup", `width=500, height=${h}`);
-
-    });
-}
-
 
 
 //* FUNCIONES PROPIAS
@@ -96,44 +67,15 @@ function tuSistemaOperativo() {
 
     // Sacamos la versión del navegador y el SO y lo guardamos en una variable
     //! Ojo, también podemos usar navigator.platform para sacar sólo el SO, pero no funciona bien
+    let SOversion = navigator.userAgentData.platform;
 
+    // if (navigator.platform == "Win32") {
+    //     SOversion = "Windows 11";
+    // } 
 
-    // let result = "";
-
-
-    // navigator.userAgentData.getHighEntropyValues(["platformVersion"])
-    // .then(response => {
-    //     // console.log(data);
-    //     // console.log(data['platform']);
-
-    //     return response;
-    // })
-    // .then(data => {
-    //     console.log(data['platform']);
-    //     result = data['platform'];
-    // });
-
-    return navigator.userAgentData.platform;
-
-    // return result;
-
-}
-
-function tuNavegadorWeb() {
-
-    let navegadorV2 = "";
-
-    navegadorV2 = navigator.userAgentData.getHighEntropyValues(["platform"])
-    .then(response => {
-        console.log(response);
-        console.log(response['brands'][0]['brand']);
-
-        if (navegadorMsj) {
-            navegadorMsj.innerHTML += `${response['brands'][0]['brand']}`;
-        }
-        
-    })
-
+    // Modificamos el innerHTML del botón para añadir esta información
+    document.querySelector("#btn-descargar").innerHTML += ` ${SOversion}`;
+    
 }
 
 /**
