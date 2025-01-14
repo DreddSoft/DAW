@@ -1,0 +1,112 @@
+:root {
+    /* COLORES */
+    --color-bg-main: #694873;
+    --color-bg-hover: #16302B;
+
+    /* PROPIEDADES DE FUENTES */
+    --font-color-main: #f2f2f2;
+    --font-color-hover: red;
+    --font-size-base: 16px;
+    --font-size-hover: 22px;
+
+
+
+    /* OTRAS PROPIEDADES */
+    --border-radius-hover: 100px;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    display: block;
+    animation: giroInfinito 5s ease infinite;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.texto p {
+    animation: deslizarDesdeLaDerecha 5s ease-in 1;
+}
+
+.bote {
+    height: 301px;
+    border-bottom: 1px solid darkblue;
+}
+
+.bouncil-ball img {
+    display: block;
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid darkblue;
+    animation: bouncilBall 2s ease infinite;
+}
+
+
+
+/* Crear un keyframe para la bola botando
+ - Tiene que empezar en 0px
+ - al 50% de la animación pasar al 100px
+ - volver a 0px al final
+*/
+@keyframes bouncilBall {
+
+    from {
+        transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(100px);
+        -moz-transform: translateY(100px);
+        -webkit-transform: translateY(100px);
+    }
+
+    to {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+    }
+}
+
+

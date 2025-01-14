@@ -1,0 +1,73 @@
+:root {
+    /* COLORES */
+    --color-bg-main: #694873;
+    --color-bg-hover: #16302B;
+
+    /* PROPIEDADES DE FUENTES */
+    --font-color-main: #f2f2f2;
+    --font-color-hover: red;
+    --font-size-base: 16px;
+    --font-size-hover: 22px;
+
+
+
+    /* OTRAS PROPIEDADES */
+    --border-radius-hover: 100px;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    display: block;
+    animation: giroInfinito 5s ease infinite;
+}
+
+
+
+/* Crear un keyframe para un giro infinito que empieze en 0grados, al 50% en 180grados y al final en 0grados*/
+@keyframes giroInfinito {
+
+    from {
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+    }
+    
+}
+
+

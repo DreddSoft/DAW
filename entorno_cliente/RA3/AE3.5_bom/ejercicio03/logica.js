@@ -35,14 +35,16 @@ addEventListener('DOMContentLoaded', () => {
         btnDownload.innerHTML += ` ${tuSistemaOperativo()}`;
     }
 
+    // Ambas funciones de navegador
     tuNavegadorWeb();
+    tuNavegadorWebFullDetail();
 
-    if (sistemaOperativo) {
-        sistemaOperativo.innerHTML += `Tu sistema operativo: ${tuSistemaOperativo()}`;
-    }
+    // Llamamos a la función para que nos seleccione en base a nuestro tipo de dispositivo
+    tipoDispositivo();
 
-    // Que marque tambien los bits del SO
-    bitsSO();
+
+    // Mostramos la geolocalización del cliente
+    geolocalizacion();
     
 
 });
@@ -123,7 +125,7 @@ function tuNavegadorWeb() {
                 // Impresion
                 if (navegadorMsj) {
                     const browserName = response.brands[0].brand;
-                    navegadorMsj.innerHTML = `Descargar Chrome para ${browserName}`;
+                    navegadorMsj.innerHTML = `Descargar RadarSystem para ${browserName}`;
                 }
             })
             .catch (error => {
@@ -149,17 +151,52 @@ function tuNavegadorWeb() {
 
 }
 
-// Seleccion de bits del sistema operativo
-function bitsSO() {
+// Función que imprimirá la información completa del navegador
+function tuNavegadorWebFullDetail() {
 
-    const bitsSO = navigator.userAgent.toLowerCase();
+    // Usamos el object navigator y hacemos un console log para revisar
+    const bfd = navigator.userAgentData.brands;
+    console.log(bfd);
 
-    if (bitsSO.includes("win64") || bitsSO.includes("x86_64")) {
+    // Guardamos la información en variables para depurar
+    let bName = bfd[0]['brand'];
+    let bVersion = bfd[0]['version']
+    
+    document.getElementById("SO").innerHTML = `Navegador: ${bName} | version: ${bVersion}`;
+    
+}
+
+// Función que seleccionará en los input:radio del html el tipo de dispositivo que usamos (computador/movil)
+function tipoDispositivo() {
+
+    if (navigator.userAgentData.mobile) {
         document.getElementById("v64").checked = true;
-    } else if (bitsSO.includes("win32") || bitsSO.includes("x86")) {
+    } else {
         document.getElementById("v32").checked = true;
     } 
 
+}
+
+// Función para capturar y mostar la geolocalización del cliente
+function geolocalizacion() {
+
+    navigator.geolocation.getCurrentPosition(exito, error);
+    
+}
+
+// Función exito para la geolocalizacion
+function exito(position) {
+
+    let latitud = position.coords.latitude;
+    let longitud = position.coords.longitude;
+
+    document.getElementById("ubi").innerHTML += latitud + " " + longitud;
+    
+}
+
+function error(position) {
+
+    document.getElementById("ubi").innerHTML += "No es posible determinar su ubicación.";
 }
 
 /**
