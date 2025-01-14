@@ -40,6 +40,9 @@ addEventListener('DOMContentLoaded', () => {
     if (sistemaOperativo) {
         sistemaOperativo.innerHTML += `Tu sistema operativo: ${tuSistemaOperativo()}`;
     }
+
+    // Que marque tambien los bits del SO
+    bitsSO();
     
 
 });
@@ -83,7 +86,7 @@ if (btnDownload) {
         // Obtener la altura máxima de pantalla
         let h = screen.height;
 
-        window.open("https://www.google.com/intl/es_es/chrome/next-steps.html?statcb=1&installdataindex=empty&defaultbrowser=0", "popup", `width=500, height=${h}`);
+        window.open("newWindow.html", "popup", `width=500, height=${h}`);
 
     });
 }
@@ -94,51 +97,74 @@ if (btnDownload) {
 // función para añadir el sistema operativo
 function tuSistemaOperativo() {
 
-    // Sacamos la versión del navegador y el SO y lo guardamos en una variable
-    //! Ojo, también podemos usar navigator.platform para sacar sólo el SO, pero no funciona bien
+    const sistemaOperativo = navigator.userAgent.toLowerCase();
+    console.log(sistemaOperativo);
 
+    if (sistemaOperativo.includes('win')) {
+        return "Windows";
+    } else if (sistemaOperativo.includes('mac')) {
+        return "Mac OS";
+    } else {
+        return "Linux";
+    }
 
-    // let result = "";
-
-
-    // navigator.userAgentData.getHighEntropyValues(["platformVersion"])
-    // .then(response => {
-    //     // console.log(data);
-    //     // console.log(data['platform']);
-
-    //     return response;
-    // })
-    // .then(data => {
-    //     console.log(data['platform']);
-    //     result = data['platform'];
-    // });
-
-    return navigator.userAgentData.platform;
-
-    // return result;
 
 }
 
 function tuNavegadorWeb() {
 
-    let navegadorV2 = "";
+    if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
 
-    navegadorV2 = navigator.userAgentData.getHighEntropyValues(["platform"])
-    .then(response => {
-        console.log(response);
-        console.log(response['brands'][0]['brand']);
+        navigator.userAgentData.getHighEntropyValues(["platform", "brands"])
+            .then(response => { // Procesamos la promesa
+                // comprobacion
+                console.log(response);
 
-        if (navegadorMsj) {
-            navegadorMsj.innerHTML += `${response['brands'][0]['brand']}`;
+                // Impresion
+                if (navegadorMsj) {
+                    const browserName = response.brands[0].brand;
+                    navegadorMsj.innerHTML = `Descargar Chrome para ${browserName}`;
+                }
+            })
+            .catch (error => {
+                console.error("Error al obtener los datos: ", error);
+            }) 
+
+    } else {    // Para el p*** FireFox, edge o chrome antiguo
+
+        const browserName = navigator.userAgent.toLowerCase();
+        console.log(browserName);
+
+        // Comprobacion
+        if (browserName.includes('chrome') && browserName.includes('edg')) {
+            navegadorMsj.innerHTML = `Descargar Chrome para Google Chrome`;
+        } else if (browserName.includes('firefox')) {
+            navegadorMsj.innerHTML = `Descargar Chrome para Firefox`;
+        } else if (browserName.includes('safari')) {
+            navegadorMsj.innerHTML = `Descargar Chrome para Safari`;
+        } else {
+            navegadorMsj.innerHTML = `Descargar Chrome para Edge`;
         }
-        
-    })
+    }
+
+}
+
+// Seleccion de bits del sistema operativo
+function bitsSO() {
+
+    const bitsSO = navigator.userAgent.toLowerCase();
+
+    if (bitsSO.includes("win64") || bitsSO.includes("x86_64")) {
+        document.getElementById("v64").checked = true;
+    } else if (bitsSO.includes("win32") || bitsSO.includes("x86")) {
+        document.getElementById("v32").checked = true;
+    } 
 
 }
 
 /**
  * Author: @DreddSoft
- * Exercise: AE3.5 - Ejercicio 2
- * Date: 08/01/2025
+ * Exercise: AE3.5 - Ejercicio 3
+ * Date: January 2025
  * Version: 1.0
  */

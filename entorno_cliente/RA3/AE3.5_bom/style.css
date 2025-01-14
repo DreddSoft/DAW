@@ -360,3 +360,21 @@ footer {
 .text-blue {
     color: var(--fblue);
 }
+
+/* Clases personalizadas */
+.version {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.version__ops {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
