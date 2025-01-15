@@ -15,10 +15,11 @@
 
         <div class="logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
-            alt="Logo Javascript">
+                alt="Logo Javascript">
             <h3>Entorno Cliente</h3>
         </div>
-        
+
+
         <nav>
             <a href="../ejercicio01/index.html" class="nav-link">Ejercicio 1</a>
             <a href="../ejercicio02/index.html" class="nav-link">Ejercicio 2</a>
@@ -33,40 +34,35 @@
 
     <main>
         <h3 class="headline2 text-blue">Objetos JavaScript - BOM</h3>
-        <h4 class="headline3 text-blue">Ejercicio 4</h4>
+        <h4 class="headline3 text-blue">Ejercicio 6</h4>
 
         <div class="enunciado">
-            
+
             <div id="enunciado-texto" class="hidden enunciado-texto">
                 <h4 class="headline4">ENUNCIADO</h4>
-                <h3 class="headline2">Ejercicio 4. OBJETO LOCATION</h3>
-                <p>Implementa una página web que tenga un texto en el encabezado principal "¿Desea contactar con nosotros?".</p>
-                <p>El siguiente texto en un párrafo "Haz click en el siguiente enlace para &lt;abrir un Webmail aleatorio&gt;, siendo el texto contenido entre &lt;&gt; un enlace."
-                </p>
-                <p>Cuando se presione dicho enlace, se generará un valor aleatorio entre 0 y 2.</p>
-                <ul>
-                    <li>Si el valor generado es 0, la aplicación redirigirá a la página web de login de hotmail.</li>
-                    <li>Si el valor es 1, la aplicación redirigirá a la página web de login de Gmail.</li>
-                    <li>Si el valor es 2, la aplicación redirigirá a la página web de login de serviciodecorreo.es</li>
-                </ul>
+                <h3 class="headline2">Ejercicio 6. OBJETO DOCUMENT</h3>
+                <p>El DOM permite a los desarrolladores ver una página HTML de otra manera, como un conjunto de objetos
+                    que JavaScript puede consultar y modificar.</p>
             </div>
             <div class="enunciado-btns">
                 <h4 class="headline4">BOTONES</h4>
                 <button type="button" id="btn-show" class="myButton2"><i class="fa fa-eye"></i>Mostrar</button>
-                <button type="button" class="myButton2 hidden" id="btn-hide"><i class="fa fa-eye-slash"></i>Ocultar</button>
+                <button type="button" class="myButton2 hidden" id="btn-hide"><i
+                        class="fa fa-eye-slash"></i>Ocultar</button>
             </div>
         </div>
 
         <div class="ejercicio">
-            <h2>¿Desea contactar con nosotros?</h2>
-            <p>Haz click en el siguiente enlace para <a href="#" id="webMail"></a></p>
+            <p id="t-prueba">Este es el texto de pruebas</p>
+            <button class="myButton1" onclick="cambiarEstilo();">Cambiar estilo</button>
         </div>
+
     </main>
 
     <footer>
         <div class="footer_content">
             <a href="https://github.com/DreddSoft" target="_blank"><i class="fa fa-at"></i>DreddSoft</a>
-                
+
             <h3>Entorno Cliente | JavaScript</h3>
 
             <h2><i class="fa fa-star-o"></i> DAW</h2>
@@ -79,8 +75,8 @@
 
 <!-- 
 * Author: @Dreddsoft
-* Exercise: AE3.5 - Ejercicio 2
-* Date: 08/01/2025
+* Exercise: AE3.5 - Ejercicio 6
+* Date: January 2025
 * Version: 1.0
 -->
 

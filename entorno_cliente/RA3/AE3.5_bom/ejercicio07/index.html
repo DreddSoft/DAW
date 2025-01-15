@@ -15,10 +15,11 @@
 
         <div class="logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
-            alt="Logo Javascript">
+                alt="Logo Javascript">
             <h3>Entorno Cliente</h3>
         </div>
-        
+
+
         <nav>
             <a href="../ejercicio01/index.html" class="nav-link">Ejercicio 1</a>
             <a href="../ejercicio02/index.html" class="nav-link">Ejercicio 2</a>
@@ -33,40 +34,50 @@
 
     <main>
         <h3 class="headline2 text-blue">Objetos JavaScript - BOM</h3>
-        <h4 class="headline3 text-blue">Ejercicio 4</h4>
+        <h4 class="headline3 text-blue">Ejercicio 7</h4>
 
         <div class="enunciado">
-            
+
             <div id="enunciado-texto" class="hidden enunciado-texto">
                 <h4 class="headline4">ENUNCIADO</h4>
-                <h3 class="headline2">Ejercicio 4. OBJETO LOCATION</h3>
-                <p>Implementa una página web que tenga un texto en el encabezado principal "¿Desea contactar con nosotros?".</p>
-                <p>El siguiente texto en un párrafo "Haz click en el siguiente enlace para &lt;abrir un Webmail aleatorio&gt;, siendo el texto contenido entre &lt;&gt; un enlace."
-                </p>
-                <p>Cuando se presione dicho enlace, se generará un valor aleatorio entre 0 y 2.</p>
+                <h3 class="headline2">Ejercicio 7. OBJETO HISTORY</h3>
+                <p>Desarrolla una aplicación web que simule un menú de navegación entre niveles de un videojuego. (Haz uso de las propiedades y métodos del objeto history). Implementa las siguientes características:</p>
                 <ul>
-                    <li>Si el valor generado es 0, la aplicación redirigirá a la página web de login de hotmail.</li>
-                    <li>Si el valor es 1, la aplicación redirigirá a la página web de login de Gmail.</li>
-                    <li>Si el valor es 2, la aplicación redirigirá a la página web de login de serviciodecorreo.es</li>
+                    <li>Incluye en un título centrado con una tipografía sin serifa el texto “Buscaminas: Navegador de niveles” con un margen de 50 px.</li>
+                    <li>Incluye debajo de este el texto “Nivel N” donde N hace referencia al nivel actual del juego. Este irá incrementando o decreciendo según se pulsen los botones descritos a continuación.</li>
+                    <li>El usuario podrá moverse entre los niveles utilizando botones para avanzar &lt;Siguiente nivel&gt; o retroceder &lt;Nivel Anterior&gt;.</li>
+                    <ul>El nivel inicial es el 1 y el nivel máximo el 5.
+                        <li>El botón &lt;Nivel Anterior&gt; estará deshabilitado en el nivel 1.</li>
+                        <li>El botón &lt;Siguiente nivel&gt; estará deshabilitado en el nivel 5.</li>
+                        <li>En ambos casos, el cursor del ratón cambiará como se describe en la figura adjunta al pasar por encima.</li>
+
+                    </ul>
+                    <li>Aplica estilos a los botones para mejorar su apariencia (puedes inspirarte en la figura adjunta, la línea negra es un elemento meramente decorativo de este documento con la función de orientar al estudiante en el diseño de la aplicación).</li>
                 </ul>
             </div>
             <div class="enunciado-btns">
                 <h4 class="headline4">BOTONES</h4>
                 <button type="button" id="btn-show" class="myButton2"><i class="fa fa-eye"></i>Mostrar</button>
-                <button type="button" class="myButton2 hidden" id="btn-hide"><i class="fa fa-eye-slash"></i>Ocultar</button>
+                <button type="button" class="myButton2 hidden" id="btn-hide"><i
+                        class="fa fa-eye-slash"></i>Ocultar</button>
             </div>
         </div>
 
         <div class="ejercicio">
-            <h2>¿Desea contactar con nosotros?</h2>
-            <p>Haz click en el siguiente enlace para <a href="#" id="webMail"></a></p>
+            <h2 class="headline2" style="margin: 50px;">Buscaminas: Navegador de niveles</h2>
+            <h3 class="headline3" id="nivel">Nivel 1</h3>
+            <div class="buttons-inline">
+                <button type="button" class="myButton3" id="btn-anterior" onclick="anterior();">Nivel Anterior</button>
+                <button type="button" class="myButton3" id="btn-siguiente" onclick="siguiente();">Nivel Siguiente</button>
+            </div>
         </div>
+
     </main>
 
     <footer>
         <div class="footer_content">
             <a href="https://github.com/DreddSoft" target="_blank"><i class="fa fa-at"></i>DreddSoft</a>
-                
+
             <h3>Entorno Cliente | JavaScript</h3>
 
             <h2><i class="fa fa-star-o"></i> DAW</h2>
@@ -79,8 +90,8 @@
 
 <!-- 
 * Author: @Dreddsoft
-* Exercise: AE3.5 - Ejercicio 2
-* Date: 08/01/2025
+* Exercise: AE3.5 - Ejercicio 7
+* Date: January 2025
 * Version: 1.0
 -->
 

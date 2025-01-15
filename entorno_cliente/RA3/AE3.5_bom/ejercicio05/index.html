@@ -15,10 +15,10 @@
 
         <div class="logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
-            alt="Logo Javascript">
+                alt="Logo Javascript">
             <h3>Entorno Cliente</h3>
         </div>
-        
+
 
         <nav>
             <a href="../ejercicio01/index.html" class="nav-link">Ejercicio 1</a>
@@ -26,6 +26,9 @@
             <a href="/entorno_cliente/RA3/AE3.5_bom/ejercicio03/index.html" class="nav-link">Ejercicio 3</a>
             <a href="../ejercicio04/index.html" class="nav-link">Ejercicio 4</a>
             <a href="../ejercicio05/index.html" class="nav-link">Ejercicio 5</a>
+            <a href="../ejercicio06/index.html" class="nav-link">Ejercicio 6</a>
+            <a href="../ejercicio07/index.html" class="nav-link">Ejercicio 7</a>
+            <a href="../ejercicio08/index.html" class="nav-link">Ejercicio 8</a>
         </nav>
     </header>
 
@@ -34,36 +37,72 @@
         <h4 class="headline3 text-blue">Ejercicio 5</h4>
 
         <div class="enunciado">
-            
+
             <div id="enunciado-texto" class="hidden enunciado-texto">
                 <h4 class="headline4">ENUNCIADO</h4>
                 <h3 class="headline2">Ejercicio 5. OBJETO DOCUMENT</h3>
-                <p>El DOM permite a los desarrolladores ver una página HTML de otra manera, como un conjunto de objetos que JavaScript puede consultar y modificar.</p>
+                <p>El DOM permite a los desarrolladores ver una página HTML de otra manera, como un conjunto de objetos
+                    que JavaScript puede consultar y modificar.</p>
                 <ul>
-                    <li>Crea un nuevo documento HTML con una imágen, un formulario con dos campos para introducir tu nombre y apellidos y 4 párrafos.</li>
+                    <li>Crea un nuevo documento HTML con una imágen, un formulario con dos campos para introducir tu
+                        nombre y apellidos y 4 párrafos.</li>
                     <li>El contenido de los párrafos será "Párrafo N", donde N hace referencia al número de párrafo</li>
-                    <li>Recupera el segundo párrafo utilizando los 4 métodos y muestralos por consola seguido del texto "obteniendo mediante METODO" donde METODO hace referencia al método utilizado para la obteneción de contenido.</li>
+                    <li>Recupera el segundo párrafo utilizando los 4 métodos y muestralos por consola seguido del texto
+                        "obteniendo mediante METODO" donde METODO hace referencia al método utilizado para la obteneción
+                        de contenido.</li>
+                    <li>Implementa un botón <b>&lt;Eliminar cuarto párrafo&gt;</b> para eliminar el cuarto párrafo
+                        cuando se clique en él</li>
+                    <li>Implementa un botón <b>&lt;Crear párrafos&gt;</b> cuya función es la creación de un nuevo
+                        párrafo “Nuevo párrafo creado mediante botón” ubicado en último lugar. Adicionalmente, se creará
+                        un nuevo párrafo “La diferencia entre innerHTML y textContent es RESPUESTA” donde RESPUESTA debe
+                        ser la completación a esa sentencia (y que sea verdadera ;) ). Dicho párrafo estará ubicado en
+                        tercer lugar.</li>
+                        <li>Implementa un botón <b>&lt;Modificar imagen&gt;</b> que sustituya la imagen existente por otra diferente a tu elección cuando se clique en él.</li>
+                        <li>Implementa un botón &lt;Modificar formulario&gt; que sustituya el texto “Nombre” referente al campo nombre del formulario por “Año de nacimiento” cuando se clique en él.</li>
+                        <li>Implementa un botón &lt;Método write&gt; que escriba “Esto es lo que pasa por usar el método document.write una vez la página se ha cargado” cuando se clique en él.</li>
                 </ul>
             </div>
             <div class="enunciado-btns">
                 <h4 class="headline4">BOTONES</h4>
                 <button type="button" id="btn-show" class="myButton2"><i class="fa fa-eye"></i>Mostrar</button>
-                <button type="button" class="myButton2 hidden" id="btn-hide"><i class="fa fa-eye-slash"></i>Ocultar</button>
+                <button type="button" class="myButton2 hidden" id="btn-hide"><i
+                        class="fa fa-eye-slash"></i>Ocultar</button>
             </div>
         </div>
 
         <form action="">
             <fieldset>
                 <legend>Datos Personales</legend>
-                .
+                <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre">
+                <input type="text" name="ape" id="ape" placeholder="Apellidos">
+
             </fieldset>
+            <img src="user.png" alt="Imagen de usuario">
+            <div class="pfos">
+                <p class="p" id="p1">Párrafo 1</p>
+                <p class="p" id="p2">Párrafo 2</p>
+                <p class="p" id="p3">Párrafo 3</p>
+                <p class="p" id="p4">Párrafo 4</p>
+            </div>
+
+
+            <div class="btns">
+                <button type="button" class="myButton1" onclick="modificarParrafos();">Modificar segundo y tercer
+                    párrafo</button>
+                <button type="button" class="myButton1" onclick="eliminarCuartoParrafo();">Eliminar cuarto
+                    párrafo</button>
+                <button type="button" class="myButton1" onclick="crearParrafos();">Crear párrafos</button>
+                <button type="button" class="myButton1" onclick="modificarImagen();">Modificar Imagen</button>
+                <button type="button" class="myButton1" onclick="modificarFormulario();">Modificar Formulario</button>
+                <button type="button" class="myButton1" onclick="metodoWrite();">Método Write</button>
+            </div>
         </form>
     </main>
 
     <footer>
         <div class="footer_content">
             <a href="https://github.com/DreddSoft" target="_blank"><i class="fa fa-at"></i>DreddSoft</a>
-                
+
             <h3>Entorno Cliente | JavaScript</h3>
 
             <h2><i class="fa fa-star-o"></i> DAW</h2>

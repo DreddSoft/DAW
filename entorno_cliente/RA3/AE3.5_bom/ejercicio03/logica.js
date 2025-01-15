@@ -160,7 +160,7 @@ function tuNavegadorWebFullDetail() {
 
     // Guardamos la información en variables para depurar
     let bName = bfd[0]['brand'];
-    let bVersion = bfd[0]['version']
+    let bVersion = bfd[0]['version'];
     
     document.getElementById("SO").innerHTML = `Navegador: ${bName} | version: ${bVersion}`;
     
