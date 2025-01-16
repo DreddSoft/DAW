@@ -135,26 +135,8 @@ function anterior() {
 //* Función para abrir buscaminas
 function abrirBuscaminas() {
 
-    switch (nivelActual) {
-        case 1:
-            window.location.href = `../buscaminas/buscaminas.html?nivel=${nivelActual}`;
-            break;
-        case 2:
-            window.location.href = `../buscaminas/buscaminas.html?nivel=${nivelActual}`;
-            break;
-        case 3:
-            window.location.href = `../buscaminas/buscaminas.html?nivel=${nivelActual}`;
-            break;
-        case 4:
-            window.location.href = `../buscaminas/buscaminas.html?nivel=${nivelActual}`;
-            break;
-        case 5:
-            window.location.href = `../buscaminas/buscaminas.html?nivel=${nivelActual}`;
-            break;
+    window.location.href = `../buscaminas/buscaminas.html?nivel=${nivelActual}`;
 
-        default:
-            break;
-    }
 
 }
 

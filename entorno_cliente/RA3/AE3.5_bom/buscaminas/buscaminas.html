@@ -4,49 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
-    <style>
-        :root {
-            color-scheme: light dark;
-        }
-
-        body {
-            display: grid;
-            place-content: center;
-            padding: 15px;
-        }
-        table {
-            border-collapse: collapse;
-        }
-        td {
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="buscaminas.css">
     <title>Buscaminas</title>
 </head>
 
 <body>
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="Logo Javascript" style="width: 200px; place-self: center; margin-bottom: 50px;">
+    <header>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
+                alt="Logo Javascript">
+            <h3>Entorno Cliente</h3>
+        </div>
+        <nav>
+            <a href="../ejercicio01/index.html" class="nav-link">Ejercicio 1</a>
+            <a href="../ejercicio02/index.html" class="nav-link">Ejercicio 2</a>
+            <a href="/entorno_cliente/RA3/AE3.5_bom/ejercicio03/index.html" class="nav-link">Ejercicio 3</a>
+            <a href="../ejercicio04/index.html" class="nav-link">Ejercicio 4</a>
+            <a href="../ejercicio05/index.html" class="nav-link">Ejercicio 5</a>
+            <a href="../ejercicio06/index.html" class="nav-link">Ejercicio 6</a>
+            <a href="../ejercicio07/index.html" class="nav-link">Ejercicio 7</a>
+            <a href="../ejercicio08/index.html" class="nav-link">Ejercicio 8</a>
+        </nav>
+    </header>
 
-    <div class="titulo" style="display: grid;">
-        <h1 style="place-self: center;">Buscaminas</h1>
-    </div>
 
-    <div class="juego">
-        <table>
-            <tbody id="tbody">
+    <main>
+        <div class="titulo" style="display: grid;">
+            <h1 class="headline1">Buscaminas</h1>
+        </div>
+
+        <h2 class="headline2" id="hNivel"></h2>
+
+        <div class="juego">
+            <table>
+                <tbody id="tbody">
 
 
-            </tbody>
-        </table>
-        <input type="button" value="Jugar" onclick="jugar();">
-    </div>
+                </tbody>
+            </table>
+            <input type="button" value="Jugar" class="myButton3" onclick="jugar();">
+        </div>
 
-    <script src="./buscaminas.js"></script>
+    </main>
+
+
+
+    <footer>
+        <div class="footer_content">
+            <a href="https://github.com/DreddSoft" target="_blank"><i class="fa fa-at"></i>DreddSoft</a>
+
+            <h3>Entorno Cliente | JavaScript</h3>
+
+            <h2><i class="fa fa-star-o"></i> DAW</h2>
+        </div>
+    </footer>
+
+    <script src="buscaminas.js"></script>
 
 </body>
 

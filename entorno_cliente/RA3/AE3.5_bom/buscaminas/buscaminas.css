@@ -1,0 +1,39 @@
+.tbody tr td {
+    /* height: 20px;
+    width: 20px;
+    border: 1px solid grey;
+    background-color: red; */
+}
+
+.pulsa {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pulsa::before {
+    content: "📦";
+    font-size: 30px;
+}
+
+.pulsado {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: lightgrey;
+}
+
+.pulsado::after {
+    content: "☁️";
+    font-size: 30px;
+}
+
