@@ -92,6 +92,59 @@ footer {
     filter: invert(100%) blur(1px);
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.tooltip i {
+    display: inline-block;
+    cursor: help;
+}
+
+/* 
+ Debe estar centrado horizontalmente con respecto al padre
+  debe mostrarse en el hover
+ cursor cambia apariencia
+ debe mostar imagen relacionada
+ fondo marron, txto blanco y altura de 50px
+ permitir desplazamiento vertical
+ border-radius 6px 
+ padding 5px
+ justo a la derecha */
+
+
+.tooltip-text {
+    /* visibility: hidden; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #BBB09B;
+    color: #fff;
+    min-width: 200px;
+    height: 50px;
+    border-radius: 6px;
+    padding: 5px;
+    overflow-y: auto;
+    cursor: help;
+    transform: translate(100%, 0);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    cursor: help;
+    opacity: 1;
+    transition: 3s;
+
+}
 
 
 
