@@ -5,6 +5,7 @@ let enunciado = document.querySelector("#enunciado-texto");
 let nivelActual = 1;
 const nivelMaximo = 5;
 const nivelMinimo = 1;
+let nuevaVentana = null;
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -135,8 +136,33 @@ function anterior() {
 //* Función para abrir buscaminas
 function abrirBuscaminas() {
 
-    window.location.href = `../buscaminas/buscaminas.html?nivel=${nivelActual}`;
+    // window.location.href = `../buscaminas/buscaminas.html?nivel=${nivelActual}`;
 
+    // Abrimos la ventana y la guardamos en una constante
+    nuevaVentana = window.open(`../buscaminas/buscaminas.html?nivel=${nivelActual}`, "sub", "height=600,width=500");
+
+    // ocultamos el boton abrir
+    document.querySelector("#btn-buscaminas").classList.add("hidden");
+
+    // Mostramos el boton cerrar
+    document.querySelector("#btn-cerrar").classList.remove("hidden");
+
+
+}
+
+function cerrarVentana() {
+
+    // Si la ventana esta abierta
+    if (nuevaVentana) {
+        // Cerramos la ventana
+        nuevaVentana.close();
+
+        // Ocultar boton cerrarVentana
+        document.querySelector("#btn-cerrar").classList.add("hidden");
+
+        // mostar el boton de buscaminas
+        document.querySelector("#btn-buscaminas").classList.remove("hidden");
+    }
 
 }
 
