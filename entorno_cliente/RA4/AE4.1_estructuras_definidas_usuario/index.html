@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandero Restaurante</title>
+</head>
+<body>
+
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
+                alt="Logo Javascript">
+        <h1>Desarrollo de Aplicaciones Web</h1>
+        <h2>Entorno Cliente</h2>
+        
+    </header>
+    <main>
+
+        <h3>Aplicación de Comandas</h3>
+        <div class="datos">
+            <label for="nummesa">Número de Mesa</label>
+            <input type="number" name="numMesa" id="numMesa" min="1" max="18">
+            <label for="comensales">Comensales</label>
+            <input type="number" name="comensales" id="comensales" min="1" max="5">
+        </div>
+        <div class="btns">
+        <button type="button" onclick="abrirMesa();">Abrir Mesa</button>
+        </div>
+        <div class="container">
+            <h4>Logs</h4>
+            <div class="logs" id="logs"></div>
+        </div>
+    </main>
+    
+</body>
+</html>
