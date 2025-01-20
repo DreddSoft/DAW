@@ -1,0 +1,26 @@
+// Botón con color primario, #3498db.
+// Botón para aceptar, #27ae60.
+// Botón para cancelar, #e74c3c.
+// Implementar esto en variables
+
+$colors: (
+    1: #3498db,
+    2: #27ae60,
+    3: #e74c3c,
+    4: #9b59b6,
+    5: #f1c40f,
+    6: #2ecc71,
+    7: #e67e22,
+    8: #1abc9c,
+    9: #34495e,
+    10: #d35400
+);
+
+$font-base: 'Poppins', sans-serif;
+$font-title: 'Montserrat', 'Arial';
+
+$fblack1: #202124;
+$fgrey: #5f6368;
+$bg-blanco-base: #ffffff;
+$bg-blanco-3: #f1f3f4;
+$fblue: #1967d2;

@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", "Arial";
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: -1px;
+  color: #202124;
+  word-wrap: normal;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -1px;
+  color: #202124;
+  word-wrap: normal;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -1px;
+  color: #202124;
+  word-wrap: normal;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1px;
+  color: #5f6368;
+  word-wrap: normal;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 3px 0 8px rgb(212, 212, 212);
+}
+header .logo {
+  width: 150px;
+  border-radius: 8px;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 70px;
+}
+header nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5f6368;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  height: 100%;
+  padding: 0 10px;
+}
+header nav a:hover {
+  color: #202124;
+  background-color: #f8f9fa;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  flex: 1;
+}
+main .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .container .box {
+  width: 130px;
+  height: 130px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+main .container .box-1 {
+  background-color: #3498db;
+}
+main .container .box-1:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+main .container .box-2 {
+  background-color: #27ae60;
+}
+main .container .box-2:hover {
+  background-color: rgb(29.661971831, 132.338028169, 73.014084507);
+}
+main .container .box-3 {
+  background-color: #e74c3c;
+}
+main .container .box-3:hover {
+  background-color: rgb(213.698630137, 43.8356164384, 26.301369863);
+}
+main .container .box-4 {
+  background-color: #9b59b6;
+}
+main .container .box-4:hover {
+  background-color: rgb(127.949790795, 67.1966527197, 152.8033472803);
+}
+main .container .box-5 {
+  background-color: #f1c40f;
+}
+main .container .box-5:hover {
+  background-color: rgb(193.7007874016, 157.3818897638, 11.2992125984);
+}
+main .container .box-6 {
+  background-color: #2ecc71;
+}
+main .container .box-6:hover {
+  background-color: rgb(36.616, 162.384, 89.948);
+}
+main .container .box-7 {
+  background-color: #e67e22;
+}
+main .container .box-7:hover {
+  background-color: rgb(191.3536585366, 101.3048780488, 21.6463414634);
+}
+main .container .box-8 {
+  background-color: #1abc9c;
+}
+main .container .box-8:hover {
+  background-color: rgb(19.8037383178, 143.1962616822, 118.8224299065);
+}
+main .container .box-9 {
+  background-color: #34495e;
+}
+main .container .box-9:hover {
+  background-color: rgb(33.8356164384, 47.5, 61.1643835616);
+}
+main .container .box-10 {
+  background-color: #d35400;
+}
+main .container .box-10:hover {
+  background-color: rgb(160, 63.6966824645, 0);
+}
+main .info-ejercicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  bottom: 0;
+  background-color: #f1f3f4;
+  color: #5f6368;
+  box-shadow: -3px 0 8px rgb(212, 212, 212);
+  padding: 20px;
+}
+footer a {
+  text-decoration: none;
+  color: #5f6368;
+  transition: 400ms ease-in-out;
+}
+footer a:hover {
+  color: #1967d2;
+}
+
+/*# sourceMappingURL=styles-comp.css.map */

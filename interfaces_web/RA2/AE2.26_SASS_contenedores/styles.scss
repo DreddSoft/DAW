@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap');
+@import '_variables.scss';
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-base;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+
+}
+
+@import '_encabezados.scss';
+
+//* ESTILOS EJERCICIO
+// Los estilos generales de los botones son:
+
+// Relleno superior e inferior de 10px.
+// Relleno en ambos laterales de 20px.
+// Bordes redondeados a 5px.
+// Margen de 5px.
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+// Esto con el hover o a implementar en cada btn
+// Oscurece un 10% el color del botón al pasar el ratón por encima.
+// Transición suave para dicho cambio de color del botón.
+// Cambio del cursor del ratón.
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    flex: 1;
+
+
+    & .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & .box {
+            width: 130px;
+            height: 130px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        @for $i from 1 through 10 {
+            $color: map-get($map: $colors, $key: $i);
+            
+            .box-#{$i} {
+                
+                background-color: $color;
+
+                &:hover {
+                    background-color: darken($color, 10%);
+                }
+            }
+        }
+
+    }
+
+    & .info-ejercicio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+@import '_pie.scss';

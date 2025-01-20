@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", "Arial";
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: -1px;
+  color: #202124;
+  word-wrap: normal;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -1px;
+  color: #202124;
+  word-wrap: normal;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -1px;
+  color: #202124;
+  word-wrap: normal;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1px;
+  color: #5f6368;
+  word-wrap: normal;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 3px 0 8px rgb(212, 212, 212);
+}
+header .logo {
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 15px #5f6368;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 70px;
+}
+header nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5f6368;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  height: 100%;
+  padding: 0 10px;
+}
+header nav a:hover {
+  color: #202124;
+  background-color: #f8f9fa;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  flex: 1;
+}
+main .btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+main .btns button:nth-child(1) {
+  background-color: #3498db;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
+main .btns button:nth-child(1):hover {
+  filter: brightness(0.8);
+}
+main .btns button:nth-child(1)::before {
+  content: "Color Primario";
+}
+main .btns button:nth-child(2) {
+  background-color: #27ae60;
+  color: #ffffff;
+  cursor: col-resize;
+  transition: 300ms ease-in;
+}
+main .btns button:nth-child(2):hover {
+  filter: brightness(0.8);
+}
+main .btns button:nth-child(2)::before {
+  content: "Color Secundario";
+}
+main .btns button:nth-child(3) {
+  background-color: #e74c3c;
+  color: #ffffff;
+  cursor: crosshair;
+  transition: 300ms ease-in;
+}
+main .btns button:nth-child(3):hover {
+  filter: brightness(0.8);
+}
+main .btns button:nth-child(3)::before {
+  content: "Color Terciario";
+}
+main .info-ejercicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  bottom: 0;
+  background-color: #f1f3f4;
+  color: #5f6368;
+  box-shadow: -3px 0 8px rgb(212, 212, 212);
+  padding: 20px;
+}
+footer a {
+  text-decoration: none;
+  color: #5f6368;
+  transition: 400ms ease-in-out;
+}
+footer a:hover {
+  color: #1967d2;
+}
+
+/*# sourceMappingURL=styles-comp.css.map */

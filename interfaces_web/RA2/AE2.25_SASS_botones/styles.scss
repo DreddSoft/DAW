@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap');
+@import '_variables.scss';
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-base;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+
+}
+
+@import '_encabezados.scss';
+
+//* ESTILOS EJERCICIO
+// Los estilos generales de los botones son:
+
+// Relleno superior e inferior de 10px.
+// Relleno en ambos laterales de 20px.
+// Bordes redondeados a 5px.
+// Margen de 5px.
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+// Esto con el hover o a implementar en cada btn
+// Oscurece un 10% el color del botón al pasar el ratón por encima.
+// Transición suave para dicho cambio de color del botón.
+// Cambio del cursor del ratón.
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    flex: 1;
+
+    & .btns {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        & button:nth-child(1) {
+            background-color: map-get($map: $botones-colors, $key: first);
+            // Me avisa el motor de SASS que map-get esta en desuso
+            color: $bg-blanco-base;
+            cursor: pointer;
+            transition: 300ms ease-in;
+            
+        }
+        & button:nth-child(1):hover {
+            filter: brightness(0.8);
+        }
+        & button:nth-child(1)::before {
+            content: "Color Primario";
+        }
+
+        & button:nth-child(2) {
+            background-color: map-get($map: $botones-colors, $key: second);
+            color: $bg-blanco-base;
+            cursor: col-resize;
+            transition: 300ms ease-in;
+            
+        }
+        & button:nth-child(2):hover {
+            filter: brightness(0.8);
+        }
+        & button:nth-child(2)::before {
+            content: "Color Secundario";
+        }
+
+        & button:nth-child(3) {
+            background-color: map-get($map: $botones-colors, $key: third);
+            color: $bg-blanco-base;
+            cursor: crosshair;
+            transition: 300ms ease-in;
+            
+        }
+        & button:nth-child(3):hover {
+            filter: brightness(0.8);
+        }
+        & button:nth-child(3)::before {
+            content: "Color Terciario";
+        }
+
+    }
+
+    & .info-ejercicio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+@import '_pie.scss';
