@@ -1,0 +1,89 @@
+@import '_variables.scss';
+
+// Color de fondo #f2f2f2
+// Fuente con variable $font-family
+// Texto alinieado al centro
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+        // Tamaño de fuente 2rem
+        // Color primary-color
+        font-size: 2rem;
+        color: $primary-color;
+    }
+
+    & p {
+        // Tamaño de fuente 1.2rem
+        // color: #555
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    & button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+        -webkit-transition: background-color 0.3s ease;
+        -moz-transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    & .product {
+        background-color: white;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin: 10px;
+
+        &:hover {
+            background-color: darken(white, 10%);
+        }
+
+        & img {
+            max-width: 100%;
+
+        }
+
+        & h3 {
+            font-size: 1.5rem;
+        }
+
+        & .important-text {
+            font-weight: bold;
+            color: $secondary-color;
+        }
+    }
+
+
+}
+
+@each $name, $style in $button-styles {
+    .#{$name} {
+        background-color: $style;
+
+        &:hover {
+            background-color: darken($style, 10%);
+        }
+    }
+}
+
+.centered {
+    @include center-element(row, center, center);
+
+    & *:not(:last-child) {
+        // border-bottom: 10px solid black;
+        padding-right: 20px;
+    }
+
+}
