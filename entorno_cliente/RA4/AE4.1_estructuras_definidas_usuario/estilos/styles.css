@@ -22,7 +22,6 @@ footer {
   justify-content: center;
   align-items: center;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
-  position: absolute;
   width: 100%;
   bottom: 0;
 }
@@ -85,6 +84,7 @@ main .aplicacion {
   justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 5rem;
 }
 main .aplicacion .barra-placing {
   display: flex;
@@ -109,9 +109,9 @@ main .aplicacion .barra-placing .barra-seating {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 }
-main .aplicacion .barra-placing .barra-seating button {
+main .aplicacion .barra-placing .barra-seating .butaca {
   display: block;
   background-color: rgb(79, 64, 60) !important;
   color: #fff;
@@ -121,6 +121,45 @@ main .aplicacion .barra-placing .barra-seating button {
   border: 1px solid transparent;
   border-radius: 100px;
   font-size: 18px;
+}
+main .aplicacion .primera-fila, main .aplicacion .segunda-fila, main .aplicacion .tercera-fila {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+main .aplicacion .mesa4 {
+  background-color: #D0B8AC;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #F2F5EA;
+  border-radius: 35px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 25px;
+}
+main .aplicacion .mesa6 {
+  background-color: #D0B8AC;
+  width: 300px;
+  height: 150px;
+  border: 1px solid #F2F5EA;
+  border-radius: 35px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 25px;
+}
+main .aplicacion .block {
+  background-color: grey;
+  border: 2px solid black;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
