@@ -6,6 +6,17 @@ const infoMesa = document.querySelector("#info-mesa");
 const abrirMesaBtn = document.querySelector("#abrir");
 const cerrarMesaBtn = document.querySelector("#cerrar");
 
+// Array de mesas
+let mesas = [];
+
+//* Evento de carga del DOM
+addEventListener('DOMContentLoaded', () => {
+
+    // Función para saber si la mesa está abierda
+    mesaEstaAbierta();
+
+});
+
 
 // Definimos la clase mesa
 class Mesa {
@@ -15,9 +26,10 @@ class Mesa {
     #_comensales;
 
     // Constructor de la clase
-    constructor(numero, comensales) {
+    constructor(numero) {
         this.#_numero = numero;
-        this.#_comensales = comensales;
+        // Todas las mesas se inician a comensales = 0
+        this.#_comensales = 0;
 
     }
 
@@ -103,7 +115,7 @@ if (mesa6) {
             abrirMenu(mesa.id);
         });
 
-    });    
+    });
 }
 
 function imprimir(mensaje) {
@@ -131,18 +143,89 @@ function abrirMenu(id) {
 // Funcion para abrir una mesa (instanciar un objeto de tipo mesa)
 function abrirMesa() {
 
-    // Capturar el id de la url
-    // Para eso primero sacamos nuestra url
-    // alert(location.href);
+    // 1. Capturar el id de la url
+    const id = getIdFromUrl();
+
+    // 2. Crear nuevo bjeto de mesa
+    let mesa = new Mesa(id);
+
+    // 3. Guardar mesa en Array
+    mesas.push(mesa);
+    console.log(mesas);
+
+    // 4. Cambiar botonera
+    abrirMesaBtn.setAttribute("hidden", true);
+
+    cerrarMesaBtn.removeAttribute("hidden");
+
+}
+
+//* Función saber si mesa esta abierta
+function mesaEstaAbierta() {
+
+    // Variables
+    $existe = false;
+
+    // 1. Capturamos el id de la url
+    const id = getIdFromUrl();
+
+    // 2. Comprobamos en el array de mesas que no coincida el número con el id
+    for (mesa in mesas) {
+
+        if (mesa.getNumero() == id) {
+            $existe = true;
+        }
+
+    }
+
+    // 3. Si existe desactivamos el botón abrirMesa
+    if ($existe) {
+
+        abrirMesaBtn.setAttribute("hidden", true);
+        cerrarMesaBtn.removeAttribute("hidden");
+
+    } else {
+
+        abrirMesaBtn.removeAttribute("hidden");
+        cerrarMesaBtn.setAttribute("hidden", true);
+
+    }
+
+}
+
+//* Función asignar comensales
+function addComensal() {
+
+    // 1. Capturamos el id de la url
+
+
+
+}
+
+//* Función para mostrar los datos de una mesa
+function showTableData() {
+
+    // Capturam
+
+}
+
+//* Función para capturar el id de la url
+function getIdFromUrl() {
+
     let url = new URL(location.href);
     let params = new URLSearchParams(url.search);
 
     // Sacamos el parametro id
     const id = params.get('id');
-    // alert(parseInt(id));
 
+    return id;
 
-    
+}
 
+//* Cerrar ventana
+function closeWindow() {
+
+    window.close();
     
 }
+
