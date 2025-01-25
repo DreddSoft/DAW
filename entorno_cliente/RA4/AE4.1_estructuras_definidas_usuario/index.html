@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/styles.css">
     <title>Comandero Restaurante</title>
 </head>
+
 <body>
 
     <header>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png"
-                alt="Logo Javascript">
+            alt="Logo Javascript">
         <h1>Desarrollo de Aplicaciones Web</h1>
         <h2>Entorno Cliente</h2>
-        
+
     </header>
     <main>
 
         <h3>Aplicación de Comandas</h3>
+
+
         <div class="aplicacion">
             <div class="barra-placing">
                 <div class="barra">BARRA</div>
@@ -32,7 +36,7 @@
             </div>
 
             <div class="primera-fila">
-                <button type="button" class="mesa4" id="1" onclick="abrirMenu();">1</button>
+                <button type="button" class="mesa4" id="1">1</button>
                 <button type="button" class="mesa4" id="2">2</button>
                 <button type="button" class="mesa4" id="3">3</button>
                 <button type="button" class="mesa4" id="4">4</button>
@@ -52,12 +56,52 @@
                 <button type="button" class="block" id="11" disabled="true"></button>
                 <button type="button" class="mesa4" id="12">12</button>
             </div>
+
+            <div class="horizontal">
+                <button class="myButton-1" onclick="showTablesOcupied();">Ver mesas ocupadas</button>
+                <button type="button" class="myButton-1" onclick="verTickets();" id="verT">Ver Ticketing</button>
+                <button type="button" class="myButton-1 hidden" onclick="cerrarTickets();" id="cerrarT">Cerrar Ticketing</button>
+            </div>
+            
+        </div>
+        <div class="menu hidden" id="menu">
+            <div class="info-mesa" id="info-mesa"></div>
+            <div class="acciones">
+                <div class="horizontal">
+                    <button type="button" id="abrir">Abrir</button>
+                    <button type="button" id="cerrar">Cobrar</button>
+                    <!-- <button type="button">Ver Ticket</button> -->
+                </div>
+                <div class="horizontal">
+                    <button type="button" onclick="addComensal();" id="addC">Añadir Comensal</button>
+                    <button type="button" id="remC" onclick="removeComensal();">Eliminar Comensal</button>
+                </div>
+                <div class="horizontal">
+                    <button type="button">Añadir Producto</button>
+                    <button type="button">Eliminar Producto</button>
+                </div>
+                <div class="horizontal">
+                    <button type="button">Comanda Mesa</button>
+                    <button type="button">Comanda Cliente</button>
+                </div>
+                <div class="horizontal">
+                    <button type="button" onclick="closeWindow();">Cerrar Menu</button>
+                </div>
+
+                <div class="precio" id="precio"></div>
+
+            </div>
+        </div>
+        <div class="logs hidden" id="logs">
+            <h3>Informacion de ticketing</h3>
+            <hr>
         </div>
 
-        <div class="logs" id="logs"></div>
-
-
-
+        <div id="ex1" class="modal hidden">
+            <h4>Mesas ocupadas</h4>
+            <p id="ex1-text"></p>
+            <button type="button" class="myButton-1" onclick="closeModal('ex1');">Cerrar</button>
+        </div>
 
     </main>
 
@@ -66,6 +110,7 @@
     </footer>
 
     <script src="script.js"></script>
-    
+
 </body>
+
 </html>

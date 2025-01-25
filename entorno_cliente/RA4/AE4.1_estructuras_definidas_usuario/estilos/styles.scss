@@ -35,6 +35,7 @@ h4 {
     font-weight: 400;
 }
 
+
 main {
     @include centrado-vertical();
 
@@ -60,17 +61,7 @@ main {
                 @include centrado-horizontal();
                 gap: 3rem;
 
-                & .butaca {
-                    display: block;
-                    background-color: rgb(79, 64, 60) !important;
-                    color: $white;
-                    height: 50px;
-                    width: 50px;
-                    cursor: pointer;
-                    border: 1px solid transparent;
-                    border-radius: 100px;
-                    font-size: 18px;
-                }
+                
             }
         }
 
@@ -82,7 +73,7 @@ main {
         }
 
         & .mesa4 {
-            background-color: $marroncito;
+            background-color: $verde;
             width: 150px;
             height: 150px;
             border: 1px solid $ivory;
@@ -92,8 +83,20 @@ main {
             font-size: 25px;
         }
 
+        & .butaca {
+            display: block;
+            background-color: $green-strong;
+            color: $white;
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 100px;
+            font-size: 18px;
+        }
+
         & .mesa6 {
-            background-color: $marroncito;
+            background-color: $verde;
             width: 300px;
             height: 150px;
             border: 1px solid $ivory;
@@ -112,10 +115,121 @@ main {
 
         }
     }
+
+    
+}
+
+.logs {
+    text-align: start;
+    display: block;
+
+    width: 400px;
+    word-wrap: normal;
+    height: 600px;
+    overflow-y: auto;
+    border: 1px solid grey;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    
+    position: absolute;
+    z-index: 999;
+    
+}
+
+.menu {
+    // display: block;
+    display: none;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 2rem;
+    @include centrado-vertical();
+    position: absolute;
+    z-index: 999;
+
+    background-color: $ivory;
+
+    & .horizontal {
+        @include centrado-horizontal();
+        gap: 2rem;
+        margin: 1rem 0;
+    }
+
+    & button {
+        height: 40px;
+        width: 180px;
+        border-radius: 6px;
+        cursor: pointer;
+        border: 2px solid grey;
+        background-color: rgba($color: grey, $alpha: 0.2);
+        transition: 150ms ease-out;
+        -moz-transition: 150ms ease-out;
+        -webkit-transition: 150ms ease-out;
+
+        &:hover {
+            background-color: darken(grey, 5%);
+            color: $white;
+        }
+    }
+
+
+
+
+}
+
+.myButton-1 {
+    margin: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: $sage;
+    color: $white;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 150ms ease-out;
+    -moz-transition: 150ms ease-out;
+    -webkit-transition: 150ms ease-out;
+
+    &:hover {
+        background-color: darken($sage, 20%);
+    }
+
+    &:active {
+        transform: translateY(4px);
+        -moz-transform: translateY(4px);
+        -webkit-transform: translateY(4px);
+
+    }
+}
+
+.modal {
+    position: absolute;
+    width: 350px;
+    min-height: 200px;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    z-index: 995;
+
 }
 
 .hidden {
     display: none;
+}
+
+.ocupada {
+    background-color: $marroncito !important;
+}
+
+.prohibido {
+    opacity: 0.3 !important;
+    color: red !important;
+    cursor: not-allowed !important;
+
 }
 
 
