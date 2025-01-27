@@ -77,12 +77,12 @@
                     <button type="button" id="remC" onclick="removeComensal();">Eliminar Comensal</button>
                 </div>
                 <div class="horizontal">
-                    <button type="button">Añadir Producto</button>
-                    <button type="button">Eliminar Producto</button>
+                    <button type="button" id="addP" onclick="showModalClientes();">Añadir Producto</button>
+                    <button type="button" id="remP">Eliminar Producto</button>
                 </div>
                 <div class="horizontal">
-                    <button type="button">Comanda Mesa</button>
-                    <button type="button">Comanda Cliente</button>
+                    <button type="button" id="cM">Comanda Mesa</button>
+                    <button type="button" id="cC">Comanda Cliente</button>
                 </div>
                 <div class="horizontal">
                     <button type="button" onclick="closeWindow();">Cerrar Menu</button>
@@ -101,6 +101,10 @@
             <h4>Mesas ocupadas</h4>
             <p id="ex1-text"></p>
             <button type="button" class="myButton-1" onclick="closeModal('ex1');">Cerrar</button>
+        </div>
+
+        <div class="modal hidden horizontal" id="modalClientes">
+
         </div>
 
     </main>

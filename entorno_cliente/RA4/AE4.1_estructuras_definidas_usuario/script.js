@@ -5,7 +5,7 @@ class Mesa {
     #_numero;
     #_comensales;
     #_tipo;
-    #_precio;
+    #_clientes;
 
     // Constructor de la clase
     constructor(numero, tipo) {
@@ -13,7 +13,7 @@ class Mesa {
         // Todas las mesas se inician a comensales = 0
         this.#_comensales = 0;
         this.#_tipo = tipo;
-        this.#_precio = 0;
+        this.#_clientes = [];
 
     }
 
@@ -42,19 +42,78 @@ class Mesa {
         this.#_tipo = tipo;
     }
 
-    get precio() {
-        return this.#_precio;
-    }
-
-    set precio(precio) {
-        this.#_precio = precio;
-    }
-
     // Funciones personalizadas
     get UbicacionMesa() {
+        return this.#_numero;
+    }
+
+    // Función para añadir un cliente al array de clientes de la mesa
+    addCliente(cliente) {
+        this.#_clientes.push(cliente);
+    }
+
+    // Función para eliminar clientes
+    removeCliente() {
+        this.#_clientes.pop();
+    }
+
+    // Función que devuelve el coste total de toda la mesa (todos los clientes)
+    getComandaMesa() {
+
+        // Variable de precioMesa
+        let precioMesa = 0;
+
+        // Recorremos el array de clientes
+        this.#_clientes.forEach((cliente) => {
+
+            precioMesa += cliente.getPrecioCliente();
+        });
+
+        return precioMesa;
+    }
+
+}
+
+// Creamos una clase cliente
+class Cliente {
+
+    // Atributos
+    #_id;
+    #_productos;
+
+    constructor(id) {
+        this.#_id = id;
+        this.#_productos = [];
+    }
+
+    // GETTERS Y SETTERS
+    set id(id) {
+        this.#_id = id;
+    }
+
+    get id() {
+        return this.#_id;
+    }
 
 
-        
+    // Funciones propias
+    addProducto(producto) {
+        this.#_productos.push(producto);
+    }
+
+    // Obtener precio cliente
+    getPrecioCliente() {
+
+        let precioTotal = 0;
+
+        // Recorremos los productos
+        productos.forEach((producto) => {
+
+            precioTotal = producto["precio"];
+
+        })
+
+        return precioTotal;
     }
 }
 
@@ -65,6 +124,12 @@ const infoMesa = document.querySelector("#info-mesa");
 // Botones de abrir y cerrar mesa
 const abrirMesaBtn = document.querySelector("#abrir");
 const cerrarMesaBtn = document.querySelector("#cerrar");
+const addComensalBtn = document.getElementById("addC");
+const removeComensalBtn = document.getElementById("remC");
+const addProductoBtn = document.getElementById("addP");
+const removeProductoBtn = document.getElementById("remP");
+const comandaMesaBtn = document.getElementById("cM");
+const comandaClienteBtn = document.getElementById("cC");
 let mesas = [];
 
 
@@ -73,6 +138,15 @@ let mesas = [];
 const butacas = document.querySelectorAll(".butaca");
 const mesa4 = document.querySelectorAll(".mesa4");
 const mesa6 = document.querySelectorAll(".mesa6");
+
+//* Array de productos
+const productos = [
+    { nombre: "zamburiñas", precio: 3.5 },
+    { nombre: "mejillones", precio: 3.5 },
+    { nombre: "gambas", precio: 3.5 },
+    { nombre: "vino blanco", precio: 3.5 },
+    { nombre: "cerveza Victoria", precio: 3.5 }
+];
 
 // Recorremos todas las butacas
 if (butacas) {
@@ -158,6 +232,8 @@ function abrirMenu(id) {
     // 3. Mostrar el id de la mesa en el info-mesa
     document.querySelector("#info-mesa").innerHTML = id;
 
+
+
     actualizarMenu(id);
 
 }
@@ -223,11 +299,11 @@ function mesaEstaAbierta(id) {
         abrirMesaBtn.setAttribute("hidden", true);
         cerrarMesaBtn.removeAttribute("hidden");
 
+
     } else {
 
         abrirMesaBtn.removeAttribute("hidden");
-        cerrarMesaBtn.setAttribute("hidden", true);
-
+        cerrarMesaBtn.setAttribute("hidden", true);        
     }
 
 }
@@ -252,7 +328,7 @@ function showTablesOcupied() {
 
     mesas.forEach((mesa) => {
 
-        textMesas.innerHTML += `${mesa.numero} - `;
+        textMesas.innerHTML += `${mesa.numero} `;
     });
 
 }
@@ -313,7 +389,8 @@ function formatNowDate() {
 function addComensal() {
 
     let id = parseInt(document.getElementById("info-mesa").innerHTML);
-    let idxTable = 0;
+    let idxMesa = null;
+    let idCliente = null;
 
     // Sacar la mesa 
     if (mesas) {
@@ -322,21 +399,26 @@ function addComensal() {
 
             if (mesa.numero == id) {
 
-                // Indice de la mesa
-                idxTable = mesas.indexOf(mesa);
+                // Modificamos el número de comensales de la mesa
+                idCliente = mesa.comensales + 1;
+                console.log(idCliente);
+                mesa.comensales = idCliente;
 
+                // Aquí mismo instanciamos el cliente
+                let temp = new Cliente(idCliente);
+
+                // Añadimos el cliente a la mesa
+                mesa.addCliente(temp);
+
+                idxMesa = mesas.indexOf(mesa);
             }
         })
     }
 
-    // Aumentamos comensal
-    let c = mesas[idxTable].comensales;
-    mesas[idxTable].comensales = c + 1;
-
     actualizarMenu(id);
 
     // Imprimir
-    imprimir(`Se ha añadido un comensale a la mesa ${id}, total: ${mesas[idxTable].comensales}.`);
+    imprimir(`Se ha creado un cliente con id ${idCliente}, que se ha añadido como comensal a la mesa ${id}, total de comensales: ${mesas[idxMesa].comensales}.`);
 
 }
 
@@ -344,6 +426,7 @@ function removeComensal() {
 
     let id = parseInt(document.getElementById("info-mesa").innerHTML);
     let idxTable = 0;
+    let idCliente = null;
 
     // Sacar la mesa 
     if (mesas) {
@@ -354,19 +437,24 @@ function removeComensal() {
 
                 // Indice de la mesa
                 idxTable = mesas.indexOf(mesa);
+                // Disminuimos comensales
+                let c = mesa.comensales;
+                idCliente = c;
+                mesa.comensales = c - 1;
+
+                // Eliminamos el cliente
+                mesa.removeCliente();
 
             }
         })
     }
 
-    // Aumentamos comensal
-    let c = mesas[idxTable].comensales;
-    mesas[idxTable].comensales = c - 1;
+
 
     actualizarMenu(id);
 
     // Imprimir
-    imprimir(`Se ha eliminado un comensal de la mesa ${id}, total: ${mesas[idxTable].comensales}.`);
+    imprimir(`Se ha eliminado el cliente ${idCliente} de la mesa ${id}, un comensale menos. Total: ${mesas[idxTable].comensales}.`);
 
 }
 
@@ -475,8 +563,8 @@ function getPrecio(id) {
 
             if (mesa.numero == id) {
 
-                console.log(mesa.precio);
-                valor = mesa.precio;
+                console.log(mesa.getComandaMesa());
+                valor = mesa.getComandaMesa();
                 precioDisplay.innerHTML = valor.toFixed(2) + "€";
 
             }
@@ -496,13 +584,77 @@ function actualizarMenu(id) {
 
 }
 
+// Funcion para cerrar una ventana modal
 function closeModal(id) {
 
     document.getElementById("ex1-text").innerHTML = "";
 
     document.getElementById(id).classList.add("hidden");
-    
+
 }
+
+// funcion para abrir menu de productos
+function showModalClientes() {
+
+    // Capturamos el id de la mesa
+    let id = parseInt(document.getElementById("info-mesa").innerHTML);
+
+    // Capturamos el modal de clientes
+    let modalClientes = document.getElementById("modalClientes");
+
+    let h3 = document.createElement("h3");
+    h3.innerHTML = "Elige un cliente";
+    modalClientes.appendChild(h3);
+
+    if (mesas) {
+
+        // Creamos todos los botones de los clientes 
+        mesas.forEach((mesa) => {
+
+            // Si coincide el id con el numero de mesa
+            if (mesa.numero == id) {
+
+                // hacemos un bucle for hasta el número de comensales
+                for (let i = 1; i <= mesa.comensales; i++) {
+                    let btn = document.createElement("button");
+                    btn.classList.add("btn-cliente");
+                    btn.innerHTML = i;
+                    modalClientes.appendChild(btn);
+                }
+
+            }
+
+        });
+    }
+
+    // Quitamos el hidden
+    modalClientes.classList.remove("hidden");
+
+    let btnSalir = document.createElement("button");
+    btnSalir.innerHTML = "Cerrar";
+
+    // Añadimos la función onclick hideModalClientes
+    btnSalir.onclick = hideModalClientes();
+
+    // Añadimos el botón salir al final del div
+    modalClientes.appendChild(btnSalir);
+
+}
+
+// Función para cerrar modal Clientes
+function hideModalClientes() {
+
+    // Capturamos el modal de clientes
+    let modalClientes = document.getElementById("modalClientes");
+
+    // Borramos todo el contenido
+    modalClientes.innerHTML = "";
+
+    // Ocultamos
+    modalClientes.classList.add("hidden");
+
+}
+
 
 
 
