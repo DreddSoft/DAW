@@ -10,7 +10,7 @@
             "port": 3306,
             "driver": "MariaDB",
             "name": "mariaDB Local",
-            "database": "campeonatos",
+            "database": "mailapp",
             "username": "root",
             "connectionTimeout": 30,
             "password": ""

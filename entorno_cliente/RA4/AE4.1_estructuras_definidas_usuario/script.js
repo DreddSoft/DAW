@@ -303,7 +303,7 @@ function mesaEstaAbierta(id) {
     } else {
 
         abrirMesaBtn.removeAttribute("hidden");
-        cerrarMesaBtn.setAttribute("hidden", true);        
+        cerrarMesaBtn.setAttribute("hidden", true);
     }
 
 }
@@ -593,67 +593,85 @@ function closeModal(id) {
 
 }
 
-// funcion para abrir menu de productos
-function showModalClientes() {
+// Función para elegir el cliente al que añadir los productos
+function pickCliente() {
 
-    // Capturamos el id de la mesa
-    let id = parseInt(document.getElementById("info-mesa").innerHTML);
+    // el id de la mesa
+    let idMesa = parseInt(document.getElementById("info-mesa").innerHTML);
+    let comensalesMesa = 0;
+    let idCliente;
 
-    // Capturamos el modal de clientes
-    let modalClientes = document.getElementById("modalClientes");
+    // Obtener los comensales de la mesa
+    comensalesMesa = getComensalesMesa(idMesa);
+    alert(comensalesMesa);
 
-    let h3 = document.createElement("h3");
-    h3.innerHTML = "Elige un cliente";
-    modalClientes.appendChild(h3);
+    if (comensalesMesa != -1) {
 
-    if (mesas) {
+        // Pedimos por prompt el id del cliente
+        idCliente = parseInt(`Introduzca un cliente entre 1 y ${comensalesMesa}`);
 
-        // Creamos todos los botones de los clientes 
-        mesas.forEach((mesa) => {
+        while (idCliente < 0 && idCliente > comensalesMesa) {
+            idCliente = prompt(`Error, recuerda un cliente entre 1 y ${comensalesMesa}`);
+        }
 
-            // Si coincide el id con el numero de mesa
-            if (mesa.numero == id) {
+        // función añadir clientes con el idMesa y idCliente
+        showProductos(idMesa, idCliente);
 
-                // hacemos un bucle for hasta el número de comensales
-                for (let i = 1; i <= mesa.comensales; i++) {
-                    let btn = document.createElement("button");
-                    btn.classList.add("btn-cliente");
-                    btn.innerHTML = i;
-                    modalClientes.appendChild(btn);
-                }
-
-            }
-
-        });
+    } else {
+        alert("No se han añadido comensales a la mesa.");
     }
 
-    // Quitamos el hidden
-    modalClientes.classList.remove("hidden");
+}
 
-    let btnSalir = document.createElement("button");
-    btnSalir.innerHTML = "Cerrar";
+// Función para obtener los comensales de la mesa
+function getComensalesMesa(id) {
 
-    // Añadimos la función onclick hideModalClientes
-    btnSalir.onclick = hideModalClientes();
+    let num = -1;
 
-    // Añadimos el botón salir al final del div
-    modalClientes.appendChild(btnSalir);
+    // Recorremos todas las mesas
+    mesas.forEach((mesa) => {
+
+        if (id == mesa.numero) {
+            alert(mesa.comensales);
+            num = mesa.comensales;
+            return num;
+        }
+    });
+
+    return num;
 
 }
 
-// Función para cerrar modal Clientes
-function hideModalClientes() {
+// Función añadir productos al cliente
+function showProductos(idMesa, idCliente) {
+    
+    // Mostramos el modal
+    const modalProductos = document.getElementById("modalProductos");
+    modalProductos.classList.remove("hidden");
 
-    // Capturamos el modal de clientes
-    let modalClientes = document.getElementById("modalClientes");
+    // Damos valor a los inputs ocultos
+    const prodMesa = document.getElementById("prod-mesa");
+    const prodCliente = document.getElementById("prod-cliente");
 
-    // Borramos todo el contenido
-    modalClientes.innerHTML = "";
-
-    // Ocultamos
-    modalClientes.classList.add("hidden");
+    prodMesa.value = idMesa;
+    prodCliente.value = idCliente;
 
 }
+
+// Función añadir productos
+function addProductosCliente(idProducto) {
+
+    let idMesa = document.getElementById("prod-mesa").value;
+    let idCliente = document.getElementById("prod-cliente").value;
+    
+    alert(productos[idProducto]["nombre"] + " " + productos[idProducto]["precio"]);
+
+
+}
+
+
+
+
 
 
 

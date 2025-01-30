@@ -56,6 +56,7 @@
 
     ];
 
+
     // Utilizando FOREACH mostrar el cotnenido de ambos
     //* Mostramos el númerico
     echo "<label>Los números: </label>";

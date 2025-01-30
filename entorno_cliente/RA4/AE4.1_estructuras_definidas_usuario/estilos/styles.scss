@@ -201,11 +201,44 @@ main {
     }
 }
 
+.myButton-2 {
+    margin: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: $white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 150ms ease-out;
+    -moz-transition: 150ms ease-out;
+    -webkit-transition: 150ms ease-out;
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+
+    &:active {
+        transform: translateY(4px);
+        -moz-transform: translateY(4px);
+        -webkit-transform: translateY(4px);
+
+    }
+}
+
+.horizontal {
+    @include centrado-horizontal();
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+
 .modal {
     position: absolute;
     width: 350px;
     min-height: 200px;
-    background-color: rgba($color: #000000, $alpha: 0.4);
+    height: auto;
+    background-color: rgba($color: #000000, $alpha: 0.8);
     color: $white;
     display: flex;
     flex-direction: column;

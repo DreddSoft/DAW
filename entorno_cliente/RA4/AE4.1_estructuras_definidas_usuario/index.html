@@ -60,9 +60,10 @@
             <div class="horizontal">
                 <button class="myButton-1" onclick="showTablesOcupied();">Ver mesas ocupadas</button>
                 <button type="button" class="myButton-1" onclick="verTickets();" id="verT">Ver Ticketing</button>
-                <button type="button" class="myButton-1 hidden" onclick="cerrarTickets();" id="cerrarT">Cerrar Ticketing</button>
+                <button type="button" class="myButton-1 hidden" onclick="cerrarTickets();" id="cerrarT">Cerrar
+                    Ticketing</button>
             </div>
-            
+
         </div>
         <div class="menu hidden" id="menu">
             <div class="info-mesa" id="info-mesa"></div>
@@ -77,7 +78,7 @@
                     <button type="button" id="remC" onclick="removeComensal();">Eliminar Comensal</button>
                 </div>
                 <div class="horizontal">
-                    <button type="button" id="addP" onclick="showModalClientes();">Añadir Producto</button>
+                    <button type="button" id="addP" onclick="pickCliente();">Añadir Producto</button>
                     <button type="button" id="remP">Eliminar Producto</button>
                 </div>
                 <div class="horizontal">
@@ -103,7 +104,25 @@
             <button type="button" class="myButton-1" onclick="closeModal('ex1');">Cerrar</button>
         </div>
 
+        <!-- MODAL CLIENTES -->
         <div class="modal hidden horizontal" id="modalClientes">
+
+            <button type="button" class="myButton-1" id="btnCerrarModal" onclick="hideModalClientes();">Cerrar</button>
+        </div>
+
+        <!-- MODAL PRODUCTOS -->
+        <div class="modal hidden horizontal" id="modalProductos">
+            <input type="hidden" name="mesa" id="prod-mesa">
+            <input type="hidden" name="cliente" id="prod-cliente">
+            <button type="button" class="myButton-1" id="0" onclick="addProductosCliente(this.id);">Zamburiñas 3,5 &euro;</button>
+            <button type="button" class="myButton-1" id="1" onclick="addProductosCliente(this.id);">Mejillones 3,5 &euro;</button>
+            <button type="button" class="myButton-1" id="2" onclick="addProductosCliente(this.id);">Gambas 3,5 &euro;</button>
+            <button type="button" class="myButton-1" id="3" onclick="addProductosCliente(this.id);">Vino blanco 3,5 &euro;</button>
+            <button type="button" class="myButton-1" id="4" onclick="addProductosCliente(this.id);">cerveza Victoria 3,5 &euro;</button>
+
+            <div class="">
+                <button type="button" class="myButton-2">Cerrar</button>
+            </div>
 
         </div>
 

@@ -86,3 +86,4 @@ SET nombreJuego = REPLACE(nombreJuego, "Poker", "Póquer")
 WHERE LOWER(nombreJuego) like '%poker%';
 
 SELECT * FROM juegos;
+

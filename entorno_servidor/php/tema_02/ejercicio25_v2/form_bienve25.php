@@ -2,6 +2,11 @@
 
 session_start();
 
+// COmprobando que el usuario este registrado
+if (!isset($_SESSION['usuario'])) {
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +104,7 @@ session_start();
 
         <br>
         <h2>Subida de imágenes</h2>
-        <h3><?= $_GET['usuario']; ?></h3>
+        <h3><?= $_SESSION['usuario']; ?></h3>
 
         <fieldset>
 

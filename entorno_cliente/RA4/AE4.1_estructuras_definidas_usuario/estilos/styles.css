@@ -231,11 +231,43 @@ main .aplicacion .block {
   -webkit-transform: translateY(4px);
 }
 
+.myButton-2 {
+  margin: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 150ms ease-out;
+  -moz-transition: 150ms ease-out;
+  -webkit-transition: 150ms ease-out;
+}
+.myButton-2:hover {
+  background-color: black;
+  color: white;
+}
+.myButton-2:active {
+  transform: translateY(4px);
+  -moz-transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
 .modal {
   position: absolute;
   width: 350px;
   min-height: 200px;
-  background-color: rgba(0, 0, 0, 0.4);
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   display: flex;
   flex-direction: column;

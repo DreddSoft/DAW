@@ -1,34 +1,32 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] != "POST") {
-
-    die("NO SE HA USADO METODO POST");
-}
-
+// Esto es para las sesiones
 session_start();
 
 
 
-// Condicional que accede al modo subida de documentos
-if (!empty($_FILES)) {
-    $modoSubida = true;
-    $usuario = $_SESSION['usuario'];
-} else {
-    $modoSubida = false;
-    $_SESSION['usuario'] = htmlspecialchars($_POST['user']);
-    $usuario = htmlspecialchars($_SESSION['usuario']);
-    $passw = htmlspecialchars($_POST['passw']);
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    $usuarioCorrecto = "user1";
-    $passwCorrecta = "1234";
+    // Condicional que accede al modo subida de documentos
+    if (!empty($_FILES)) {
+        $modoSubida = true;
+        $usuario = $_SESSION['usuario'];
+    } else {
+        $modoSubida = false;
+        $_SESSION['usuario'] = htmlspecialchars($_POST['user']);
+        $usuario = htmlspecialchars($_SESSION['usuario']);
+        $passw = htmlspecialchars($_POST['passw']);
 
-    // Condicional que verifica el acceso
-    if ($usuario == $usuarioCorrecto && $passw == $passwCorrecta) {
-        header("Location: form_bienve25.php?usuario=$usuario");
+        $usuarioCorrecto = "user1";
+        $passwCorrecta = "1234";
+
+        // Condicional que verifica el acceso
+        if ($usuario == $usuarioCorrecto && $passw == $passwCorrecta) {
+            header("Location: form_bienve25.php?usuario=$usuario");
+        }
     }
+} else {
+    header("Location: formulario25v2.html");
 }
-
-
 
 
 /**
@@ -175,7 +173,6 @@ if (!empty($_FILES)) {
         $tamanoLimite = 2 * (1024 * 1024);
 
         $rutaTemp = $tempImg . basename($nombreImg);
-
 
         if ($tamanoImg > $tamanoLimite) {
             $mensaje = "Error, el archivo subido es demasiado grande.";
