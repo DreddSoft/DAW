@@ -70,7 +70,8 @@
             <div class="acciones">
                 <div class="horizontal">
                     <button type="button" id="abrir">Abrir</button>
-                    <button type="button" id="cerrar">Cobrar</button>
+                    <button type="button" id="cerrar" class="hidden">Cobrar</button>
+                    <button type="button" id="cambiar" onclick="cambiarMesaDeSitio()">Cambiar Mesa</button>
                     <!-- <button type="button">Ver Ticket</button> -->
                 </div>
                 <div class="horizontal">
@@ -79,11 +80,13 @@
                 </div>
                 <div class="horizontal">
                     <button type="button" id="addP" onclick="pickCliente();">Añadir Producto</button>
-                    <button type="button" id="remP">Eliminar Producto</button>
+                    <button type="button" id="remP" onclick="pickCliente();">Eliminar Producto</button>
                 </div>
                 <div class="horizontal">
-                    <button type="button" id="cM">Comanda Mesa</button>
-                    <button type="button" id="cC">Comanda Cliente</button>
+                    <button type="button" id="cM" onclick="comandaMesa()">Comanda Mesa</button>
+                    <button type="button" class="hidden" onclick="cerrarComandaMesa()" id="ccM">Cerrar Comanda Mesa</button>
+                    <button type="button" id="cC" onclick="comandaClienteMesa();">Comanda Cliente</button>
+                    <button type="button" id="ccC" class="hidden" onclick="cerrarComandaCliente();">Cerrar Comanda Cliente</button>
                 </div>
                 <div class="horizontal">
                     <button type="button" onclick="closeWindow();">Cerrar Menu</button>
@@ -121,9 +124,14 @@
             <button type="button" class="myButton-1" id="4" onclick="addProductosCliente(this.id);">cerveza Victoria 3,5 &euro;</button>
 
             <div class="">
-                <button type="button" class="myButton-2">Cerrar</button>
+                <button type="button" class="myButton-2" onclick="hideProductos();">Cerrar</button>
+                <button type="button" class="myButton-2" onclick="removeProductoCliente();">Eliminar Producto</button>
             </div>
 
+        </div>
+
+        <div class="logs hidden" id="printeable">
+    
         </div>
 
     </main>

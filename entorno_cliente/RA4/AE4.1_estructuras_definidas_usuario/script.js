@@ -42,6 +42,14 @@ class Mesa {
         this.#_tipo = tipo;
     }
 
+    get clientes() {
+        return this.#_clientes;
+    }
+
+    set clientes(clientes) {
+        this.#_clientes = clientes;
+    }
+
     // Funciones personalizadas
     get UbicacionMesa() {
         return this.#_numero;
@@ -58,8 +66,18 @@ class Mesa {
     }
 
     // Función que devuelve el coste total de toda la mesa (todos los clientes)
-    getComandaMesa() {
+    // getComandaMesa() {
 
+    //     let mensaje = `Comanda completa de la mesa: ${this.#_numero}.`;
+
+    //     for (let cliente of this.#_clientes) {
+    //         mensaje += `\n${cliente.id} `.cliente.getProductos();
+    //     }
+
+    //     return mensaje;
+    // }
+
+    getPrecioMesa() {
         // Variable de precioMesa
         let precioMesa = 0;
 
@@ -95,10 +113,42 @@ class Cliente {
         return this.#_id;
     }
 
+    set productos(productos) {
+        this.#_productos = productos;
+    }
+
+    get productos() {
+        return this.#_productos;
+    }
+
 
     // Funciones propias
     addProducto(producto) {
         this.#_productos.push(producto);
+    }
+
+    // Funcion eliminar producto del array
+    removeProducto(nombreProducto) {
+        const idx = this.#_productos.findIndex(producto => producto.nombre === nombreProducto);
+
+        if (idx != -1) {
+            this.#_productos.splice(idx, 1);
+        } else {
+            alert(`El producto ${nombreProducto} no esta en la lista de productos.`);
+        }
+    }
+
+    getProductos() {
+
+        let mensaje = "";
+
+        for (let producto of this.#_productos) {
+
+            mensaje += `\n${producto.nombre} - ${producto.precio} €`;
+
+        }
+
+        return mensaje.trim();
     }
 
     // Obtener precio cliente
@@ -107,9 +157,9 @@ class Cliente {
         let precioTotal = 0;
 
         // Recorremos los productos
-        productos.forEach((producto) => {
+        this.#_productos.forEach((producto) => {
 
-            precioTotal = producto["precio"];
+            precioTotal += producto.precio;
 
         })
 
@@ -264,8 +314,7 @@ function abrirMesa() {
     mesas.push(mesa);
 
     // 4. Cambiar botonera
-    abrirMesaBtn.setAttribute("hidden", true);
-    cerrarMesaBtn.removeAttribute("hidden");
+    mesaEstaAbierta(id);
 
     // 5. La mesa esta ocupada le cambiamos el estilo
     document.getElementById(id).classList.add("ocupada");
@@ -280,30 +329,21 @@ function abrirMesa() {
 //* Función saber si mesa esta abierta
 function mesaEstaAbierta(id) {
 
-    // Variables
-    existe = false;
-
-    if (mesas) {
-        // 2. Comprobamos en el array de mesas que no coincida el número con el id
-        mesas.forEach((mesa) => {
-            if (mesa.numero == id) {
-                existe = true;
-            }
-        })
-    }
+    // Capturamos la mesa
+    let mesaSeleccionada = mesas.find(mesa => mesa.numero == id);
 
 
     // 3. Si existe desactivamos el botón abrirMesa
-    if (existe) {
+    if (mesaSeleccionada) {
 
-        abrirMesaBtn.setAttribute("hidden", true);
-        cerrarMesaBtn.removeAttribute("hidden");
+        abrirMesaBtn.classList.add("hidden");;
+        cerrarMesaBtn.classList.remove("hidden");
 
 
     } else {
 
-        abrirMesaBtn.removeAttribute("hidden");
-        cerrarMesaBtn.setAttribute("hidden", true);
+        abrirMesaBtn.classList.remove("hidden");
+        cerrarMesaBtn.classList.add("hidden");
     }
 
 }
@@ -359,6 +399,10 @@ function closeTable() {
 
     // 4. quitar los estilos de ocupada
     document.getElementById(id).classList.remove("ocupada");
+
+
+    // Volver los botones a su estado inicial
+    mesaEstaAbierta(id);
 
     actualizarMenu(id);
 
@@ -525,6 +569,12 @@ function btnControl(id) {
         remCBtn.classList.remove("prohibido");
     }
 
+    // Controlar los botones de abrir y cerrar
+    // Uso el find, porque paso de hacer mas forEach
+    let mesaSeleccionada = mesas.find(mesa => mesa.numero == id);
+
+    mesaEstaAbierta(id);
+
 }
 
 
@@ -556,22 +606,24 @@ function getPrecio(id) {
     let valor = 0;
     const precioDisplay = document.getElementById("precio");
 
-    // Sacar la mesa 
-    if (mesas) {
-        // 3. Recorrer el array de mesas
-        mesas.forEach((mesa) => {
+    let mesaSeleccionada = mesas.find(mesa => mesa.numero === id);
 
-            if (mesa.numero == id) {
+    if (!mesaSeleccionada) {
 
-                console.log(mesa.getComandaMesa());
-                valor = mesa.getComandaMesa();
-                precioDisplay.innerHTML = valor.toFixed(2) + "€";
+        console.log(`No se encontró la mesa con ID ${id}`);
 
-            }
-        })
-    } else {
-        precioDisplay.innerHTML = valor.toFixed(2) + "€";
+        precioDisplay.innerHTML = "0,00 €";
+        return;
+
     }
+
+    mesaSeleccionada.clientes.forEach(cliente => {
+        cliente.productos.forEach(producto => {
+            valor += producto.precio;
+        });
+    });
+
+    precioDisplay.innerHTML = valor.toFixed(2) + "€";
 
 }
 
@@ -603,14 +655,14 @@ function pickCliente() {
 
     // Obtener los comensales de la mesa
     comensalesMesa = getComensalesMesa(idMesa);
-    alert(comensalesMesa);
+    // alert(comensalesMesa);
 
     if (comensalesMesa != -1) {
 
         // Pedimos por prompt el id del cliente
-        idCliente = parseInt(`Introduzca un cliente entre 1 y ${comensalesMesa}`);
+        idCliente = parseInt(prompt(`Introduzca un cliente entre 1 y ${comensalesMesa}`));
 
-        while (idCliente < 0 && idCliente > comensalesMesa) {
+        while (idCliente <= 0 || idCliente > comensalesMesa) {
             idCliente = prompt(`Error, recuerda un cliente entre 1 y ${comensalesMesa}`);
         }
 
@@ -632,7 +684,7 @@ function getComensalesMesa(id) {
     mesas.forEach((mesa) => {
 
         if (id == mesa.numero) {
-            alert(mesa.comensales);
+            // alert(mesa.comensales);
             num = mesa.comensales;
             return num;
         }
@@ -644,7 +696,7 @@ function getComensalesMesa(id) {
 
 // Función añadir productos al cliente
 function showProductos(idMesa, idCliente) {
-    
+
     // Mostramos el modal
     const modalProductos = document.getElementById("modalProductos");
     modalProductos.classList.remove("hidden");
@@ -658,18 +710,354 @@ function showProductos(idMesa, idCliente) {
 
 }
 
+// Funcion para cerrar el menu de productos cliente
+function hideProductos() {
+
+    const modalProductos = document.getElementById("modalProductos");
+    modalProductos.classList.add("hidden");
+
+}
+
 // Función añadir productos
 function addProductosCliente(idProducto) {
 
-    let idMesa = document.getElementById("prod-mesa").value;
-    let idCliente = document.getElementById("prod-cliente").value;
-    
-    alert(productos[idProducto]["nombre"] + " " + productos[idProducto]["precio"]);
+    let idMesa = parseInt(document.getElementById("prod-mesa").value);
+    let idCliente = parseInt(document.getElementById("prod-cliente").value);
+
+    // Buscar la mesa pero mas simple
+    let mesaSeleccionada = mesas.find(mesa => mesa.numero == idMesa);
+
+    // Si la mesa esta seleccionada
+    if (mesaSeleccionada) {
+
+        // Sacamos el cliente
+        let clienteSeleccionado = mesaSeleccionada.clientes.find(cliente => cliente.id == idCliente);
+
+        // Si se cumple que el cliente selccionado
+        if (clienteSeleccionado) {
+            // Creamos el producto
+            let producto = productos[idProducto];
+
+            // Insertar en el cliente
+            clienteSeleccionado.addProducto(producto);
+
+            // Mesanje de impresion
+            let mensaje = `El cliente ${idCliente} de la mesa ${idMesa} ha ordenado un ${producto.nombre} de precio ${producto.precio} €`;
+            imprimir(mensaje);
+
+            // Actyualimar menu
+            actualizarMenu(idMesa)
+        } else {
+            alert("Cliente no encontrado en la mesa.");
+        }
+
+    } else {
+        alert("Mesa no encontrada.");
+    }
+
 
 
 }
 
+// Funcion para eliminar productos
+function removeProductoCliente() {
 
+    let idMesa = parseInt(document.getElementById("prod-mesa").value);
+    let idCliente = parseInt(document.getElementById("prod-cliente").value);
+
+    let mesaSeleccionada = mesas.find(mesa => mesa.numero === idMesa);
+
+    if (mesaSeleccionada) {
+
+        // Buscar el cliente dentro de la mesa
+        let clienteSeleccionado = mesaSeleccionada.clientes.find(cliente => cliente.id == idCliente);
+
+        if (clienteSeleccionado) {
+
+            // Creamos un mensaje para el prompt de los productos del cliente
+            let mensaje = `Listado de productos ordenados por el cliente ${idCliente}`;
+
+            mensaje += clienteSeleccionado.getProductos();
+
+            let nombreProducto = prompt(mensaje + "\nIntroduce el nombre del prodcuto:");
+
+            let idxProdcuto = clienteSeleccionado.productos.findIndex(producto => producto.nombre == nombreProducto);
+
+            // Si el indice del producto ha sido encontrado
+            if (idxProdcuto != -1) {
+
+                // Nos cargamos el producto del cliente
+                clienteSeleccionado.productos.splice(idxProdcuto, 1);
+
+                // confimacion
+                alert(`Se ha eliminado el producto ${nombreProducto} de la cuenta del cliente ${idCliente}`);
+
+                // Impresion de ticket
+                imprimir(`Se ha eliminado el producto ${nombreProducto} de la cuenta del cliente ${idCliente}`);
+
+                actualizarMenu(idMesa);
+
+            } else {
+                alert(`El cliente ${idCliente} no tiene el producto ${nombreProducto} en su comanda.`);
+            }
+
+        } else {
+            alert("Cliente no encontrado en la mesa");
+        }
+
+    }
+
+}
+
+
+// Funcion para sacar la comanda de la mesa
+function comandaMesa() {
+
+    let idMesa = parseInt(document.getElementById("info-mesa").innerHTML);
+
+    let mesaSeleccionada = mesas.find(mesa => mesa.numero == idMesa);
+    let printeable = document.getElementById("printeable");
+
+    let totalMesa = 0;
+
+    if (!mesaSeleccionada) {
+
+        alert("No se ha seleccionado ninguna mesa.");
+        return;
+
+    }
+
+    let mensaje = `<h3>Comanda de la Mesa ${idMesa}</h3><hr>`;
+
+    // Recorremos los clientes de la mesa
+    mesaSeleccionada.clientes.forEach(cliente => {
+
+        mensaje += `<h4>Cliente ${cliente.id}</h4><ul>`;
+
+        if (cliente.productos.length == 0) {
+            mensaje += `<li>No ha pedido nada aún.</li>`;
+        } else {
+
+            // Recorremos los productos del cliente
+            cliente.productos.forEach(producto => {
+
+                mensaje += `<li>${producto.nombre} | ${producto.precio} €.</li>`;
+                let precioProducto = parseFloat(producto.precio);
+                totalMesa += precioProducto;
+
+            });
+        }
+
+        // Cambiar botones
+        document.getElementById("cM").classList.add("hidden");
+        document.getElementById("ccM").classList.remove('hidden');
+
+        mensaje += "</ul>";
+    });
+
+
+    // Precio total de la mesa
+    mensaje += `<br><b class='red'>${totalMesa} €</b>`;
+
+    printeable.innerHTML += mensaje;
+    printeable.classList.remove("hidden");
+
+}
+
+// Cerrar comanda mesa
+function cerrarComandaMesa() {
+
+    let printeable = document.getElementById("printeable");
+
+    printeable.innerHTML = "";
+
+    document.getElementById("cM").classList.remove("hidden");
+    document.getElementById("ccM").classList.add('hidden');
+
+    printeable.classList.add("hidden");
+
+}
+
+// Comanda de cliente
+function comandaClienteMesa() {
+
+    // Capturamos los ids de mesa y cliente en los inputs hidden
+    let idMesa = parseInt(document.getElementById("info-mesa").innerHTML);
+    let totalCliente = 0;
+    let mensaje = "";
+    let printeable = document.getElementById("printeable");
+
+    // Seleccionamos mesa
+    let mesaSeleccionada = mesas.find(mesa => mesa.numero == idMesa);
+
+    // Si hay mesa
+    if (mesaSeleccionada) {
+
+        // Pedir el id del cliente
+        let comensales = mesaSeleccionada.comensales;
+
+        let idCliente = parseInt(prompt(`Introduce el id del cliente entre 1 y ${comensales}.`));
+
+        let clienteSeleccionado = mesaSeleccionada.clientes.find(cliente => cliente.id == idCliente);
+
+        if (clienteSeleccionado) {
+
+            // Construimos el mensaje
+            mensaje = `<h3>Comanda de la Mesa ${idMesa}</h3><hr>`;
+
+            mensaje += `<h4>Cliente ${clienteSeleccionado.id}</h4><ul>`;
+
+            clienteSeleccionado.productos.forEach(producto => {
+
+                mensaje += `<li>${producto.nombre} | ${producto.precio} €.</li>`;
+                let precioProducto = parseFloat(producto.precio);
+                totalCliente += precioProducto;
+
+            });
+
+            mensaje += "</ul>";
+
+            // Cambiar botones
+            document.getElementById("cC").classList.add("hidden");
+            document.getElementById("ccC").classList.remove('hidden');
+
+
+        } else {
+            warning("Error Comanda Cliente: no hay cliente seleccionado.");
+        }
+
+        // Precio total de la mesa
+        mensaje += `<br><b class='red'>${totalCliente} €</b>`;
+
+        printeable.innerHTML += mensaje;
+        printeable.classList.remove("hidden");
+
+    } else {
+        warning("Error Comanda Cliente: No hay mesa seleccionada.");
+    }
+
+}
+
+// Cerrar comanda mesa
+function cerrarComandaCliente() {
+
+    let printeable = document.getElementById("printeable");
+
+    printeable.innerHTML = "";
+
+    document.getElementById("cC").classList.remove("hidden");
+    document.getElementById("ccC").classList.add('hidden');
+
+    printeable.classList.add("hidden");
+
+}
+
+// Funcion para pasar la mesa a otra mesa
+function cambiarMesaDeSitio() {
+
+    // Acceder al setter y cambiar la mesa de numero
+    // Pedir por prompt
+    // Controlar que numero introduce dependiendo de los comensales
+
+    // Capturamos los ids de mesa 
+    let idMesa = parseInt(document.getElementById("info-mesa").innerHTML);
+
+    // Traer la mesa 
+    let mesaSeleccionada = mesas.find(mesa => mesa.numero == idMesa);
+
+    // Sacamos los comensales
+    let coms = mesaSeleccionada.comensales;
+
+    let nuevoNum = 0;
+
+    switch (true) {
+        case coms == 1:
+            while (true) {
+
+                nuevoNum = parseInt(prompt("Elige el nuevo numero de entre las mesas:"
+                    + "\n 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18."
+                    + "\n¿Qué número eliges?"
+                ));
+
+                let validos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18];
+
+                if (validos.includes(nuevoNum)) {
+
+                    // Salimos del bucle
+                    break;
+                }
+
+            }
+
+            // Accedemos al setter y cambiamos
+            mesaSeleccionada.numero = nuevoNum;
+
+            // Alert
+            alert(`Cambio de mesa desde ${idMesa} a ${nuevoNum}.`);
+            imprimir(`Cambio de mesa desde ${idMesa} a ${nuevoNum}.`);
+
+            // Cambiamos
+            document.getElementById(idMesa).classList.remove("ocupada");
+            document.getElementById(nuevoNum).classList.add("ocupada");
+
+            // mesaEstaAbierta(idMesa);
+            // mesaEstaAbierta(nuevoNum);
+
+            closeTable();
+
+            // Actualizamos menu
+            actualizarMenu(idMesa);
+            actualizarMenu(nuevoNum);
+
+            break;
+
+        case coms > 1 || coms <= 4:
+            while (true) {
+
+                nuevoNum = parseInt(prompt("Elige el nuevo numero de entre las mesas:"
+                    + "\n 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12."
+                    + "\n¿Qué número eliges?"
+                ));
+
+                let validos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12];
+
+                if (validos.includes(nuevoNum)) {
+
+                    // Salimos del bucle
+                    break;
+                }
+
+            }
+
+            // Accedemos al setter y cambiamos
+            mesaSeleccionada.numero = nuevoNum;
+
+            // Alert
+            alert(`Cambio de mesa desde ${idMesa} a ${nuevoNum}.`);
+            imprimir(`Cambio de mesa desde ${idMesa} a ${nuevoNum}.`);
+
+            // Cambiamos
+            document.getElementById(idMesa).classList.remove("ocupada");
+            document.getElementById(nuevoNum).classList.add("ocupada");
+
+            // mesaEstaAbierta(idMesa);
+            // mesaEstaAbierta(nuevoNum);
+            closeTable();
+
+            // Actualizamos menu
+            actualizarMenu(idMesa);
+            actualizarMenu(nuevoNum);
+
+            break;
+
+        default:
+            alert("Error: no tenemos otra mesa para mas de 4 comensales.");
+            break;
+    }
+
+
+
+}
 
 
 

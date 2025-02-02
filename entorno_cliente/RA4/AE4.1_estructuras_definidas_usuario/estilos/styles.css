@@ -156,6 +156,11 @@ main .aplicacion .block {
   height: 100px;
   border-radius: 100px;
 }
+main #printeable {
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 0;
+}
 
 .logs {
   text-align: start;

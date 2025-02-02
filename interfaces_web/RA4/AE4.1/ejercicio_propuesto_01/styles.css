@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Poppins&display=swap');
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.6);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Economica', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #04151F;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h2 {
+    color: #04151F;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+h3 {
+    color: #04151F;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+h4 {
+    color: #04151F;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+main {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+
+}
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    border: 1px solid grey;
+    border-radius: 8px;
+
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+}
