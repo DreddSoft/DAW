@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="shortcut icon" href="logo-iesjorgeguillen-footer.svg">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+
+        <img src="logo-iesjorgeguillen.svg" alt="Logo Jorge Guillén">
+        <h1>Interfaces Web</h1>
+
+    </header>
+    <main>
+        <h2>Documentos Multimedia en la Web</h2>
+
+        <div class="ejercicio">
+            <h2>Ejercicio I</h2>
+            <h3>Reproductor de Video</h3>
+            <video id="video" width="720" height="400" src="https://cdn.teachertube.com/mp4video604/355204.mp4">
+            </video>
+            <div class="controls">
+                <button id="play">
+                    <i id="playContent" class="material-symbols-outlined">
+                        play_arrow
+                    </i>
+                </button>
+                <button id="restart">
+                    <i class="material-symbols-outlined">
+                        restart_alt
+                    </i>
+                </button>
+                <button id="rewind">
+                    <sipan class="material-symbols-outlined">
+                        fast_rewind
+                    </sipan>
+                </button>
+                <button id="forward">
+                    <i class="material-symbols-outlined">
+                        fast_forward
+                    </i>
+                </button>
+                <button id="mute">
+                    <i id="muteContent" class="material-symbols-outlined">
+                        no_sound
+                    </i>
+                </button>
+                <button id="downVolume">
+                    <i class="material-symbols-outlined">
+                        volume_down
+                    </i>
+                </button>
+                <button id="upVolume">
+                    <i class="material-symbols-outlined">
+                        volume_up
+                    </i>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="ejercicio audio">
+            <button id="cambiaAudio">Iniciar Sonido Ambiente</button>
+            <p id="audioMsj" class="audio-msj">Reproduciendo: <span id="audioTitle"></span></p>
+
+
+        </div>
+
+    </main>
+    <footer>
+
+        <h2>DAW</h2>
+        <a href="https://github.com/DreddSoft" class="marca">DreddSoft</a>
+        <h3>Interfaces Web</h3>
+
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
