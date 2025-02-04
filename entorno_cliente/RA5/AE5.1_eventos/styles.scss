@@ -1,0 +1,162 @@
+@import '_variables.scss';
+
+// Color de fondo #f2f2f2
+// Fuente con variable $font-family
+// Texto alinieado al centro
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+        // Tamaño de fuente 2rem
+        // Color primary-color
+        font-size: 2rem;
+        color: $primary-color;
+    }
+
+    & p {
+        // Tamaño de fuente 1.2rem
+        // color: #555
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+    & button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+        -webkit-transition: background-color 0.3s ease;
+        -moz-transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    & .product {
+        background-color: white;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin: 10px;
+
+        &:hover {
+            background-color: darken(white, 10%);
+        }
+
+        & img {
+            max-width: 100%;
+
+        }
+
+        & h3 {
+            font-size: 1.5rem;
+        }
+
+        & .important-text {
+            font-weight: bold;
+            color: $secondary-color;
+        }
+    }
+
+    & form {
+        @include center-element(column, center, center);
+        border: 2px solid $lapizlazuli;
+        border-radius: 15px;
+        background-color: $lavender;
+        padding: 2rem;
+        margin: 2rem 0;
+        box-shadow: 0 0 10px 4px rgba($color: $lapizlazuli, $alpha: 0.4);
+
+        & h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: $coolgrey;
+            letter-spacing: 2px;
+        }
+
+        & h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: $coolgrey;
+            letter-spacing: 1px;
+        }
+
+        & input {
+            font-size: 18px;
+            font-weight: 300;
+            color: black;
+            padding: 1rem 1.5rem;
+            min-width: 300px;
+            text-align: left;
+            border: 2px solid $coolgrey;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+
+            &::placeholder {
+                color: rgba($color: #000000, $alpha: 0.5);
+                letter-spacing: 2px;
+            }
+
+            &:focus {
+                outline: none;
+                border: 2px solid $cambridge;
+                box-shadow: 0 0 12px 2px $cambridge;
+            }
+        }
+
+        & button {
+            padding: 1rem 1.5rem !important;
+            border: solid 2px black;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            background-color: $lapizlazuli;
+            color: #fff;
+            transition: 150ms ease-in;
+            -webkit-transition: 150ms ease-in;
+            -moz-transition: 150ms ease-in;
+
+            &:hover {
+                color: $lapizlazuli;
+                background-color: #fff;
+
+            }
+
+        }
+
+
+    }
+
+
+}
+
+@each $name, $style in $button-styles {
+    .#{$name} {
+        background-color: $style;
+
+        &:hover {
+            background-color: darken($style, 10%);
+        }
+    }
+}
+
+.centered {
+    @include center-element(row, center, center);
+
+    & *:not(:last-child) {
+        // border-bottom: 10px solid black;
+        padding-right: 20px;
+    }
+
+}
+
+.row {
+    @include center-element(row, center, center);
+}

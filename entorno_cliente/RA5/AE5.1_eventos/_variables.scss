@@ -1,0 +1,36 @@
+// Botón con color primario, #3498db.
+// Botón para aceptar, #27ae60.
+// Botón para cancelar, #e74c3c.
+// Implementar esto en variables
+
+// Define las siguientes variables en tu archivo SCSS:
+// $primary-color: #3498db
+// $secondary-color: #e74c3c
+// $font-family: Arial
+// $base-font-size: 16px
+$primary-color: #3498db;
+$secondary-color: #e74c3c;
+$font-family: Arial;
+$base-font-size: 16px;
+
+// Colores formulario
+$lapizlazuli: #28587B;
+$powderblue: #9FB4C7;
+$cambridge: #9FB798;
+$coolgrey: #7F7CAF;
+$lavender: #EEEEFF;
+
+
+
+$button-styles: (
+    primary-button: $primary-color,
+    secondary-button: #2ecc71,
+    buy-button: #f39c12
+);
+
+@mixin center-element($direccion, $horizontal, $vertical) {
+    display: flex;
+    flex-direction: $direccion;
+    justify-content: $horizontal;
+    align-items: $vertical;
+}

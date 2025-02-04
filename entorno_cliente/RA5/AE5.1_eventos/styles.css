@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+body h1 {
+  font-size: 2rem;
+  color: #3498db;
+}
+body p {
+  font-size: 1.2rem;
+  color: #555;
+}
+body button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+body .product {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px;
+}
+body .product:hover {
+  background-color: rgb(229.5, 229.5, 229.5);
+}
+body .product img {
+  max-width: 100%;
+}
+body .product h3 {
+  font-size: 1.5rem;
+}
+body .product .important-text {
+  font-weight: bold;
+  color: #e74c3c;
+}
+body form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #28587B;
+  border-radius: 15px;
+  background-color: #EEEEFF;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 10px 4px rgba(40, 88, 123, 0.4);
+}
+body form h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #7F7CAF;
+  letter-spacing: 2px;
+}
+body form h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #7F7CAF;
+  letter-spacing: 1px;
+}
+body form input {
+  font-size: 18px;
+  font-weight: 300;
+  color: black;
+  padding: 1rem 1.5rem;
+  min-width: 300px;
+  text-align: left;
+  border: 2px solid #7F7CAF;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+body form input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+body form input:focus {
+  outline: none;
+  border: 2px solid #9FB798;
+  box-shadow: 0 0 12px 2px #9FB798;
+}
+body form button {
+  padding: 1rem 1.5rem !important;
+  border: solid 2px black;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #28587B;
+  color: #fff;
+  transition: 150ms ease-in;
+  -webkit-transition: 150ms ease-in;
+  -moz-transition: 150ms ease-in;
+}
+body form button:hover {
+  color: #28587B;
+  background-color: #fff;
+}
+
+.primary-button {
+  background-color: #3498db;
+}
+.primary-button:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+
+.secondary-button {
+  background-color: #2ecc71;
+}
+.secondary-button:hover {
+  background-color: rgb(36.616, 162.384, 89.948);
+}
+
+.buy-button {
+  background-color: #f39c12;
+}
+.buy-button:hover {
+  background-color: rgb(199.8795180723, 126.5060240964, 10.1204819277);
+}
+
+.centered {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.centered *:not(:last-child) {
+  padding-right: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

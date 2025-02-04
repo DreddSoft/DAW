@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>SASS - Contenedores</title>
+</head>
+
+<body>
+
+    <h1>Kiosko Fernando</h1>
+    <p>Nuestras delicatessen ahora te las llevamos a casa.</p>
+    <button class="primary-button">Ver Menú</button>
+    <button class="secondary-button">Registrarse</button>
+    <h2>Los más demandados</h2>
+    <div class="product">
+        <img src="https://cdn-icons-png.flaticon.com/512/468/468339.png" alt="Gambas">
+        <h3>Gamba roja</h3>
+        <p>Gamba roja de Garrucha (150 gramos).</p>
+        <p class="important-text">3,50 €</p>
+        <button class="buy-button">Comprar</button>
+    </div>
+    <div class="product">
+        <img src="https://cdn-icons-png.flaticon.com/512/1137/1137928.png" alt="Mejillones">
+        <h3>Mejillones</h3>
+        <p>Mejillones del Cantábrico (2 unidades).</p>
+        <p class="important-text">2,00 €</p>
+        <button class="buy-button">Comprar</button>
+    </div>
+    <div class="product centered">
+        <img src="https://cdn-icons-png.flaticon.com/512/3751/3751463.png" alt="Prod 3">
+        <h3>Zamburiñas</h3>
+        <p>Zamburiñas gallegas (2 unidades)</p>
+        <p class="important-text">4,70 €</p>
+        <button class="buy-button">Comprar</button>
+    </div>
+
+    <!--
+    FORMULARIO
+
+Incluye un título: “Datos de contacto”.
+
+El formulario tendrá los siguientes campos:
+
+    - ♿Nombre del cliente (Obligatorio), entre 3 y 10 caracteres alfabéticos, el primero con mayúscula.  
+    - Primer apellido (Obligatorio), entre 4 y 8 caracteres alfabéticos, el primero con mayúscula.
+    - Segundo apellido, entre 4 y 8 caracteres alfabéticos, el primero con mayúscula.
+    - Télefono de contacto (Obligatorio), formato: +99 999-999-999
+    - Email (Obligatorio), aplica el patrón que consideres oportuno.
+    - Dirección (Obligatorio), aplica el patrón que consideres oportuno.
+
+    - Se deben validar los datos introducidos en cada campo mediante el método checkValidity() y las propiedades de validity, mostrando un mensaje de error personalizado para cada campo en base al error introducido.
+
+    - Usa expresiones regulares para comprobar los campos.
+
+    - Aplica un borde de color rojo al campo cuando se haya enviado un valor erróneo en dicho campo. Adicionalmente, puedes aplicar los estilos que consideres oportunos al formulario para mejorar su visualización.
+
+Ubica el formulario debajo del contenedor asociado a las “zamburiñas”, en un contenedor a la izquierda.-->
+
+    <form action="#">
+        <h2>Kiosco Fernando</h2>
+        <h3>Datos de contacto</h3>
+        <input type="text" name="name" id="name" placeholder="Nombre: ">
+        <input type="text" name="lname1" id="lname1" placeholder="Primer apellido: ">
+        <input type="text" name="lname2" id="lname2" placeholder="Segundo apellido: ">
+        <input type="tel" name="phone" id="phone" placeholder="Teléfono: ">
+        <input type="email" name="email" id="email" placeholder="Email: ">
+        <input type="text" name="address" id="address" placeholder="Dirección: ">
+
+        <div class="row">
+            <button type="reset">Borrar</button>
+            <button type="submit">Enviar</button>
+        </div>
+
+    </form>
+
+
+
+
+</body>
+
+</html>
