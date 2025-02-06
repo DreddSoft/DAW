@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Poppins&display=swap');
+
 :root {
     --btn-bg-color: #3498db;
     --text-color: #fff;
-    --btn-hover-bg:#2980b9;
+    --btn-hover-bg: #2980b9;
     --btn-disabled-bg: #95a5a6;
     --btn-disabled-color: black;
 }
@@ -24,7 +25,10 @@ header {
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.6);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Economica', Arial, Helvetica, sans-serif;
 }
 
@@ -68,12 +72,24 @@ main {
     justify-content: center;
     align-items: center;
     margin: 2rem 0;
+    overflow: hidden;
 }
 
 video {
     border: 1px solid grey;
     border-radius: 8px;
 
+}
+
+.audio-base {
+    font-style: italic;
+}
+
+.audio-msj {
+    display: block;
+    animation: run 4s infinite;
+    width: 250px;
+    
 }
 
 footer {
@@ -103,6 +119,64 @@ footer {
     color: gold;
 }
 
+button {
+
+    /* Color de fondo: #3498db
+    Color de texto: #fff
+    Relleno: 10px superior e inferior y 15px izquierda y derecha.
+    Sin borde
+    El puntero cambia al interactuar con el botón, al icono de la mano.
+    Transición suave al cambiar los colores anteriormente mencionados. */
+
+    background-color: var(--btn-bg-color);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+    -webkit-transition: 300ms ease-in-out;
+    -moz-transition: 300ms ease-in-out;
+}
+
+button:hover {
+    background-color: var(--btn-hover-bg);
+    color: black;
+}
+
+button.desactivado {
+    background-color: var(--btn-disabled-bg);
+    color: black;
+    cursor: not-allowed;
+}
+
+@media (max-width: 720px) {
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+
 .modoOscuro {
-    
+    background-color: black;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@keyframes run {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
 }

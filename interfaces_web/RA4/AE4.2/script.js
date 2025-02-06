@@ -78,6 +78,7 @@ volumeDown.addEventListener("click", () => {
 volumeUp.addEventListener("click", () => {
     // Suvimos 0.1 al volumen
     let newVolume = video.volume + 0.1;
+    console.log(video.volume);
     video.volume = newVolume.toFixed(1);
 
     console.log(video.volume);
@@ -87,6 +88,7 @@ volumeUp.addEventListener("click", () => {
 
 });
 
+// Arrai de audios
 const audios = [
     { title: "Naturaleza", src: "https://sound-effects-media.bbcrewind.co.uk/mp3/NHU05104275.mp3" },
     { title: "Industria", src: "https://sound-effects-media.bbcrewind.co.uk/mp3/07076051.mp3" },
@@ -118,6 +120,18 @@ function controlBtnsSonido() {
 
     // Esto aplicara true o false dependiendo de si se cumple la condicon
     volumeDown.disabled = video.volume === 0;
+    if (video.volume === 0) {
+        volumeDown.classList.add("desactivado");
+    } else {
+        volumeDown.classList.remove("desactivado");
+
+    }
     volumeUp.disabled = video.volume === 1;
+    if (video.volume === 1) {
+        volumeUp.classList.add("desactivado");
+
+    } else {
+        volumeUp.classList.remove("desactivado");
+    }
     
 }

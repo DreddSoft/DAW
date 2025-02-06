@@ -73,3 +73,20 @@ LEFT JOIN departamentos AS D ON D.id = E.idDpto
 ORDER BY salario
 
 SELECT id, nombre, edad, salario, oficina, rango, idDpto FROM empleados WHERE id =1;
+
+
+
+SELECT 
+    E.id AS idEmpleado,
+    E.nombre AS nombreEmpleado,
+    E.edad AS edadEmpleado,
+    D.nombre AS nombreDepartamento
+FROM empleados AS E
+LEFT JOIN departamentos AS D ON D.id = E.idDpto;
+
+SELECT
+    P.idPeticion as idPeticion,
+    P.refPeticion as referenciaPeticion,
+    U.nombre as nombreUsuarioCreador
+FROM petiociones AS P
+left join usuarios as U on U.id = P.usuarioCreador;
