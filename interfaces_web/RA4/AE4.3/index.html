@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Snake III</title>
 </head>
 
@@ -13,12 +14,19 @@
 
     <main>
 
-        <canvas id="lienzo" width="600" height="480"></canvas>
+        <div class="info">
+            <h1>Snake III</h1>
+            <p class="text">Nivel actual: <span id="levelDisplay"></span></p>
+        </div>
+
+        <canvas id="canvas" width="600" height="480"></canvas>
+
     </main>
 
     <footer></footer>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
