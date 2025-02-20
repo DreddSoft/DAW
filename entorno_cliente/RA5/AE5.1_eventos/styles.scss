@@ -131,6 +131,18 @@ body {
 
         }
 
+        .alert {
+            padding: 1rem 1.5rem;
+            width: 300px;
+            text-align: center;
+            color: red;
+            background-color: rgba($color: red, $alpha: 0.1);
+            border: 2px solid red;
+            border-radius: 6px;
+            margin: 0 0 1rem 0;
+            word-wrap: break-word;
+        }
+
 
     }
 
@@ -159,4 +171,8 @@ body {
 
 .row {
     @include center-element(row, center, center);
+}
+
+.hidden {
+    display: none;
 }
