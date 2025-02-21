@@ -63,19 +63,17 @@ Ubica el formulario debajo del contenedor asociado a las “zamburiñas”, en u
     <form action="#" id="miForm">
         <h2>Kiosco Fernando</h2>
         <h3>Datos de contacto</h3>
-        <input type="text" name="name" id="name" placeholder="Nombre: " autocomplete="off">
-        <div class="alert hidden" id="alert-nombre"></div>
-        <input type="text" name="lname1" id="lname1" placeholder="Primer apellido: " autocomplete="off">
-        <div class="alert hidden" id="alert-ape1"></div>
-        <input type="text" name="lname2" id="lname2" placeholder="Segundo apellido: " autocomplete="off">
-        <div class="alert hidden" id="alert-ape2"></div>
-        <input type="tel" name="phone" id="phone" placeholder="Teléfono: " autocomplete="off">
-        <input type="email" name="email" id="email" placeholder="Email: " autocomplete="off">
-        <input type="text" name="address" id="address" placeholder="Dirección: " autocomplete="off">
+        <input type="text" name="name" id="name" placeholder="Nombre: " autocomplete="off" required minlength="3" maxlength="10" pattern="^[A-Z][a-z]{3,10}$">
+        <input type="text" name="lname1" id="lname1" placeholder="Primer apellido: " autocomplete="off" required minlength="4" maxlength="8" pattern="^[A-Z][a-z]{3,7}$">
+        <input type="text" name="lname2" id="lname2" placeholder="Segundo apellido: " autocomplete="off" minlength="4" maxlength="8" pattern="^[A-Z][a-z]{3,7}$">
+        <input type="tel" name="phone" id="phone" placeholder="Teléfono: " autocomplete="off" required minlength="15" maxlength="15" pattern="^\+\d{2} \d{3}-\d{3}-\d{3}$">
+        <input type="email" name="email" id="email" placeholder="Email: " autocomplete="off" required pattern="^([A-Za-z0-9._-]+)@([A-Za-z0-9]+)\.([a-z]{2,4})(\.[a-z]{2,4})?$">
+        <input type="text" name="address" id="address" placeholder="Dirección: " autocomplete="off" required>
+        <div class="alert hidden" id="alert-error"></div>
 
         <div class="row">
             <button type="reset">Borrar</button>
-            <button type="submit">Enviar</button>
+            <button type="submit" id="btn-send">Enviar</button>
         </div>
 
     </form>
