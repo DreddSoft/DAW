@@ -5,7 +5,33 @@ const form = document.getElementById("miForm");
 const alertError = document.getElementById("alert-error");
 const btnSend = document.getElementById("btn-send");
 
+let arrProducts = [];
+
 //* Eventos
+
+window.addEventListener("DOMContentLoaded", () => {
+
+
+    if (document.cookie.indexOf('usuario=') != -1) {
+        let user = localStorage.getItem('nombre') + " " + localStorage.getItem('ape1');
+        let cnt = localStorage.getItem("contador");
+
+        if (cnt == "1") {
+            document.getElementById("welcome").innerHTML = `¡Bienvenido ${user}, que delicatessen deseas probar hoy!`;
+            cnt++;
+            localStorage.setItem("contador", cnt);
+        } else {
+            document.getElementById("welcome").innerHTML = `¡Bienvenido de nuevo ${user}!, ¿repetimos?`;
+        }
+
+        // Aplicamos valores a la tabla
+        showDataIfInStorage();
+
+    } else {
+        document.getElementById("welcome").innerHTML = `Nuestras delicatessen ahora te las llevamos a casa.`;
+
+    }
+});
 
 form.elements[0].addEventListener("focusout", validarNombre, false);
 form.elements[1].addEventListener("focusout", validarPrimerApellido, false);
@@ -224,6 +250,61 @@ function saveShitInLocalStorage(name, lastName, lastName1, phone, email, dir) {
     localStorage.setItem('email', email);
     localStorage.setItem('dir', dir);
 
+    let nomCompleto = name + " " + lastName;
+    // Creamos la cookie del usuario
+    let d = new Date();
+    d.setTime(d.getTime() + 30 * 60 * 1000);
+    let exp = "expires=" + d.toUTCString();
+    document.cookie = "usuario=" + nomCompleto + ";" + exp + ";path=/";
+
+    let precioTotal = 0;
+    let prodsNombres = [];
+
+    arrProducts.forEach(producto => {
+
+        prodsNombres.push(producto.nombre);
+        precioTotal += producto.precio;
+    });
+
+    prodsNombres = prodsNombres.join(', ');
+
+    localStorage.setItem('productos', prodsNombres);
+    localStorage.setItem('precio', precioTotal);
+
+    // El contador por el primer inicio de sesion
+    alert("Pasa por aquí, que es guardar el contador");
+    localStorage.setItem("contador", "1");
+
+}
+
+function showDataIfInStorage() {
+
+    const nombre = localStorage.getItem('nombre');
+    const ape1 = localStorage.getItem('ape1');
+    const ape2 = localStorage.getItem('ape2');
+    const tel = localStorage.getItem('tel');
+    const productos = localStorage.getItem('productos');
+    const precio = parseFloat(localStorage.getItem('precio'));
+
+    const dir = localStorage.getItem('dir');
+
+    if (nombre) document.getElementById('nombre-display').innerText = nombre;
+    if (ape1) document.getElementById('nombre-display').innerText += " " + ape1;
+    if (ape2) document.getElementById('nombre-display').innerText += " " + ape2;
+    if (tel) document.getElementById('tel-display').innerText = tel;
+    if (dir) document.getElementById('dir-display').innerText = dir;
+    if (productos) document.getElementById('pedido-display').innerText = productos;
+    if (precio) document.getElementById('precio-display').innerText = precio.toFixed(2) + " €";
+
+}
+
+function buy(nombre, precio) {
+    let producto = {
+        nombre: nombre,
+        precio: precio
+    };
+    arrProducts.push(producto);
+    console.log(`Producto añadido: ${nombre}, Precio: ${precio}`);
 }
 
 

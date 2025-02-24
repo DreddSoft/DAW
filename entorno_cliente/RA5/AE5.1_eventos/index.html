@@ -12,7 +12,7 @@
 <body>
 
     <h1>Kiosko Fernando</h1>
-    <p>Nuestras delicatessen ahora te las llevamos a casa.</p>
+    <p id="welcome">Nuestras delicatessen ahora te las llevamos a casa.</p>
     <button class="primary-button">Ver Menú</button>
     <button class="secondary-button">Registrarse</button>
     <h2>Los más demandados</h2>
@@ -21,21 +21,21 @@
         <h3>Gamba roja</h3>
         <p>Gamba roja de Garrucha (150 gramos).</p>
         <p class="important-text">3,50 €</p>
-        <button class="buy-button">Comprar</button>
+        <button class="buy-button" id="1" onclick="buy('Gamba roja', 3.50)">Comprar</button>
     </div>
     <div class="product">
         <img src="https://cdn-icons-png.flaticon.com/512/1137/1137928.png" alt="Mejillones">
         <h3>Mejillones</h3>
         <p>Mejillones del Cantábrico (2 unidades).</p>
         <p class="important-text">2,00 €</p>
-        <button class="buy-button">Comprar</button>
+        <button class="buy-button" id="2" onclick="buy('Mejillones', 2.00)">Comprar</button>
     </div>
     <div class="product centered">
         <img src="https://cdn-icons-png.flaticon.com/512/3751/3751463.png" alt="Prod 3">
         <h3>Zamburiñas</h3>
         <p>Zamburiñas gallegas (2 unidades)</p>
         <p class="important-text">4,70 €</p>
-        <button class="buy-button">Comprar</button>
+        <button class="buy-button" id="3" onclick="buy('Zamburiñas', 4.70)">Comprar</button>
     </div>
 
     <!--
@@ -60,23 +60,57 @@ El formulario tendrá los siguientes campos:
 
 Ubica el formulario debajo del contenedor asociado a las “zamburiñas”, en un contenedor a la izquierda.-->
 
-    <form action="#" id="miForm">
-        <h2>Kiosco Fernando</h2>
-        <h3>Datos de contacto</h3>
-        <input type="text" name="name" id="name" placeholder="Nombre: " autocomplete="off" required minlength="3" maxlength="10" pattern="^[A-Z][a-z]{3,10}$">
-        <input type="text" name="lname1" id="lname1" placeholder="Primer apellido: " autocomplete="off" required minlength="4" maxlength="8" pattern="^[A-Z][a-z]{3,7}$">
-        <input type="text" name="lname2" id="lname2" placeholder="Segundo apellido: " autocomplete="off" minlength="4" maxlength="8" pattern="^[A-Z][a-z]{3,7}$">
-        <input type="tel" name="phone" id="phone" placeholder="Teléfono: " autocomplete="off" required minlength="15" maxlength="15" pattern="^\+\d{2} \d{3}-\d{3}-\d{3}$">
-        <input type="email" name="email" id="email" placeholder="Email: " autocomplete="off" required pattern="^([A-Za-z0-9._-]+)@([A-Za-z0-9]+)\.([a-z]{2,4})(\.[a-z]{2,4})?$">
-        <input type="text" name="address" id="address" placeholder="Dirección: " autocomplete="off" required>
-        <div class="alert hidden" id="alert-error"></div>
+    <div class="data">
+        <form action="#" id="miForm">
+            <h2>Kiosco Fernando</h2>
+            <h3>Datos de contacto</h3>
+            <input type="text" name="name" id="name" placeholder="Nombre: " autocomplete="off" required minlength="3" maxlength="10" pattern="^[A-Z][a-z]{3,10}$">
+            <input type="text" name="lname1" id="lname1" placeholder="Primer apellido: " autocomplete="off" required minlength="4" maxlength="8" pattern="^[A-Z][a-z]{3,7}$">
+            <input type="text" name="lname2" id="lname2" placeholder="Segundo apellido: " autocomplete="off" minlength="4" maxlength="8" pattern="^[A-Z][a-z]{3,7}$">
+            <input type="tel" name="phone" id="phone" placeholder="Teléfono: " autocomplete="off" required minlength="15" maxlength="15" pattern="^\+\d{2} \d{3}-\d{3}-\d{3}$">
+            <input type="email" name="email" id="email" placeholder="Email: " autocomplete="off" required pattern="^([A-Za-z0-9._-]+)@([A-Za-z0-9]+)\.([a-z]{2,4})(\.[a-z]{2,4})?$">
+            <input type="text" name="address" id="address" placeholder="Dirección: " autocomplete="off" required>
+            <div class="alert hidden" id="alert-error"></div>
+    
+            <div class="row">
+                <button type="reset">Borrar</button>
+                <button type="submit" id="btn-send">Enviar</button>
+            </div>
+    
+        </form>
 
-        <div class="row">
-            <button type="reset">Borrar</button>
-            <button type="submit" id="btn-send">Enviar</button>
+        <div class="pedido">
+            <h3>Datos Pedido</h3>
+            <table>
+                <tr>
+                    <th>Nombre completo</th>
+                    <td id="nombre-display"></td>
+                </tr>
+                <tr>
+                    <th>Dirección</th>
+                    <td id="dir-display"></td>
+                </tr>
+                <tr>
+                    <th>Teléfono</th>
+                    <td id="tel-display"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Pedido</th>
+    
+                </tr>
+                <tr>
+                    <td colspan="2" id="pedido-display"></td>
+                </tr>
+                <tr>
+                    <th>Precio</th>
+                    <td id="precio-display"></td>
+                </tr>
+            </table>
         </div>
 
-    </form>
+
+    </div>
+
 
 
 

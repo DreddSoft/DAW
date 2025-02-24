@@ -47,6 +47,13 @@ body .product .important-text {
   font-weight: bold;
   color: #e74c3c;
 }
+body .data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
 body form {
   display: flex;
   flex-direction: column;
@@ -117,6 +124,31 @@ body form .alert {
   border-radius: 6px;
   margin: 0 0 1rem 0;
   word-wrap: break-word;
+}
+body .pedido table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+body .pedido table th, body .pedido table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  min-width: 200px;
+  padding: 0.7rem 1.2rem;
+  text-align: left;
+}
+body .pedido table th {
+  background-color: #bbbbff;
+  font-weight: bold;
+}
+body .pedido table tr:nth-child(even) {
+  background-color: #fff;
+}
+body .pedido table tr:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+body .pedido table tr:hover {
+  background-color: #e1d8ff;
 }
 
 .primary-button {
