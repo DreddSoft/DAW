@@ -4,6 +4,9 @@
 const form = document.getElementById("miForm");
 const alertError = document.getElementById("alert-error");
 const btnSend = document.getElementById("btn-send");
+const btnShowPedido = document.getElementById("btn-showPedido");
+const btnDelete = document.getElementById("btn-delete");
+const btnLogout = document.getElementById("btn-logout");
 
 let arrProducts = [];
 
@@ -16,12 +19,15 @@ window.addEventListener("DOMContentLoaded", () => {
         let user = localStorage.getItem('nombre') + " " + localStorage.getItem('ape1');
         let cnt = localStorage.getItem("contador");
 
+        document.getElementById("btn-logout").textContent = "Log out";
+
         if (cnt == "1") {
             document.getElementById("welcome").innerHTML = `¡Bienvenido ${user}, que delicatessen deseas probar hoy!`;
             cnt++;
             localStorage.setItem("contador", cnt);
         } else {
             document.getElementById("welcome").innerHTML = `¡Bienvenido de nuevo ${user}!, ¿repetimos?`;
+            
         }
 
         // Aplicamos valores a la tabla
@@ -33,6 +39,15 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// Evento click en el botón ver pedido
+btnShowPedido.addEventListener("click", () => {
+    document.getElementById("pedido").scrollIntoView({ behavior: 'smooth' });
+}, false);
+
+// Evento para borrar la información del pedido en LocalStorage
+btnDelete.addEventListener("click", clearShitFromStorage, false);
+
+
 form.elements[0].addEventListener("focusout", validarNombre, false);
 form.elements[1].addEventListener("focusout", validarPrimerApellido, false);
 form.elements[2].addEventListener("focusout", validarSegundoApellido, false);
@@ -41,6 +56,9 @@ form.elements[4].addEventListener("focusout", validarEmail, false);
 form.elements[5].addEventListener("focusout", validaDireccion, false);
 
 btnSend.addEventListener("click", checkEnvioForm, false);
+
+btnLogout.addEventListener("click", logout, false);
+
 
 
 function validarNombre() {
@@ -277,6 +295,14 @@ function saveShitInLocalStorage(name, lastName, lastName1, phone, email, dir) {
 
 }
 
+function logout() {
+    // Eliminar la cookie del usuario
+    document.cookie = "usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    alert("Has cerrado sesión.");
+    window.location.reload();
+}
+
+
 function showDataIfInStorage() {
 
     const nombre = localStorage.getItem('nombre');
@@ -306,6 +332,19 @@ function buy(nombre, precio) {
     arrProducts.push(producto);
     console.log(`Producto añadido: ${nombre}, Precio: ${precio}`);
 }
+
+// Función que elimina toda la información en webstorage
+function clearShitFromStorage() {
+    localStorage.clear();
+    alert("Toda la información del pedido ha sido eliminada.");
+    window.location.reload();
+}
+
+// Función para eliminar sólo la información del pedido
+function clearShitFromPedido() {
+    localStorage.removeItem('productos');
+}
+
 
 
 

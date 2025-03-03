@@ -13,8 +13,8 @@
 
     <h1>Kiosko Fernando</h1>
     <p id="welcome">Nuestras delicatessen ahora te las llevamos a casa.</p>
-    <button class="primary-button">Ver Menú</button>
-    <button class="secondary-button">Registrarse</button>
+    <button class="primary-button" id="btn-showPedido">Ver Pedido</button>
+    <button class="secondary-button" id="btn-logout">Registrarse</button>
     <h2>Los más demandados</h2>
     <div class="product">
         <img src="https://cdn-icons-png.flaticon.com/512/468/468339.png" alt="Gambas">
@@ -73,13 +73,13 @@ Ubica el formulario debajo del contenedor asociado a las “zamburiñas”, en u
             <div class="alert hidden" id="alert-error"></div>
     
             <div class="row">
-                <button type="reset">Borrar</button>
-                <button type="submit" id="btn-send">Enviar</button>
+                <button type="reset" id="btn-delete">Borrar Pedido</button>
+                <button type="submit" id="btn-send">Realizar Pedido</button>
             </div>
     
         </form>
 
-        <div class="pedido">
+        <div class="pedido" id="pedido">
             <h3>Datos Pedido</h3>
             <table>
                 <tr>
