@@ -60,7 +60,7 @@ function captarNivel() {
 
     if (nivel == "" || nivel == null) {
         // Si no hay parametro nivel, establecemos le nivel base en 3
-        nivel = 3;
+        nivel = 5;
     }
 
     // Devolvemos el nivel
